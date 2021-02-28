@@ -6,10 +6,11 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import StartPage from './src/views/StartPage';
-import Favorites from './src/views/Favorite';
-import Destination from './src/views/Destination';
-import NotFound from './src/views/NotFound';
+
+import Favorites from 'views/Favorite';
+import Destination from 'views/Destination';
+import NotFound from 'views/NotFound';
+import StartPage from 'views/StartPage';
 
 function App() {
   return (
