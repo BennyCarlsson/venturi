@@ -1,9 +1,10 @@
 import React from 'react';
+import {Heading} from './styles'
 
 function StartPage() {
   return (
     <div>
-      StartPage
+      <Heading>StartPage</Heading>
     </div>
   );
 }
