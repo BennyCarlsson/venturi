@@ -1,5 +1,3 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Heading = styled.h1`
-  font-size: 64px;
-`
+export const StartPageWrapper = styled.div``;

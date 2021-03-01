@@ -1,4 +1,5 @@
-import { Token } from './vasttrafik';
+import { Token } from 'types';
+
 export const getExpireTime = (secondsToExpires: any) => {
   let date = new Date();
   date.setSeconds(date.getSeconds() + secondsToExpires);

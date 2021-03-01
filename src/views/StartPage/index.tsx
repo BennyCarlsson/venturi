@@ -1,11 +1,14 @@
-import { getDepartureBoard, DepartureBoard, Departure, ApiError } from 'api/vasttrafik/vasttrafik';
+import { getDepartureBoard } from 'api/vasttrafik/vasttrafik';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Heading } from './styles';
+import { ApiError, Departure, DepartureBoard } from 'types';
+import NextDepartureBox from './NextDepartureBox';
+import OtherDepartures from './OtherDeparturesBox';
+import { StartPageWrapper } from './styles';
 
 const spaldingsgatan = '9021014006160000';
 //const nordstan = '9021014004945000';
 
-function StartPage() {
+const StartPage = () => {
   const [departures, setDepartures] = useState<Departure[]>([]);
   const [error, setError] = useState<ApiError | null>(null);
 
@@ -14,7 +17,8 @@ function StartPage() {
     if ((data as ApiError).DepartureBoard.error) {
       setError(data as ApiError);
     } else {
-      setDepartures((data as DepartureBoard).DepartureBoard.Departure);
+      const departures = (data as DepartureBoard).DepartureBoard.Departure;
+      setDepartures(departures);
     }
     console.log(data);
   }, []);
@@ -23,28 +27,18 @@ function StartPage() {
     getTimeTable();
   }, [getTimeTable]);
 
-  const renderDepartures = () => {
-    return departures.map((departure) => {
-      return (
-        <div>
-          <h2>{departure.stop}</h2>
-          <h3>{`${departure.name} ${departure.direction}`}</h3>
-          <p>Spår: {departure.track}</p>
-          <p>Tid: {departure.time}</p>
-          <p>Förväntad Tid: {departure.rtTime}</p>
-        </div>
-      );
-    });
-  };
-
   return (
-    <div>
-      <Heading>Departs</Heading>
+    <StartPageWrapper>
+      {departures.length > 0 && (
+        <React.Fragment>
+          <NextDepartureBox {...departures[0]} />
+          <OtherDepartures departures={departures.slice(1, 4)} />
+        </React.Fragment>
+      )}
       {error && <h2>{error.DepartureBoard.error}</h2>}
       {error && <p>{error.DepartureBoard.errorText}</p>}
-      {departures.length > 1 && renderDepartures()}
-    </div>
+    </StartPageWrapper>
   );
-}
+};
 
 export default StartPage;
