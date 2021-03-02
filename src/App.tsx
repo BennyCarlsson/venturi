@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Link, HashRouter } from 'react-router-dom';
 
 import Favorites from 'views/Favorite';
 import Destination from 'views/Destination';
 import NotFound from 'views/NotFound';
 import StartPage from 'views/StartPage';
 
+// Todo: use Browser router when not hosting on github pages
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <div>
           <Switch>
             <Route exact path="/">
@@ -44,7 +45,7 @@ function App() {
             </ul>
           </nav>
         </div>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
