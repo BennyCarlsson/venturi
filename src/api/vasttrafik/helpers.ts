@@ -1,6 +1,6 @@
 import { Token } from 'types';
 
-export const getExpireTime = (secondsToExpires: any) => {
+export const getExpireTime = (secondsToExpires: number) => {
   let date = new Date();
   date.setSeconds(date.getSeconds() + secondsToExpires);
   return date;
@@ -15,6 +15,6 @@ export const getTime = () => {
 
 export const isTokenValid = (token: Token) => {
   if (!token.accessToken) return false;
-  if (token.expires && token.expires < new Date()) return false;
+  if (!token.expires || token?.expires < new Date()) return false;
   return true;
 };
