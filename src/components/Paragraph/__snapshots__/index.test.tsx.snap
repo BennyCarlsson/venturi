@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Paragraph /> should match snapshot 1`] = `
-<div
-  className="sc-bdfBwQ gDhytj"
+<p
+  className="sc-bdfBwQ cGtYIP"
 >
   test
-</div>
+</p>
 `;
