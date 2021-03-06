@@ -1,16 +1,16 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import MyComponent from '.';
+import Paragraph from '.';
 
-describe('<MyComponent />', () => {
+describe('<Paragraph />', () => {
   it('should match snapshot', () => {
-    const tree = renderer.create(<MyComponent title="test" />).toJSON();
+    const tree = renderer.create(<Paragraph title="test" />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should renders without crashing', () => {
-    render(<MyComponent title="test" />);
+    render(<Paragraph title="test" />);
     expect(screen).toBeTruthy();
   });
 });

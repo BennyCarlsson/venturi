@@ -1,5 +1,5 @@
 import styled from 'styled-components';
 
-export const MyComponentWrapper = styled.div`
+export const ParagraphWrapper = styled.div`
   padding: 16px;
 `;
