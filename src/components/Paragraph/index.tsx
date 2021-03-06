@@ -1,12 +1,22 @@
 import React from 'react';
 import { ParagraphWrapper } from './styles';
 
+export enum fontWeight {
+  normal = 400,
+  medium = 500,
+  bold = 700
+}
+
 type ParagraphProps = {
-  title: string;
+  children: React.ReactNode;
+  fontSize?: number;
+  fontWeight?: fontWeight;
+  color?: string;
+  center?: boolean;
 };
 
-const Paragraph = ({ title, ...props }: ParagraphProps) => {
-  return <ParagraphWrapper {...props}>{title}</ParagraphWrapper>;
+const Paragraph = ({ children, ...props }: ParagraphProps) => {
+  return <ParagraphWrapper {...props}>{children}</ParagraphWrapper>;
 };
 
 export default Paragraph;

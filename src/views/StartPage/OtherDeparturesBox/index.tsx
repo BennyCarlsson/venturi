@@ -1,3 +1,4 @@
+import Paragraph from 'components/Paragraph';
 import { Departure } from 'types';
 import { Box, DepartureWrapper } from './styles';
 
@@ -12,7 +13,7 @@ const OtherDeparturesBox = (props: Departures) => {
       {departures.map((departure) => {
         return (
           <DepartureWrapper>
-            <p>{departure.time}</p>
+            <Paragraph>{departure.time}</Paragraph>
             <p>{departure.direction}</p>
             <p>{departure.sname}</p>
           </DepartureWrapper>
