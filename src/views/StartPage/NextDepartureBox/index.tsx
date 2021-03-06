@@ -1,3 +1,5 @@
+import Paragraph, { fontWeight } from 'components/Paragraph';
+import colors from 'tokens/colors';
 import { Departure } from 'types';
 import { Box, Heading, Heading2, Heading3, Heading4 } from './styles';
 
@@ -9,7 +11,11 @@ const NextDepartureBox = (props: Departure) => {
       <Heading2>{stop}</Heading2>
       <Heading3>{time}</Heading3>
       <Heading4>{rtTime}</Heading4>
-      <div>{`${sname} ${direction}`}</div>
+      <Paragraph
+        color={colors.vGray}
+        fontSize={14}
+        fontWeight={fontWeight.normal}
+      >{`${sname} ${direction}`}</Paragraph>
     </Box>
   );
 };
