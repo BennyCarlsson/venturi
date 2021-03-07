@@ -12,7 +12,7 @@ const OtherDeparturesBox = (props: Departures) => {
     <Box>
       {departures.map((departure) => {
         return (
-          <DepartureWrapper>
+          <DepartureWrapper key={departure.journeyNumber}>
             <Paragraph>{departure.time}</Paragraph>
             <p>{departure.direction}</p>
             <p>{departure.sname}</p>

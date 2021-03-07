@@ -1,7 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import Paragraph, { fontWeight } from '.';
+import Paragraph from '.';
+import { FontWeight } from 'types';
 
 describe('<Paragraph />', () => {
   it('should match snapshot', () => {
@@ -11,7 +12,7 @@ describe('<Paragraph />', () => {
 
   it('should renders without crashing', () => {
     render(
-      <Paragraph fontSize={16} fontWeight={fontWeight.bold} color="green" center>
+      <Paragraph fontSize={16} fontWeight={FontWeight.bold} color="green" center uppercase>
         test
       </Paragraph>
     );

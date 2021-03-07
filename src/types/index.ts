@@ -1,3 +1,9 @@
+export enum FontWeight {
+  normal = 400,
+  medium = 500,
+  bold = 700
+}
+
 export type Token = {
   accessToken: string;
   expires: null | Date;

@@ -1,18 +1,14 @@
 import React from 'react';
+import { FontWeight } from 'types';
 import { ParagraphWrapper } from './styles';
-
-export enum fontWeight {
-  normal = 400,
-  medium = 500,
-  bold = 700
-}
 
 type ParagraphProps = {
   children: React.ReactNode;
   fontSize?: number;
-  fontWeight?: fontWeight;
+  fontWeight?: FontWeight;
   color?: string;
   center?: boolean;
+  uppercase?: boolean;
 };
 
 const Paragraph = ({ children, ...props }: ParagraphProps) => {
