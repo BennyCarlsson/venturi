@@ -3,9 +3,25 @@ import { getTime } from './helpers';
 
 const id = 'T0hDc2txdEp6cDhMYlVmRjhsaWVfeERHdDBBYTp6ME5wWWY3dlYxbUFhTEVFbkdyRFprTGEwODBh';
 
-export const fetchDepartureBoard = async (fromStopId: string, token: Token): Promise<Response> => {
+export const fetchTrip = async (
+  originId: string,
+  destId: string,
+  token: Token
+): Promise<Response> => {
   const { date, time } = getTime();
-  const tripUrl = `https://api.vasttrafik.se/bin/rest.exe/v2/departureBoard?id=${fromStopId}&date=${date}&time=${time}&format=json`;
+  const tripUrl = `https://api.vasttrafik.se/bin/rest.exe/v2/trip?originId=${originId}&destId=${destId}&date=${date}&time=${time}&format=json`;
+  const response = await fetch(tripUrl, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token.accessToken}`
+    }
+  });
+  return response;
+};
+
+export const fetchDepartureBoard = async (originId: string, token: Token): Promise<Response> => {
+  const { date, time } = getTime();
+  const tripUrl = `https://api.vasttrafik.se/bin/rest.exe/v2/departureBoard?id=${originId}&date=${date}&time=${time}&format=json`;
   const response = await fetch(tripUrl, {
     method: 'GET',
     headers: {
