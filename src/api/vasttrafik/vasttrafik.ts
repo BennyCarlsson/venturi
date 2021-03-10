@@ -1,4 +1,4 @@
-import { ApiError, DepartureBoard, Token, Trip, TripList } from 'types';
+import { ApiError, DepartureBoard, Token, GetTripResponse } from 'types';
 import { getExpireTime, isTokenValid } from './helpers';
 import { fetchAccessToken, fetchDepartureBoard, fetchTrip } from './vasttrafikApi';
 
@@ -11,8 +11,11 @@ const updateToken = async () => {
   token = { accessToken, expires };
 };
 
-export const getTrip = async (originId: string, destId: string): Promise<TripList | ApiError> => {
-  return apiCaller(() => fetchTrip(originId, destId, token)) as Promise<TripList | ApiError>;
+export const getTrip = async (
+  originId: string,
+  destId: string
+): Promise<GetTripResponse | ApiError> => {
+  return apiCaller(() => fetchTrip(originId, destId, token)) as Promise<GetTripResponse | ApiError>;
 };
 
 export const getDepartureBoard = async (originId: string): Promise<DepartureBoard | ApiError> => {

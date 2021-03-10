@@ -1,21 +1,21 @@
 import Paragraph from 'components/Paragraph';
-import { Departure } from 'types';
+import { Legs } from 'types';
 import { Box, DepartureWrapper } from './styles';
 
 type Departures = {
-  departures: Departure[];
+  legs: Legs[];
 };
 
 const OtherDeparturesBox = (props: Departures) => {
-  const { departures } = props;
+  const { legs } = props;
   return (
     <Box>
-      {departures.map((departure) => {
+      {legs.map((leg) => {
         return (
-          <DepartureWrapper key={departure.journeyNumber}>
-            <Paragraph>{departure.time}</Paragraph>
-            <p>{departure.direction}</p>
-            <p>{departure.sname}</p>
+          <DepartureWrapper key={leg.Leg?.id}>
+            <Paragraph>{leg.Leg?.Origin?.time}</Paragraph>
+            <p>{leg.Leg.direction}</p>
+            <p>{leg.Leg.sname}</p>
           </DepartureWrapper>
         );
       })}

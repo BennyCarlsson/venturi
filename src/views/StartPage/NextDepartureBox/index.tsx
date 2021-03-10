@@ -1,12 +1,12 @@
 import Heading, { HeadingType } from 'components/Heading';
 import Paragraph from 'components/Paragraph';
 import colors from 'tokens/colors';
-import { Departure, FontWeight } from 'types';
+import { FontWeight, Leg } from 'types';
 import { Box } from './styles';
 
-const NextDepartureBox = (props: Departure) => {
-  const { stop, time, rtTime, direction, sname } = props;
-  const shouldShowRtTime = () => rtTime !== time;
+const NextDepartureBox = (props: Leg) => {
+  const { Origin, direction, sname } = props;
+  const shouldShowRtTime = () => Origin?.rtTime !== Origin?.time;
   return (
     <Box>
       <Heading
@@ -23,7 +23,7 @@ const NextDepartureBox = (props: Departure) => {
         fontSize={28}
         color={colors.vBlack}
       >
-        {stop}
+        {Origin?.name}
       </Heading>
       <Heading
         headingType={HeadingType.H2}
@@ -31,7 +31,7 @@ const NextDepartureBox = (props: Departure) => {
         fontSize={34}
         color={colors.vBlue}
       >
-        {time}
+        {Origin?.time}
       </Heading>
       {shouldShowRtTime() && (
         <Heading
@@ -40,7 +40,7 @@ const NextDepartureBox = (props: Departure) => {
           fontSize={24}
           color={colors.vBlack}
         >
-          ({rtTime})
+          ({Origin?.rtTime})
         </Heading>
       )}
       <Paragraph

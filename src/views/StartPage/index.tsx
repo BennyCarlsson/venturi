@@ -1,26 +1,34 @@
-import { getDepartureBoard } from 'api/vasttrafik/vasttrafik';
-import React, { useCallback, useEffect, useState } from 'react';
-import { ApiError, Departure, DepartureBoard } from 'types';
+import { getTrip } from 'api/vasttrafik/vasttrafik';
+import { Fragment, useCallback, useEffect, useState } from 'react';
+import { ApiError, GetTripResponse, Legs } from 'types';
 import NextDepartureBox from './NextDepartureBox';
 import OtherDepartures from './OtherDeparturesBox';
 import { StartPageWrapper } from './styles';
 
 const spaldingsgatan = '9021014006160000';
+const lillaBommen = '9021014004380000';
 //const nordstan = '9021014004945000';
 
 const StartPage = () => {
-  const [departures, setDepartures] = useState<Departure[]>([]);
+  const [legs, setTrips] = useState<Legs[]>();
   const [error, setError] = useState<ApiError | null>(null);
 
   const getTimeTable = useCallback(async () => {
-    const data = await getDepartureBoard(spaldingsgatan);
-    if ((data as ApiError).DepartureBoard.error) {
-      setError(data as ApiError);
-    } else {
-      const departures = (data as DepartureBoard).DepartureBoard.Departure;
-      setDepartures(departures);
+    const data = await getTrip(spaldingsgatan, lillaBommen);
+
+    if ((data as ApiError).error) {
+      console.log((data as ApiError).error);
     }
-    console.log(data);
+
+    const tripList = (data as GetTripResponse).TripList;
+    if (tripList.error) {
+      setError(data as ApiError);
+    } else if (tripList) {
+      const _legs = tripList.Trip as Legs[];
+      console.log('tripList', tripList);
+      console.log('_legs', _legs);
+      setTrips(_legs);
+    }
   }, []);
 
   useEffect(() => {
@@ -29,14 +37,14 @@ const StartPage = () => {
 
   return (
     <StartPageWrapper>
-      {departures.length > 0 && (
-        <React.Fragment>
-          <NextDepartureBox {...departures[0]} />
-          <OtherDepartures departures={departures.slice(1, 4)} />
-        </React.Fragment>
+      {legs && legs.length > 0 && (
+        <Fragment>
+          <NextDepartureBox {...legs[0].Leg} />
+          <OtherDepartures legs={legs.slice(1, 4)} />
+        </Fragment>
       )}
-      {error && <h2>{error.DepartureBoard.error}</h2>}
-      {error && <p>{error.DepartureBoard.errorText}</p>}
+      {error && <h2>{error.error}</h2>}
+      {error && <p>{error.errorText}</p>}
     </StartPageWrapper>
   );
 };
