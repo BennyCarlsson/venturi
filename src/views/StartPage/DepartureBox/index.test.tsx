@@ -1,21 +1,21 @@
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import NextDepartureBox from '.';
+import DepartureBox from '.';
 
-describe('<Documentation />', () => {
+describe('<DepartureBox />', () => {
   const name = 'Test name';
   const track = 'Test Track';
 
   describe('snapshots', () => {
     it('should match snapshot', () => {
-      const tree = renderer.create(<NextDepartureBox name={name} track={track} />).toJSON();
+      const tree = renderer.create(<DepartureBox name={name} track={track} />).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
 
   describe('Component', () => {
     beforeEach(() => {
-      render(<NextDepartureBox name={name} track={track} />);
+      render(<DepartureBox name={name} track={track} />);
     });
 
     it('should render without crashing', () => {

@@ -1,7 +1,7 @@
 import { getTrip } from 'api/vasttrafik/vasttrafik';
 import { Fragment, useCallback, useEffect, useState } from 'react';
 import { ApiError, GetTripResponse, Legs } from 'types';
-import NextDepartureBox from './NextDepartureBox';
+import DepartureBox from './DepartureBox';
 import OtherDepartures from './OtherDeparturesBox';
 import { StartPageWrapper } from './styles';
 
@@ -40,7 +40,7 @@ const StartPage = () => {
     <StartPageWrapper>
       {legs && legs.length > 0 && (
         <Fragment>
-          <NextDepartureBox name={legs[0].Leg.Origin?.name} track={legs[0].Leg.Origin?.track} />
+          <DepartureBox name={legs[0].Leg.Origin?.name} track={legs[0].Leg.Origin?.track} />
           <OtherDepartures legs={legs.slice(1, 4)} />
         </Fragment>
       )}

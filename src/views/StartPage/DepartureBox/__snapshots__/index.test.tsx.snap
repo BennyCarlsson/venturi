@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Documentation /> snapshots should match snapshot 1`] = `
+exports[`<DepartureBox /> snapshots should match snapshot 1`] = `
 <div
   className="sc-iBPRYJ HCnjh"
 >

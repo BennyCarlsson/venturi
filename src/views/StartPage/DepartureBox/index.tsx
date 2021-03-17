@@ -18,7 +18,7 @@ type NextDepartureBoxProps = {
   track: string | undefined;
 };
 
-const NextDepartureBox = (props: NextDepartureBoxProps) => {
+const DepartureBox = (props: NextDepartureBoxProps) => {
   const { name, track } = props;
   return (
     <NextDepartureWrapper>
@@ -66,4 +66,4 @@ const NextDepartureBox = (props: NextDepartureBoxProps) => {
   );
 };
 
-export default NextDepartureBox;
+export default DepartureBox;
