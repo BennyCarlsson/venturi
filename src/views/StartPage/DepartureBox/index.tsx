@@ -1,4 +1,4 @@
-import Heading, { HeadingType } from 'components/Heading';
+import Heading from 'components/Heading';
 import Paragraph from 'components/Paragraph';
 import colors from 'tokens/colors';
 import { FontWeight } from 'types';
@@ -24,7 +24,7 @@ const DepartureBox = (props: NextDepartureBoxProps) => {
     <NextDepartureWrapper>
       <TopPart>
         <Heading
-          headingType={HeadingType.H1}
+          headingType={'h1'}
           fontWeight={FontWeight.medium}
           fontSize={18}
           color={colors.white}
@@ -35,7 +35,7 @@ const DepartureBox = (props: NextDepartureBoxProps) => {
           {/* Todo: icon after type */}
           <StyledTrailLogo />
           <Heading
-            headingType={HeadingType.H2}
+            headingType={'h2'}
             fontWeight={FontWeight.medium}
             fontSize={28}
             color={colors.white}

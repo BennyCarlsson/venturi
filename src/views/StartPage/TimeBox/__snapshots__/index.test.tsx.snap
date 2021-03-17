@@ -2,8 +2,15 @@
 
 exports[`<TimeBox /> should match snapshot 1`] = `
 <div
-  className="sc-bdfBwQ gDhytj"
+  className="sc-gKsewC fJFOVJ"
 >
-  test
+  <h1
+    className="sc-bdfBwQ UZuHf"
+    color="#FFFFFF"
+    fontSize={18}
+    fontWeight={500}
+  >
+    Title
+  </h1>
 </div>
 `;

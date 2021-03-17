@@ -1,20 +1,13 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import Heading, { HeadingType } from '.';
+import Heading from '.';
 import { FontWeight } from 'types';
 
 describe('<Heading />', () => {
   it('should match snapshot', () => {
     const tree = renderer
       .create(
-        <Heading
-          headingType={HeadingType.H1}
-          fontSize={16}
-          fontWeight={FontWeight.bold}
-          color="green"
-          center
-        >
+        <Heading headingType={'h1'} fontSize={16} fontWeight={FontWeight.bold} color="green" center>
           test
         </Heading>
       )
@@ -24,13 +17,7 @@ describe('<Heading />', () => {
 
   it('should renders without crashing', () => {
     render(
-      <Heading
-        headingType={HeadingType.H1}
-        fontSize={16}
-        fontWeight={FontWeight.bold}
-        color="green"
-        center
-      >
+      <Heading headingType={'h1'} fontSize={16} fontWeight={FontWeight.bold} color="green" center>
         testy test
       </Heading>
     );
@@ -38,7 +25,8 @@ describe('<Heading />', () => {
     expect(screen.queryByText('testy test')).toBeInTheDocument();
   });
 
-  const headingTypes = Object.values(HeadingType);
+  type headingType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  const headingTypes: headingType[] = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
   headingTypes.forEach((headingType) => {
     it(`${headingType} should render passed child element`, () => {
       const text = 'Testy test';
