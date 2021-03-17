@@ -1,4 +1,4 @@
-enum colors {
+enum Colors {
   background = '#A0C1B8',
   white = '#FFFFFF',
   black = '#000000',
@@ -10,4 +10,4 @@ enum colors {
   borderWhite = '#95BFCE'
 }
 
-export default colors;
+export default Colors;

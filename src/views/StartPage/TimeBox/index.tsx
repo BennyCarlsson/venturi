@@ -1,6 +1,6 @@
 import Heading from 'components/Heading';
 import React from 'react';
-import colors from 'tokens/colors';
+import Colors from 'tokens/colors';
 import { FontWeight } from 'types';
 import { TimeBoxWrapper } from './styles';
 
@@ -16,7 +16,7 @@ const TimeBox = ({ title, ...props }: TimeBoxProps) => {
           headingType={'h1'}
           fontWeight={FontWeight.medium}
           fontSize={18}
-          color={colors.white}
+          color={Colors.white}
         >
           Title
         </Heading>

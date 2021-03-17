@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
-import colors from 'tokens/colors';
+import Colors from 'tokens/colors';
 import { FontWeight as _fontWeight } from 'types/index';
 
 const generalFontStyle = ({ fontSize, color, fontWeight, center, uppercase }) =>
   css`
     font-size: ${fontSize ? `${fontSize}px` : 'initial'};
-    color: ${color ? color : colors.black};
+    color: ${color ? color : Colors.black};
     font-weight: ${fontWeight ? fontWeight : _fontWeight.normal};
     text-align: ${center ? 'center' : 'initial'};
     text-transform: ${uppercase ? 'uppercase' : 'none'};

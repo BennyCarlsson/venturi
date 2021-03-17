@@ -1,6 +1,6 @@
 import Heading from 'components/Heading';
 import Paragraph from 'components/Paragraph';
-import colors from 'tokens/colors';
+import Colors from 'tokens/colors';
 import { FontWeight } from 'types';
 import {
   BottomPart,
@@ -27,7 +27,7 @@ const DepartureBox = (props: NextDepartureBoxProps) => {
           headingType={'h1'}
           fontWeight={FontWeight.medium}
           fontSize={18}
-          color={colors.white}
+          color={Colors.white}
         >
           Departs from
         </Heading>
@@ -38,7 +38,7 @@ const DepartureBox = (props: NextDepartureBoxProps) => {
             headingType={'h2'}
             fontWeight={FontWeight.medium}
             fontSize={28}
-            color={colors.white}
+            color={Colors.white}
           >
             {name}
           </Heading>
@@ -46,18 +46,18 @@ const DepartureBox = (props: NextDepartureBoxProps) => {
       </TopPart>
       <BottomPart>
         <BottomLeftPart>
-          <Paragraph fontWeight={FontWeight.medium} fontSize={14} color={colors.white}>
+          <Paragraph fontWeight={FontWeight.medium} fontSize={14} color={Colors.white}>
             Platform
           </Paragraph>
-          <BottomParagraph fontWeight={FontWeight.medium} fontSize={24} color={colors.white}>
+          <BottomParagraph fontWeight={FontWeight.medium} fontSize={24} color={Colors.white}>
             {track}
           </BottomParagraph>
         </BottomLeftPart>
         <BottomRightPart>
-          <Paragraph fontWeight={FontWeight.medium} fontSize={14} color={colors.white}>
+          <Paragraph fontWeight={FontWeight.medium} fontSize={14} color={Colors.white}>
             Destination name
           </Paragraph>
-          <BottomParagraph fontWeight={FontWeight.medium} fontSize={24} color={colors.white}>
+          <BottomParagraph fontWeight={FontWeight.medium} fontSize={24} color={Colors.white}>
             Placeholder
           </BottomParagraph>
         </BottomRightPart>
