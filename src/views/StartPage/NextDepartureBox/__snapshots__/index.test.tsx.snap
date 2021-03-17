@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Documentation /> snapshots should match snapshot 1`] = `
+<div
+  className="sc-iBPRYJ HCnjh"
+>
+  <div
+    className="sc-fubCfw hIKVhW"
+  >
+    <h1
+      className="sc-bdfBwQ UZuHf"
+      color="#FFFFFF"
+      fontSize={18}
+      fontWeight={500}
+    >
+      Departs from
+    </h1>
+    <div
+      className="sc-dQppl dWSjyx"
+    >
+      <svg
+        className="sc-crrsfI fCASlj"
+      >
+        train.svg
+      </svg>
+      <h2
+        className="sc-gsTCUz htLLms"
+        color="#FFFFFF"
+        fontSize={28}
+        fontWeight={500}
+      >
+        Test name
+      </h2>
+    </div>
+  </div>
+  <div
+    className="sc-pFZIQ hxExeM"
+  >
+    <div
+      className="sc-jrAGrp jzTLuk"
+    >
+      <p
+        className="sc-gKsewC bMoIAp"
+        color="#FFFFFF"
+        fontSize={14}
+        fontWeight={500}
+      >
+        Platform
+      </p>
+      <p
+        className="sc-gKsewC iTDTZO sc-iqHYGH jyHRlY"
+        color="#FFFFFF"
+        fontSize={24}
+        fontWeight={500}
+      >
+        Test Track
+      </p>
+    </div>
+    <div
+      className="sc-kEjbxe bnNZBb"
+    >
+      <p
+        className="sc-gKsewC bMoIAp"
+        color="#FFFFFF"
+        fontSize={14}
+        fontWeight={500}
+      >
+        Destination name
+      </p>
+      <p
+        className="sc-gKsewC iTDTZO sc-iqHYGH jyHRlY"
+        color="#FFFFFF"
+        fontSize={24}
+        fontWeight={500}
+      >
+        Placeholder
+      </p>
+    </div>
+  </div>
+</div>
+`;

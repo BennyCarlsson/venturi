@@ -47,7 +47,7 @@ export type Leg = {
   kcal?: Float32Array;
   Origin?: Origin;
   sname?: string;
-  type: string;
+  type: 'VAS' | 'LDT' | 'REG' | 'BUS' | 'BOAT' | 'TRAM' | 'TAXI' | 'WALK' | 'BIKE' | 'CAR';
   GeometryRef?: GeometryRef;
   bgColor?: string;
   Notes?: Notes;

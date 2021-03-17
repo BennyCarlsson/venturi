@@ -8,6 +8,7 @@ import { StartPageWrapper } from './styles';
 const spaldingsgatan = '9021014006160000';
 const lillaBommen = '9021014004380000';
 //const nordstan = '9021014004945000';
+//const shouldShowRtTime = () => Origin?.rtTime !== Origin?.time;
 
 const StartPage = () => {
   const [legs, setTrips] = useState<Legs[]>();
@@ -39,7 +40,7 @@ const StartPage = () => {
     <StartPageWrapper>
       {legs && legs.length > 0 && (
         <Fragment>
-          <NextDepartureBox {...legs[0].Leg} />
+          <NextDepartureBox name={legs[0].Leg.Origin?.name} track={legs[0].Leg.Origin?.track} />
           <OtherDepartures legs={legs.slice(1, 4)} />
         </Fragment>
       )}

@@ -6,7 +6,8 @@ enum colors {
   vGray = '#726A95',
   secondGray = '#AFAEAF',
   vBlue = '#719FB0',
-  vGreen = '#A0C1B8'
+  vGreen = '#A0C1B8',
+  borderWhite = '#95BFCE'
 }
 
 export default colors;
