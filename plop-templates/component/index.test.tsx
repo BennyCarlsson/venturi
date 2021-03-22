@@ -9,7 +9,7 @@ describe('<MyComponent />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should renders without crashing', () => {
+  it('should render without crashing', () => {
     render(<MyComponent title="test" />);
     expect(screen).toBeTruthy();
   });

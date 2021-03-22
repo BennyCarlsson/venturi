@@ -2,15 +2,64 @@
 
 exports[`<TimeBox /> should match snapshot 1`] = `
 <div
-  className="sc-gKsewC fJFOVJ"
+  className="sc-iBPRYJ gBQuqu"
 >
-  <h1
-    className="sc-bdfBwQ UZuHf"
-    color="#FFFFFF"
-    fontSize={18}
-    fontWeight={500}
+  <div
+    className="sc-fubCfw byQruP"
   >
-    Title
-  </h1>
+    <div
+      className="sc-pFZIQ"
+    >
+      <h2
+        className="sc-gsTCUz gXSMrj"
+        color="#719FB0"
+        fontSize={48}
+        fontWeight={700}
+      >
+        133:37
+      </h2>
+      <p
+        className="sc-gKsewC inetcg"
+        color="#719FB0"
+        fontSize={14}
+        fontWeight={700}
+      />
+    </div>
+    <div
+      className="sc-jrAGrp lcRLbZ"
+    >
+      <p
+        className="sc-gKsewC inetcg"
+        color="#719FB0"
+        fontSize={14}
+        fontWeight={700}
+      >
+        location
+      </p>
+    </div>
+  </div>
+  <div
+    className="sc-kEjbxe fyZMWj"
+  >
+    <div
+      className="sc-iqHYGH lmnLrs"
+    >
+      <p
+        className="sc-gKsewC gtcvBk"
+        color="#FFFFFF"
+        fontSize={14}
+        fontWeight={400}
+      >
+        15
+      </p>
+    </div>
+    <p
+      className="sc-gKsewC eCnwPF"
+      fontSize={14}
+      fontWeight={500}
+    >
+      hissinge
+    </p>
+  </div>
 </div>
 `;

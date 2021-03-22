@@ -15,7 +15,7 @@ describe('<Heading />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should renders without crashing', () => {
+  it('should render without crashing', () => {
     render(
       <Heading headingType={'h1'} fontSize={16} fontWeight={FontWeight.bold} color="green" center>
         testy test

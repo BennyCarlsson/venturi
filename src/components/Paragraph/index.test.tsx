@@ -10,7 +10,7 @@ describe('<Paragraph />', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should renders without crashing', () => {
+  it('should render without crashing', () => {
     render(
       <Paragraph fontSize={16} fontWeight={FontWeight.bold} color="green" center uppercase>
         test
@@ -19,7 +19,7 @@ describe('<Paragraph />', () => {
     expect(screen).toBeTruthy();
   });
 
-  it('should renders text', () => {
+  it('should render text', () => {
     render(<Paragraph>asd 123</Paragraph>);
     expect(screen.queryByText('asd 123')).toBeInTheDocument();
   });

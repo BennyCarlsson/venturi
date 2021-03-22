@@ -4,6 +4,7 @@ import { ApiError, GetTripResponse, Legs } from 'types';
 import DepartureBox from './DepartureBox';
 import OtherDepartures from './OtherDeparturesBox';
 import { StartPageWrapper } from './styles';
+import TimeBox from './TimeBox';
 
 const spaldingsgatan = '9021014006160000';
 const lillaBommen = '9021014004380000';
@@ -41,6 +42,13 @@ const StartPage = () => {
       {legs && legs.length > 0 && (
         <Fragment>
           <DepartureBox name={legs[0].Leg.Origin?.name} track={legs[0].Leg.Origin?.track} />
+          <TimeBox
+            date={legs[0].Leg.Origin?.date}
+            time={legs[0].Leg.Origin?.time}
+            location={legs[0].Leg.Destination?.name}
+            number={legs[0].Leg.sname}
+            direction={legs[0].Leg.direction}
+          />
           <OtherDepartures legs={legs.slice(1, 4)} />
         </Fragment>
       )}
