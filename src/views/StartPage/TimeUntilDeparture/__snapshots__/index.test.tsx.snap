@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TimeUntilDeparture /> should match snapshot 1`] = `
+<p
+  className="sc-bdfBwQ dmwOly"
+  color="#719FB0"
+  fontSize={14}
+  fontWeight={700}
+>
+  in 3 minutes 
+</p>
+`;

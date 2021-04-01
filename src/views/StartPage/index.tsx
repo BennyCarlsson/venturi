@@ -41,10 +41,12 @@ const StartPage = () => {
     <StartPageWrapper>
       {legs && legs.length > 0 && (
         <Fragment>
+          {/* Todo: rtTrack */}
           <DepartureBox name={legs[0].Leg.Origin?.name} track={legs[0].Leg.Origin?.track} />
           <TimeBox
             date={legs[0].Leg.Origin?.date}
             time={legs[0].Leg.Origin?.time}
+            rtTime={legs[0].Leg.Origin?.rtTime}
             location={legs[0].Leg.Destination?.name}
             number={legs[0].Leg.sname}
             direction={legs[0].Leg.direction}

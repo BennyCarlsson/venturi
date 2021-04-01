@@ -16,14 +16,16 @@ exports[`<TimeBox /> should match snapshot 1`] = `
         fontSize={48}
         fontWeight={700}
       >
-        133:37
+        13:37
       </h2>
       <p
         className="sc-gKsewC inetcg"
         color="#719FB0"
         fontSize={14}
         fontWeight={700}
-      />
+      >
+        in 35 minutes 
+      </p>
     </div>
     <div
       className="sc-jrAGrp lcRLbZ"

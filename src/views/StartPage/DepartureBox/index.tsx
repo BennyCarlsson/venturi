@@ -18,6 +18,7 @@ type NextDepartureBoxProps = {
   track: string | undefined;
 };
 
+//TODO: alternative routes?
 const DepartureBox = (props: NextDepartureBoxProps) => {
   const { name, track } = props;
   return (

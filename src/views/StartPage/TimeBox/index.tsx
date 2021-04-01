@@ -2,6 +2,7 @@ import Heading from 'components/Heading';
 import Paragraph from 'components/Paragraph';
 import Colors from 'tokens/colors';
 import { FontWeight } from 'types';
+import TimeUntilDeparture from '../TimeUntilDeparture';
 import {
   TimeBoxWrapper,
   TimeWrapper,
@@ -14,28 +15,14 @@ import {
 type TimeBoxProps = {
   date?: string;
   time?: string;
+  rtTime?: string;
   location?: string;
   number?: string;
   direction?: string;
 };
 
-//Todo försening!
-const TimeBox = ({ date, time, location, number, direction, ...props }: TimeBoxProps) => {
-  const getTimeUntilDeparture = () => {
-    if (!date || !time) return;
-    const today = new Date();
-    const departure = new Date(`${date} ${time}`);
-    const diffMs = departure.valueOf() - today.valueOf();
-    const diffDays = Math.floor(diffMs / 86400000); // days
-    const diffDaysString = `${diffDays > 0 ? `${diffDays} days ` : ''}`;
-    const diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
-    const diffHrsString = `${diffHrs > 0 ? `${diffHrs} hour(s) ` : ''}`;
-    const diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-    const diffMinsString = `${diffMins > 0 ? `${diffMins} minutes ` : ''}`;
-    if (diffDays < 0 && diffHrs < 0 && diffMins === 0) return 'now';
-    return `${diffDaysString}${diffHrsString}${diffMinsString}`;
-  };
-
+//Todo: show rtTime and map-pin.svg
+const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: TimeBoxProps) => {
   return (
     <TimeBoxWrapper {...props}>
       <TimeLocationWrapper>
@@ -48,9 +35,7 @@ const TimeBox = ({ date, time, location, number, direction, ...props }: TimeBoxP
           >
             {time}
           </Heading>
-          <Paragraph fontWeight={FontWeight.bold} fontSize={14} color={Colors.vBlue}>
-            {getTimeUntilDeparture()}
-          </Paragraph>
+          <TimeUntilDeparture date={date} time={rtTime ? rtTime : time} />
         </TimeWrapper>
         <LocationWrapper>
           <Paragraph fontSize={14} fontWeight={FontWeight.bold} color={Colors.vBlue}>
