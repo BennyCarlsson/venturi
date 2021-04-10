@@ -65,4 +65,41 @@ describe('<TimeBox />', () => {
     );
     expect(screen.getByText('in 45 minutes')).toBeInTheDocument();
   });
+
+  it('should render time once', () => {
+    render(
+      <TimeBox date={date} time={time} location={location} number={number} direction={direction} />
+    );
+    expect(screen.getAllByText(time).length).toBe(1);
+  });
+
+  it('should render time once if rtTime is same', () => {
+    render(
+      <TimeBox
+        date={date}
+        time={time}
+        rtTime={time}
+        location={location}
+        number={number}
+        direction={direction}
+      />
+    );
+    expect(screen.getAllByText(time).length).toBe(1);
+  });
+
+  it('should render new time and old time when late', () => {
+    const rtTime = '13:47';
+    render(
+      <TimeBox
+        date={date}
+        time={time}
+        rtTime={rtTime}
+        location={location}
+        number={number}
+        direction={direction}
+      />
+    );
+    expect(screen.getByText(time)).toBeInTheDocument();
+    expect(screen.getByText(rtTime)).toBeInTheDocument();
+  });
 });

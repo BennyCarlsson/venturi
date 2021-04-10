@@ -10,7 +10,8 @@ import {
   NumberBox,
   TimeLocationWrapper,
   NumberAndNameWrapper,
-  StyledMapPinLogo
+  StyledMapPinLogo,
+  StyledRtTimeHeading
 } from './styles';
 
 type TimeBoxProps = {
@@ -22,8 +23,18 @@ type TimeBoxProps = {
   direction?: string;
 };
 
-//Todo: show rtTime and map-pin.svg
 const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: TimeBoxProps) => {
+  const isOnTime = () => {
+    if (!rtTime) return true;
+    if (time !== rtTime) return false;
+    return true;
+  };
+
+  const getTimeColor = () => {
+    if (isOnTime()) return Colors.vBlue;
+    return Colors.vRed;
+  };
+
   return (
     <TimeBoxWrapper {...props}>
       <TimeLocationWrapper>
@@ -38,12 +49,17 @@ const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: 
             headingType={'h2'}
             fontWeight={FontWeight.bold}
             fontSize={48}
-            color={Colors.vBlue}
+            color={getTimeColor()}
           >
-            {time}
+            {rtTime ? rtTime : time}
           </Heading>
-          <TimeUntilDeparture date={date} time={rtTime ? rtTime : time} />
+          {!isOnTime() && (
+            <StyledRtTimeHeading headingType={'h3'} fontWeight={FontWeight.bold} fontSize={18}>
+              {time}
+            </StyledRtTimeHeading>
+          )}
         </TimeWrapper>
+        <TimeUntilDeparture date={date} time={rtTime ? rtTime : time} />
       </TimeLocationWrapper>
       <NumberAndNameWrapper>
         <NumberBox>

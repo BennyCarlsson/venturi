@@ -8,10 +8,10 @@ exports[`<TimeBox /> should match snapshot 1`] = `
     className="sc-fubCfw hCyCsd"
   >
     <div
-      className="sc-jrAGrp bykmwW"
+      className="sc-kEjbxe gXsult"
     >
       <svg
-        className="sc-kEjbxe hjRlid"
+        className="sc-iqHYGH dvCyjA"
       >
         map-pin.svg
       </svg>
@@ -25,7 +25,7 @@ exports[`<TimeBox /> should match snapshot 1`] = `
       </p>
     </div>
     <div
-      className="sc-pFZIQ"
+      className="sc-pFZIQ nhztm"
     >
       <h2
         className="sc-gsTCUz gXSMrj"
@@ -35,21 +35,21 @@ exports[`<TimeBox /> should match snapshot 1`] = `
       >
         13:37
       </h2>
-      <p
-        className="sc-gKsewC inetcg"
-        color="#719FB0"
-        fontSize={14}
-        fontWeight={700}
-      >
-        in 35 minutes 
-      </p>
     </div>
+    <p
+      className="sc-gKsewC inetcg"
+      color="#719FB0"
+      fontSize={14}
+      fontWeight={700}
+    >
+      in 35 minutes 
+    </p>
   </div>
   <div
-    className="sc-iqHYGH iOKKCK"
+    className="sc-crrsfI hiXqPz"
   >
     <div
-      className="sc-crrsfI fYjFtJ"
+      className="sc-dQppl gSNhSP"
     >
       <p
         className="sc-gKsewC gtcvBk"

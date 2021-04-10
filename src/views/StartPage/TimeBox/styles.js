@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Colors from 'tokens/colors';
 import { ReactComponent as MapPinLogo } from 'assets/icons/map-pin.svg';
+import Heading from 'components/Heading';
 
 export const TimeBoxWrapper = styled.div`
   padding: 16px 32px;
@@ -16,7 +17,18 @@ export const TimeLocationWrapper = styled.div`
   margin-bottom: 16px;
 `;
 
-export const TimeWrapper = styled.div``;
+export const TimeWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const StyledRtTimeHeading = styled(Heading)`
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  text-decoration: line-through;
+  color: #accad5;
+`;
 
 export const LocationWrapper = styled.div`
   display: flex;
