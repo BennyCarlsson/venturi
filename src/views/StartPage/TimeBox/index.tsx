@@ -9,7 +9,8 @@ import {
   LocationWrapper,
   NumberBox,
   TimeLocationWrapper,
-  NumberAndNameWrapper
+  NumberAndNameWrapper,
+  StyledMapPinLogo
 } from './styles';
 
 type TimeBoxProps = {
@@ -26,6 +27,12 @@ const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: 
   return (
     <TimeBoxWrapper {...props}>
       <TimeLocationWrapper>
+        <LocationWrapper>
+          <StyledMapPinLogo />
+          <Paragraph fontSize={14} fontWeight={FontWeight.bold} color={Colors.vBlue}>
+            {location}
+          </Paragraph>
+        </LocationWrapper>
         <TimeWrapper>
           <Heading
             headingType={'h2'}
@@ -37,11 +44,6 @@ const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: 
           </Heading>
           <TimeUntilDeparture date={date} time={rtTime ? rtTime : time} />
         </TimeWrapper>
-        <LocationWrapper>
-          <Paragraph fontSize={14} fontWeight={FontWeight.bold} color={Colors.vBlue}>
-            {location}
-          </Paragraph>
-        </LocationWrapper>
       </TimeLocationWrapper>
       <NumberAndNameWrapper>
         <NumberBox>
