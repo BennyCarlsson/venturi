@@ -1,6 +1,19 @@
+html {
+  height: -webkit-fill-available;
+}
 body {
   background-color: #ffffff;
   font-family: 'Montserrat';
+}
+a {
+  font-family: 'Montserrat';
+}
+.App {
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 p,
 h1,
