@@ -1,4 +1,3 @@
-import React from 'react';
 import { MyComponentWrapper } from './styles';
 
 type MyComponentProps = {
