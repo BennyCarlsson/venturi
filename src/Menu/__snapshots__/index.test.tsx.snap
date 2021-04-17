@@ -1,9 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Menu /> should match snapshot 1`] = `
-<div
-  className="sc-bdfBwQ gDhytj"
+<nav
+  className="sc-dlfnbm ebxcBV"
 >
-  test
-</div>
+  <a
+    aria-current="page"
+    className="sc-hKgILt cRuwcv active"
+    href="/"
+    onClick={[Function]}
+    style={Object {}}
+  >
+    <svg>
+      book-open.svg
+    </svg>
+    <span
+      className="sc-eCssSg kcQKoW"
+    >
+      Current table
+    </span>
+  </a>
+  <a
+    aria-current={null}
+    className="sc-hKgILt cRuwcv"
+    href="/favorites"
+    onClick={[Function]}
+  >
+    <svg>
+      train-car.svg
+    </svg>
+    <span
+      className="sc-jSgupP dxonMR"
+    >
+      Departures
+    </span>
+  </a>
+  <a
+    aria-current={null}
+    className="sc-hKgILt cRuwcv"
+    href="/options"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-bdfBwQ hvQWz"
+    >
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+      <div
+        className="sc-gsTCUz hslkzR"
+      />
+    </div>
+    <span
+      className="sc-gKsewC jKkyBy"
+    >
+      Options
+    </span>
+  </a>
+</nav>
 `;
