@@ -12,23 +12,25 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <Switch>
-          <Route exact path="/">
-            <StartPage />
-          </Route>
-          <Route path="/venturi">
-            <StartPage />
-          </Route>
-          <Route path="/favorites">
-            <Favorites />
-          </Route>
-          <Route path="/options">
-            <Destination />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
+        <div className="Content">
+          <Switch>
+            <Route exact path="/">
+              <StartPage />
+            </Route>
+            <Route path="/venturi">
+              <StartPage />
+            </Route>
+            <Route path="/favorites">
+              <Favorites />
+            </Route>
+            <Route path="/options">
+              <Destination />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </div>
         <Menu />
       </HashRouter>
     </div>
