@@ -2,7 +2,7 @@ import { getTrip } from 'api/vasttrafik/vasttrafik';
 import { Fragment, useCallback, useEffect, useState } from 'react';
 import { ApiError, GetTripResponse, Legs } from 'types';
 import DepartureBox from './DepartureBox';
-import OtherDepartures from './OtherDeparturesBox';
+import OtherDepartures from './OtherDepartures';
 import { StartPageWrapper } from './styles';
 import TimeBox from './TimeBox';
 
