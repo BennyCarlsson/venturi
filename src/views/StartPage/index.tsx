@@ -14,6 +14,11 @@ const lillaBommen = '9021014004380000';
 const StartPage = () => {
   const [legs, setTrips] = useState<Legs[]>();
   const [error, setError] = useState<ApiError | null>(null);
+  const [showOtherDepartures, setShowOtherDepartures] = useState(false);
+
+  const handleShowOtherDeparturesClick = () => {
+    setShowOtherDepartures((prevState) => !prevState);
+  };
 
   const getTimeTable = useCallback(async () => {
     const data = await getTrip(spaldingsgatan, lillaBommen);
@@ -42,7 +47,11 @@ const StartPage = () => {
       {legs && legs.length > 0 && (
         <Fragment>
           {/* Todo: rtTrack */}
-          <DepartureBox name={legs[0].Leg.Origin?.name} track={legs[0].Leg.Origin?.track} />
+          <DepartureBox
+            name={legs[0].Leg.Origin?.name}
+            track={legs[0].Leg.Origin?.track}
+            slim={showOtherDepartures}
+          />
           <TimeBox
             date={legs[0].Leg.Origin?.date}
             time={legs[0].Leg.Origin?.time}
@@ -51,7 +60,11 @@ const StartPage = () => {
             number={legs[0].Leg.sname}
             direction={legs[0].Leg.direction}
           />
-          <OtherDepartures legs={legs.slice(1, 4)} />
+          <OtherDepartures
+            legs={legs.slice(1, 4)}
+            handleOnClick={handleShowOtherDeparturesClick}
+            showContent={showOtherDepartures}
+          />
         </Fragment>
       )}
       {error && <h2>{error.error}</h2>}

@@ -2,8 +2,8 @@ import React from 'react';
 import { FontWeight } from 'types';
 import { StyledH1, StyledH2, StyledH3, StyledH4, StyledH5, StyledH6 } from './styles';
 
-type HeadingProps = {
-  children: React.ReactNode;
+export type HeadingProps = {
+  children?: React.ReactNode;
   fontSize?: number;
   fontWeight?: FontWeight;
   color?: string;

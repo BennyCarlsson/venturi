@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MotionHeading /> should match snapshot 1`] = `
+<h2
+  className="sc-gsTCUz clJLCV"
+  style={Object {}}
+>
+  Heading
+</h2>
+`;

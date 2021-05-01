@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontWeight } from 'types';
-import { ParagraphWrapper } from './styles';
+import { P } from './styles';
 
-type ParagraphProps = {
-  children: React.ReactNode;
+export type ParagraphProps = {
+  children?: React.ReactNode;
   fontSize?: number;
   fontWeight?: FontWeight;
   color?: string;
@@ -12,7 +12,7 @@ type ParagraphProps = {
 };
 
 const Paragraph = ({ children, ...props }: ParagraphProps) => {
-  return <ParagraphWrapper {...props}>{children}</ParagraphWrapper>;
+  return <P {...props}>{children}</P>;
 };
 
 export default Paragraph;

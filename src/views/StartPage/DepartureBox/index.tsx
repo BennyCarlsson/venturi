@@ -1,5 +1,7 @@
 import Heading from 'components/Heading';
-import Paragraph from 'components/Paragraph';
+import MotionHeading from 'components/MotionHeading';
+import MotionParagraph from 'components/MotionParagraph';
+import { motion } from 'framer-motion';
 import Colors from 'tokens/colors';
 import { FontWeight } from 'types';
 import {
@@ -16,22 +18,30 @@ import {
 type NextDepartureBoxProps = {
   name: string | undefined;
   track: string | undefined;
+  slim: boolean;
 };
 
 //TODO: alternative routes?
-const DepartureBox = (props: NextDepartureBoxProps) => {
-  const { name, track } = props;
+const DepartureBox = ({ name, track, slim }: NextDepartureBoxProps) => {
+  const variant = {};
+  const hide = { slim: { opacity: 0, y: -5 }, big: {} };
+  const topPart = { slim: { paddingTop: 0 } };
+  const bottomPart = { slim: { paddingTop: 0 } };
+
   return (
-    <NextDepartureWrapper>
-      <TopPart>
-        <Heading
-          headingType={'h1'}
-          fontWeight={FontWeight.medium}
-          fontSize={18}
-          color={Colors.white}
-        >
-          Departs from
-        </Heading>
+    <NextDepartureWrapper variants={variant} animate={slim ? 'slim' : 'big'} initial="initial">
+      <TopPart variants={topPart}>
+        <motion.span variants={hide}>
+          <MotionHeading
+            variants={hide}
+            headingType={'h1'}
+            fontWeight={FontWeight.medium}
+            fontSize={18}
+            color={Colors.white}
+          >
+            Departs from
+          </MotionHeading>
+        </motion.span>
         <DepartsWrapper>
           {/* Todo: icon after type */}
           <StyledTrailLogo />
@@ -46,19 +56,41 @@ const DepartureBox = (props: NextDepartureBoxProps) => {
         </DepartsWrapper>
       </TopPart>
       <BottomPart>
-        <BottomLeftPart>
-          <Paragraph fontWeight={FontWeight.medium} fontSize={14} color={Colors.white}>
+        <BottomLeftPart variants={bottomPart}>
+          <MotionParagraph
+            variants={hide}
+            fontWeight={FontWeight.medium}
+            fontSize={14}
+            color={Colors.white}
+          >
             Platform
-          </Paragraph>
-          <BottomParagraph fontWeight={FontWeight.medium} fontSize={24} color={Colors.white}>
+          </MotionParagraph>
+
+          <BottomParagraph
+            variants={bottomPart}
+            fontWeight={FontWeight.medium}
+            fontSize={24}
+            color={Colors.white}
+          >
             {track}
           </BottomParagraph>
         </BottomLeftPart>
-        <BottomRightPart>
-          <Paragraph fontWeight={FontWeight.medium} fontSize={14} color={Colors.white}>
+        <BottomRightPart variants={bottomPart}>
+          <MotionParagraph
+            variants={hide}
+            fontWeight={FontWeight.medium}
+            fontSize={14}
+            color={Colors.white}
+          >
             Destination name
-          </Paragraph>
-          <BottomParagraph fontWeight={FontWeight.medium} fontSize={24} color={Colors.white}>
+          </MotionParagraph>
+
+          <BottomParagraph
+            variants={bottomPart}
+            fontWeight={FontWeight.medium}
+            fontSize={24}
+            color={Colors.white}
+          >
             Placeholder
           </BottomParagraph>
         </BottomRightPart>

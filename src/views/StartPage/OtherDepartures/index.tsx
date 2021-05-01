@@ -1,5 +1,4 @@
 import Paragraph from 'components/Paragraph';
-import { useState } from 'react';
 import Colors from 'tokens/colors';
 import { FontWeight, Legs } from 'types';
 import ChevronIcon from './ChevronIcon';
@@ -15,13 +14,12 @@ import {
 } from './styles';
 
 type Departures = {
+  handleOnClick: () => void;
+  showContent: boolean;
   legs: Legs[];
 };
 
-const OtherDepartures = (props: Departures) => {
-  const { legs } = props;
-  const [showContent, setShowContent] = useState(false);
-
+const OtherDepartures = ({ handleOnClick, showContent, legs }: Departures) => {
   const variant = {
     initial: { height: 0 },
     animate: { height: showContent ? 'fit-content' : 0, transition: { duration: 0.3 } }
@@ -36,7 +34,7 @@ const OtherDepartures = (props: Departures) => {
       <Top
         onClick={(e) => {
           e.preventDefault();
-          setShowContent((prevState) => !prevState);
+          handleOnClick();
         }}
       >
         <span />
@@ -48,6 +46,7 @@ const OtherDepartures = (props: Departures) => {
 
       <Content variants={variant} animate={'animate'} initial={'initial'}>
         {legs.map((leg) => {
+          //Todo leg can be an array of legs if trip contains multiple steps
           return (
             <DepartureWrapper key={leg.Leg?.id}>
               <TimeAndDirectionWrapper>
