@@ -5,7 +5,7 @@ import Heading from 'components/Heading';
 
 export const TimeBoxWrapper = styled.div`
   padding: 16px 32px;
-  margin: 48px 24px;
+  margin: 16px 24px;
   background: ${Colors.white};
   border: 1px solid #f3f3f3;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
