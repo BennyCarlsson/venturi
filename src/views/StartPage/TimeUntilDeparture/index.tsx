@@ -33,7 +33,9 @@ const TimeUntilDeparture = ({ time, date }: TimeUntilDepartureProps) => {
   const getTimeUntilDeparture = () => {
     if (!date || !time) return;
     const today = new Date();
-    const departure = new Date(`${date} ${time}`);
+    var arr: any[] = `${date} ${time}`.split(/[- :]/);
+    const departure = new Date(arr[0], arr[1] - 1, arr[2], arr[3], arr[4]);
+
     const diffMs = departure.valueOf() - today.valueOf();
     const days = getDays(diffMs);
     const hours = getHours(diffMs);
