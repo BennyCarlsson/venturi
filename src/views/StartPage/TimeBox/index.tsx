@@ -3,6 +3,7 @@ import Paragraph from 'components/Paragraph';
 import Colors from 'tokens/colors';
 import { FontWeight } from 'types';
 import TimeUntilDeparture from '../TimeUntilDeparture';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   TimeBoxWrapper,
   TimeWrapper,
@@ -13,6 +14,8 @@ import {
   StyledMapPinLogo,
   StyledRtTimeHeading
 } from './styles';
+import { increment } from 'redux/testSlice';
+import { useAppDispatch, useAppSelector } from 'hooks/redux';
 
 type TimeBoxProps = {
   date?: string;
@@ -35,8 +38,16 @@ const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: 
     return Colors.vRed;
   };
 
+  const dispatch = useAppDispatch();
+  const count = useAppSelector((state) => {
+    console.log(state);
+
+    return state.test.value;
+  });
+
   return (
-    <TimeBoxWrapper {...props}>
+    <TimeBoxWrapper {...props} onClick={() => dispatch(increment())}>
+      <h1>{count}</h1>
       <TimeLocationWrapper>
         <LocationWrapper>
           <StyledMapPinLogo />

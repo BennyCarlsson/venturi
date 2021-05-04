@@ -1,6 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import TimeBox from '.';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { useSelector, useDispatch } from 'react-redux';
+
+jest.mock('react-redux', () => ({
+  useSelector: jest.fn(),
+  useDispatch: jest.fn()
+}));
 
 describe('<TimeBox />', () => {
   const date = '2021-01-01';
