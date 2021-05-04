@@ -1,7 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getTrip } from 'api/vasttrafik/vasttrafik';
 
-export const testSlice = createSlice({
-  name: 'trip',
+type tripOrderType = {
+  fromId: string;
+  toId: string;
+};
+export const fetchTrip = createAsyncThunk('trip/fetchTrip', async (tripOrder: tripOrderType) => {
+  const response = await getTrip(tripOrder.fromId, tripOrder.toId);
+  return response;
+});
+
+export const tripSlice = createSlice({
+  name: 'test',
   initialState: {
     value: 0
   },
@@ -25,6 +35,6 @@ export const testSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = testSlice.actions;
+export const { increment, decrement, incrementByAmount } = tripSlice.actions;
 
-export default testSlice.reducer;
+export default tripSlice.reducer;

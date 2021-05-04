@@ -3,7 +3,8 @@ import Paragraph from 'components/Paragraph';
 import Colors from 'tokens/colors';
 import { FontWeight } from 'types';
 import TimeUntilDeparture from '../TimeUntilDeparture';
-import { useDispatch, useSelector } from 'react-redux';
+import { useAppDispatch, useAppSelector } from 'hooks/redux';
+import { increment } from 'redux/testSlice';
 import {
   TimeBoxWrapper,
   TimeWrapper,
@@ -14,8 +15,6 @@ import {
   StyledMapPinLogo,
   StyledRtTimeHeading
 } from './styles';
-import { increment } from 'redux/testSlice';
-import { useAppDispatch, useAppSelector } from 'hooks/redux';
 
 type TimeBoxProps = {
   date?: string;

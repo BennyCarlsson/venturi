@@ -1,4 +1,6 @@
-import { getTrip } from 'api/vasttrafik/vasttrafik';
+import { fetchTrip } from 'redux/tripSlice';
+import { unwrapResult } from '@reduxjs/toolkit';
+import { useAppDispatch } from 'hooks/redux';
 import { Fragment, useCallback, useEffect, useState } from 'react';
 import { ApiError, GetTripResponse, Legs } from 'types';
 import DepartureBox from './DepartureBox';
@@ -12,6 +14,7 @@ const lillaBommen = '9021014004380000';
 //const shouldShowRtTime = () => Origin?.rtTime !== Origin?.time;
 
 const StartPage = () => {
+  const dispatch = useAppDispatch();
   const [legs, setTrips] = useState<Legs[]>();
   const [error, setError] = useState<ApiError | null>(null);
   const [showOtherDepartures, setShowOtherDepartures] = useState(false);
@@ -21,7 +24,8 @@ const StartPage = () => {
   };
 
   const getTimeTable = useCallback(async () => {
-    const data = await getTrip(spaldingsgatan, lillaBommen);
+    const result = await dispatch(fetchTrip({ fromId: spaldingsgatan, toId: lillaBommen }));
+    const data = unwrapResult(result);
 
     if ((data as ApiError).error) {
       console.log((data as ApiError).error);
