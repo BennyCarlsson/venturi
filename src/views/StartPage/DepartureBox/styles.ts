@@ -37,7 +37,7 @@ export const BottomParagraph = styled(MotionParagraph)`
 export const StyledTrailLogo = styled(TrainLogo)`
   width: 32px;
   height: 32px;
-  padding-right: 16px;
+  margin-right: 16px;
   path {
     fill: ${Colors.white};
   }

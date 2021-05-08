@@ -38,7 +38,7 @@ export const LocationWrapper = styled.div`
 export const StyledMapPinLogo = styled(MapPinLogo)`
   height: 22px;
   width: 18px;
-  padding-right: 16px;
+  margin-right: 16px;
   stroke: ${Colors.vBlue};
 `;
 
