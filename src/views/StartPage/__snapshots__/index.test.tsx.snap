@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<StartPage /> should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hHftDr bCBwfF"
+  >
+    <div
+      class="sc-iBPRYJ HCnjh"
+    >
+      <div
+        class="sc-fubCfw hIKVhW"
+      >
+        <span>
+          <h1
+            class="sc-bdfBwQ UZuHf"
+            color="#FFFFFF"
+            font-size="18"
+            font-weight="500"
+          >
+            Departs from
+          </h1>
+        </span>
+        <div
+          class="sc-dQppl dWSjyx"
+        >
+          <svg
+            class="sc-crrsfI fCASlj"
+          >
+            train.svg
+          </svg>
+          <h2
+            class="sc-gsTCUz htLLms"
+            color="#FFFFFF"
+            font-size="28"
+            font-weight="500"
+          >
+            name
+          </h2>
+        </div>
+      </div>
+      <div
+        class="sc-pFZIQ hxExeM"
+      >
+        <div
+          class="sc-jrAGrp jzTLuk"
+        >
+          <p
+            class="sc-gKsewC bMoIAp"
+            color="#FFFFFF"
+            font-size="14"
+            font-weight="500"
+          >
+            Platform
+          </p>
+          <p
+            class="sc-gKsewC iTDTZO sc-iqHYGH jyHRlY"
+            color="#FFFFFF"
+            font-size="24"
+            font-weight="500"
+          >
+            track
+          </p>
+        </div>
+        <div
+          class="sc-kEjbxe bnNZBb"
+        >
+          <p
+            class="sc-gKsewC bMoIAp"
+            color="#FFFFFF"
+            font-size="14"
+            font-weight="500"
+          >
+            Destination name
+          </p>
+          <p
+            class="sc-gKsewC iTDTZO sc-iqHYGH jyHRlY"
+            color="#FFFFFF"
+            font-size="24"
+            font-weight="500"
+          >
+            Placeholder
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-dmlrTW dgOdrT"
+    >
+      <div
+        class="sc-kfzAmx bUuPIZ"
+      >
+        <div
+          class="sc-iwyYcG bbVDLA"
+        >
+          <svg
+            class="sc-cxFLnm eFZZAI"
+          >
+            map-pin.svg
+          </svg>
+          <p
+            class="sc-gKsewC inetcg"
+            color="#719FB0"
+            font-size="14"
+            font-weight="700"
+          >
+            destination name
+          </p>
+        </div>
+        <div
+          class="sc-fKFyDc hkLWbf"
+        >
+          <h2
+            class="sc-gsTCUz fNVbJl"
+            color="#A0616A"
+            font-size="48"
+            font-weight="700"
+          >
+            15:31
+          </h2>
+          <h3
+            class="sc-dlfnbm gDZnXS sc-bBXqnf jEPXpx"
+            font-size="18"
+            font-weight="700"
+          >
+             15:30
+          </h3>
+        </div>
+        <p
+          class="sc-gKsewC inetcg"
+          color="#719FB0"
+          font-size="14"
+          font-weight="700"
+        >
+          now
+        </p>
+      </div>
+      <div
+        class="sc-lmoMRL bYrWNd"
+      >
+        <div
+          class="sc-iJuUWI fytIuD"
+        >
+          <p
+            class="sc-gKsewC gtcvBk"
+            color="#FFFFFF"
+            font-size="14"
+            font-weight="400"
+          >
+            18
+          </p>
+        </div>
+        <p
+          class="sc-gKsewC eCnwPF"
+          font-size="14"
+          font-weight="500"
+        >
+          direction
+        </p>
+      </div>
+    </div>
+    <div
+      class="sc-bqyKva jSOVnk"
+    >
+      <a
+        class="sc-kstrdz cQnKCZ"
+      >
+        <span />
+        <p
+          class="sc-gKsewC ecZMIM sc-hBEYos"
+          color="#FFFFFF"
+          font-size="18"
+          font-weight="500"
+        >
+          Other departures
+        </p>
+        <svg
+          fill="none"
+          height="24"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
+      </a>
+      <div
+        class="sc-fodVxV faFDam"
+        style="height: 0px;"
+      >
+        <div
+          class="sc-fFubgz gqHger"
+        >
+          <div
+            class="sc-bkzZxe gAHmgU"
+          >
+            <p
+              class="sc-gKsewC cQZNpE"
+              color="#FFFFFF"
+              font-size="18"
+            >
+              15:35
+            </p>
+            <p
+              class="sc-gKsewC cQZNpE sc-idOhPF cbscxb"
+              color="#FFFFFF"
+              font-size="18"
+            >
+              direction
+            </p>
+          </div>
+          <div
+            class="sc-dIUggk bpjTIx"
+          >
+            <p
+              class="sc-gKsewC dfHdoQ"
+              font-size="14"
+            >
+              18
+            </p>
+          </div>
+        </div>
+        <div
+          class="sc-fFubgz gqHger"
+        >
+          <div
+            class="sc-bkzZxe gAHmgU"
+          >
+            <p
+              class="sc-gKsewC cQZNpE"
+              color="#FFFFFF"
+              font-size="18"
+            >
+              15:30
+            </p>
+            <p
+              class="sc-gKsewC cQZNpE sc-idOhPF cbscxb"
+              color="#FFFFFF"
+              font-size="18"
+            >
+              direction
+            </p>
+          </div>
+          <div
+            class="sc-dIUggk bpjTIx"
+          >
+            <p
+              class="sc-gKsewC dfHdoQ"
+              font-size="14"
+            >
+              18
+            </p>
+          </div>
+        </div>
+        <div
+          class="sc-fFubgz gqHger"
+        >
+          <div
+            class="sc-bkzZxe gAHmgU"
+          >
+            <p
+              class="sc-gKsewC cQZNpE"
+              color="#FFFFFF"
+              font-size="18"
+            >
+              15:30
+            </p>
+            <p
+              class="sc-gKsewC cQZNpE sc-idOhPF cbscxb"
+              color="#FFFFFF"
+              font-size="18"
+            >
+              direction
+            </p>
+          </div>
+          <div
+            class="sc-dIUggk bpjTIx"
+          >
+            <p
+              class="sc-gKsewC dfHdoQ"
+              font-size="14"
+            >
+              18
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

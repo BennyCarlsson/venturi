@@ -3,9 +3,7 @@
 exports[`<TimeBox /> should match snapshot 1`] = `
 <div
   className="sc-iBPRYJ eVsxDR"
-  onClick={[Function]}
 >
-  <h1 />
   <div
     className="sc-fubCfw hCyCsd"
   >

@@ -11,11 +11,8 @@ const updateToken = async () => {
   token = { accessToken, expires };
 };
 
-export const getTrip = async (
-  originId: string,
-  destId: string
-): Promise<GetTripResponse | ApiError> => {
-  return apiCaller(() => fetchTrip(originId, destId, token)) as Promise<GetTripResponse | ApiError>;
+export const getTrip = async (originId: string, destId: string): Promise<GetTripResponse> => {
+  return apiCaller(() => fetchTrip(originId, destId, token)) as Promise<GetTripResponse>;
 };
 
 export const getDepartureBoard = async (originId: string): Promise<DepartureBoard | ApiError> => {

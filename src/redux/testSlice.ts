@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const testSlice = createSlice({
+const testSlice = createSlice({
   name: 'trip',
   initialState: {
     value: 0

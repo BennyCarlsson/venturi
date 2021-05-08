@@ -1,6 +1,7 @@
 import Paragraph from 'components/Paragraph';
 import Colors from 'tokens/colors';
-import { FontWeight, Legs } from 'types';
+import { FontWeight } from 'types';
+import { Trip } from 'redux/tripSlice';
 import ChevronIcon from './ChevronIcon';
 import {
   Box,
@@ -16,10 +17,10 @@ import {
 type Departures = {
   handleOnClick: () => void;
   showContent: boolean;
-  legs: Legs[];
+  trips: Trip[];
 };
 
-const OtherDepartures = ({ handleOnClick, showContent, legs }: Departures) => {
+const OtherDepartures = ({ handleOnClick, showContent, trips }: Departures) => {
   const variant = {
     initial: { height: 0 },
     animate: { height: showContent ? 'fit-content' : 0, transition: { duration: 0.3 } }
@@ -45,20 +46,20 @@ const OtherDepartures = ({ handleOnClick, showContent, legs }: Departures) => {
       </Top>
 
       <Content variants={variant} animate={'animate'} initial={'initial'}>
-        {legs.map((leg) => {
+        {trips.map((trip) => {
           //Todo leg can be an array of legs if trip contains multiple steps
           return (
-            <DepartureWrapper key={leg.Leg?.id}>
+            <DepartureWrapper key={trip.id}>
               <TimeAndDirectionWrapper>
                 <Paragraph fontSize={18} color={Colors.white}>
-                  {leg.Leg?.Origin?.time}
+                  {trip.departureTime}
                 </Paragraph>
                 <DirectionParagraph fontSize={18} color={Colors.white}>
-                  {leg.Leg.direction}
+                  {trip.direction}
                 </DirectionParagraph>
               </TimeAndDirectionWrapper>
               <NameBox>
-                <Paragraph fontSize={14}>{leg.Leg.sname}</Paragraph>
+                <Paragraph fontSize={14}>{trip.number}</Paragraph>
               </NameBox>
             </DepartureWrapper>
           );

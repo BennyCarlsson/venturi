@@ -1,8 +1,6 @@
 import { fetchTrip } from 'redux/tripSlice';
-import { unwrapResult } from '@reduxjs/toolkit';
-import { useAppDispatch } from 'hooks/redux';
-import { Fragment, useCallback, useEffect, useState } from 'react';
-import { ApiError, GetTripResponse, Legs } from 'types';
+import { useAppDispatch, useAppSelector } from 'hooks/redux';
+import { Fragment, useEffect, useState } from 'react';
 import DepartureBox from './DepartureBox';
 import OtherDepartures from './OtherDepartures';
 import { StartPageWrapper } from './styles';
@@ -15,64 +13,44 @@ const lillaBommen = '9021014004380000';
 
 const StartPage = () => {
   const dispatch = useAppDispatch();
-  const [legs, setTrips] = useState<Legs[]>();
-  const [error, setError] = useState<ApiError | null>(null);
+  const trips = useAppSelector((state) => state.trip.trips);
+  const error = useAppSelector((state) => state.trip.error);
   const [showOtherDepartures, setShowOtherDepartures] = useState(false);
 
   const handleShowOtherDeparturesClick = () => {
     setShowOtherDepartures((prevState) => !prevState);
   };
 
-  const getTimeTable = useCallback(async () => {
-    const result = await dispatch(fetchTrip({ fromId: spaldingsgatan, toId: lillaBommen }));
-    const data = unwrapResult(result);
-
-    if ((data as ApiError).error) {
-      console.log((data as ApiError).error);
-    }
-
-    const tripList = (data as GetTripResponse).TripList;
-    if (tripList.error) {
-      setError(data as ApiError);
-    } else if (tripList) {
-      const _legs = tripList.Trip as Legs[];
-      console.log('tripList', tripList);
-      console.log('_legs', _legs);
-      setTrips(_legs);
-    }
-  }, []);
-
   useEffect(() => {
-    getTimeTable();
-  }, [getTimeTable]);
+    dispatch(fetchTrip({ fromId: spaldingsgatan, toId: lillaBommen }));
+  }, [dispatch]);
 
   return (
     <StartPageWrapper>
-      {legs && legs.length > 0 && (
+      {trips && trips.length > 0 && (
         <Fragment>
           {/* Todo: rtTrack */}
           <DepartureBox
-            name={legs[0].Leg.Origin?.name}
-            track={legs[0].Leg.Origin?.track}
+            name={trips[0].departureName}
+            track={trips[0].departureTrack}
             slim={showOtherDepartures}
           />
           <TimeBox
-            date={legs[0].Leg.Origin?.date}
-            time={legs[0].Leg.Origin?.time}
-            rtTime={legs[0].Leg.Origin?.rtTime}
-            location={legs[0].Leg.Destination?.name}
-            number={legs[0].Leg.sname}
-            direction={legs[0].Leg.direction}
+            date={trips[0].departureDate}
+            time={trips[0].departureTime}
+            rtTime={trips[0].departureNewTime}
+            location={trips[0].destinationName}
+            number={trips[0].number}
+            direction={trips[0].direction}
           />
           <OtherDepartures
-            legs={legs.slice(1, 4)}
+            trips={trips.slice(1, 4)}
             handleOnClick={handleShowOtherDeparturesClick}
             showContent={showOtherDepartures}
           />
         </Fragment>
       )}
-      {error && <h2>{error.error}</h2>}
-      {error && <p>{error.errorText}</p>}
+      {error && <h2>{error}</h2>}
     </StartPageWrapper>
   );
 };

@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getTrip } from 'api/vasttrafik/vasttrafik';
+import { GetTripResponse } from 'types';
 
 type tripOrderType = {
   fromId: string;
@@ -10,31 +11,55 @@ export const fetchTrip = createAsyncThunk('trip/fetchTrip', async (tripOrder: tr
   return response;
 });
 
-export const tripSlice = createSlice({
-  name: 'test',
-  initialState: {
-    value: 0
-  },
-  reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      console.log('hello');
+export type Trip = {
+  id?: string;
+  departureName?: string;
+  departureTrack?: string;
+  departureDate?: string;
+  departureTime?: string;
+  departureNewTime?: string;
+  newTime?: string;
+  destinationName?: string;
+  number?: string;
+  direction?: string;
+};
+const convertData = (data: GetTripResponse): Trip[] | undefined => {
+  return data.TripList.Trip?.map((trip) => ({
+    id: trip.Leg.id,
+    departureName: trip.Leg.Origin?.name,
+    departureTrack: trip.Leg.Origin?.track,
+    departureDate: trip.Leg.Origin?.date,
+    departureTime: trip.Leg.Origin?.time,
+    departureNewTime: trip.Leg.Origin?.rtTime,
+    destinationName: trip.Leg.Destination?.name,
+    number: trip.Leg.sname,
+    direction: trip.Leg.direction
+  }));
+};
+export interface TripState {
+  loading: boolean;
+  trips?: Trip[];
+  error?: string;
+}
 
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
-    }
+const initialState: TripState = {
+  loading: true
+};
+
+const tripSlice = createSlice({
+  name: 'trip',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchTrip.fulfilled, (state, action) => {
+      state.loading = false;
+      if (action.payload.TripList.error) {
+        state.error = action.payload.TripList.errorText;
+      } else {
+        state.trips = convertData(action.payload as GetTripResponse);
+      }
+    });
   }
 });
-
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = tripSlice.actions;
 
 export default tripSlice.reducer;
