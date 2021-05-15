@@ -11,7 +11,7 @@ const Menu = () => {
         <BookLogo />
         <SpanOne>Current table</SpanOne>
       </StyledLink>
-      <StyledLink to="/favorites" activeClassName="active">
+      <StyledLink to="/departures" activeClassName="active">
         <TrainCar />
         <SpanTwo>Departures</SpanTwo>
       </StyledLink>

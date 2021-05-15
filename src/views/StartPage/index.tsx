@@ -13,6 +13,8 @@ const lillaBommen = '9021014004380000';
 
 const StartPage = () => {
   const dispatch = useAppDispatch();
+  const origin = useAppSelector((state) => state.trip.origin);
+  const destination = useAppSelector((state) => state.trip.destination);
   const trips = useAppSelector((state) => state.trip.trips);
   const error = useAppSelector((state) => state.trip.error);
   const [showOtherDepartures, setShowOtherDepartures] = useState(false);
@@ -22,8 +24,11 @@ const StartPage = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchTrip({ fromId: spaldingsgatan, toId: lillaBommen }));
-  }, [dispatch]);
+    // Todo: check type some placec can't be searcherd on id
+    if (origin?.id && destination?.id) {
+      dispatch(fetchTrip({ fromId: origin?.id, toId: destination?.id }));
+    }
+  }, [dispatch, origin, destination]);
 
   return (
     <StartPageWrapper>

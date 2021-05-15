@@ -46,7 +46,7 @@ describe('<Menu />', () => {
 
   it('should go to Departures screen', () => {
     userEvent.click(screen.getByText('Departures'));
-    expect(window.location.pathname).toBe('/favorites');
+    expect(window.location.pathname).toBe('/departures');
   });
 
   it('should go to Options screen', () => {

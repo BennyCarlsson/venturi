@@ -23,7 +23,7 @@ exports[`<Menu /> should match snapshot 1`] = `
   <a
     aria-current={null}
     className="sc-hKgILt cRuwcv"
-    href="/favorites"
+    href="/departures"
     onClick={[Function]}
   >
     <svg>

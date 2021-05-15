@@ -28,13 +28,6 @@ export type TripList = {
   noNamespaceSchemaLocation: string;
 };
 
-// export type Trip = {
-//   Leg?: Leg[];
-//   travelWarranty?: boolean;
-//   valid?: boolean;
-//   alternative: boolean;
-//   type?: string;
-// };
 export type Legs = {
   Leg: Leg;
 };
@@ -142,4 +135,35 @@ export type Departure = {
   time: string;
   track: string;
   type: string;
+};
+
+export type GetLocationList = {
+  LocationList: LocationList;
+};
+
+export type LocationList = {
+  errorText?: string;
+  error?: string;
+  serverdate?: string;
+  StopLocation?: StopLocation[] | StopLocation;
+  CoordLocation?: CoordLocation[] | CoordLocation;
+  servertime?: string;
+};
+
+export type StopLocation = {
+  id: string;
+  lon: string;
+  idx: string;
+  weight?: string;
+  name: string;
+  track?: string;
+  lat: string;
+};
+
+export type CoordLocation = {
+  lon: string;
+  idx: string;
+  name: string;
+  type: string;
+  lat: string;
 };

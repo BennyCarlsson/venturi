@@ -1,7 +1,7 @@
 import './App.css';
 import { Switch, Route, HashRouter } from 'react-router-dom';
 
-import Favorites from 'views/Favorite';
+import Departures from 'views/Departures';
 import Destination from 'views/Destination';
 import NotFound from 'views/NotFound';
 import StartPage from 'views/StartPage';
@@ -23,8 +23,8 @@ function App() {
               <Route path="/venturi">
                 <StartPage />
               </Route>
-              <Route path="/favorites">
-                <Favorites />
+              <Route path="/departures">
+                <Departures />
               </Route>
               <Route path="/options">
                 <Destination />

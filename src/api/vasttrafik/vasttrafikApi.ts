@@ -19,6 +19,22 @@ export const fetchTrip = async (
   return response;
 };
 
+export const fetchLocationOnName = async (
+  name: string,
+  signal: AbortSignal,
+  token: Token
+): Promise<Response> => {
+  const url = ` https://api.vasttrafik.se/bin/rest.exe/v2/location.name?input=${name}&format=json`;
+  const response = await fetch(url, {
+    signal,
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token.accessToken}`
+    }
+  });
+  return response;
+};
+
 export const fetchDepartureBoard = async (originId: string, token: Token): Promise<Response> => {
   const { date, time } = getTime();
   const tripUrl = `https://api.vasttrafik.se/bin/rest.exe/v2/departureBoard?id=${originId}&date=${date}&time=${time}&format=json`;
