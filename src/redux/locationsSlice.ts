@@ -19,7 +19,7 @@ export const fetchOriginLocationsOnName = createAsyncThunk(
   _getLocationOName
 );
 
-enum LocationType {
+export enum LocationType {
   StopLocation,
   CoordLocation
 }
