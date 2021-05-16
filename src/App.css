@@ -23,7 +23,7 @@ a {
 }
 .Content {
   height: calc(100% - 64px);
-  overflow: scroll;
+  overflow: auto;
 }
 p,
 h1,
