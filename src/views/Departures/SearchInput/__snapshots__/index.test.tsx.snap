@@ -4,6 +4,8 @@ exports[`<SearchInput /> should match snapshot 1`] = `
 <input
   className="sc-bdfBwQ kDyVWm"
   onBlur={[Function]}
+  onChange={[MockFunction]}
   onFocus={[Function]}
+  value="123"
 />
 `;

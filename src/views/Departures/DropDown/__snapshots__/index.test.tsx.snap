@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DropDown /> should match snapshot 1`] = `null`;
+exports[`<DropDown /> should match snapshot 1`] = `
+<ul
+  className="sc-bdfBwQ hqbaFS"
+>
+  <li
+    className="sc-gsTCUz iMZhDb"
+    onClick={[Function]}
+  >
+    name
+  </li>
+</ul>
+`;

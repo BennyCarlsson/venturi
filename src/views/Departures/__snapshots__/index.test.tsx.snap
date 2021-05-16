@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Departures /> should match snapshot 1`] = `
+<div
+  className="sc-gsTCUz bwEGGT"
+>
+  <p
+    className="sc-bdfBwQ dvBDVy"
+    fontSize={18}
+  >
+    From
+  </p>
+  <input
+    className="sc-eCssSg cPRgtU"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    value=""
+  />
+  <br />
+  <p
+    className="sc-bdfBwQ dvBDVy"
+    fontSize={18}
+  >
+    To
+  </p>
+  <input
+    className="sc-eCssSg cPRgtU"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onFocus={[Function]}
+    value=""
+  />
+  <br />
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    Save
+  </button>
+</div>
+`;
