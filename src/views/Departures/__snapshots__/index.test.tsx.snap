@@ -38,5 +38,22 @@ exports[`<Departures /> should match snapshot 1`] = `
   >
     Save
   </button>
+  <a
+    className="sc-jSgupP kerZvo"
+    onClick={[Function]}
+  >
+    <svg
+      className="sc-gKsewC cXnLtb"
+    >
+      plus.svg
+    </svg>
+    <p
+      className="sc-bdfBwQ gbRIVK sc-iBPRYJ lmnfLE"
+      color="#FFFFFF"
+      fontSize={18}
+    >
+      Create commute trip
+    </p>
+  </a>
 </div>
 `;

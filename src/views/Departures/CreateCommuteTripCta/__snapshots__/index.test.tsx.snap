@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateCommuteTripCta /> should match snapshot 1`] = `
+<a
+  className="sc-gsTCUz jxAhtz"
+  onClick={[Function]}
+>
+  <svg
+    className="sc-dlfnbm ilDCCC"
+  >
+    plus.svg
+  </svg>
+  <p
+    className="sc-bdfBwQ gbRIVK sc-hKgILt SVDlr"
+    color="#FFFFFF"
+    fontSize={18}
+  >
+    Create commute trip
+  </p>
+</a>
+`;

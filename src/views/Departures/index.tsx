@@ -11,6 +11,7 @@ import { DeparturesWrapper } from './styles';
 import DropDown from './DropDown';
 import SearchInput from './SearchInput';
 import { saveOriginAndDestination } from 'utils/localStorage';
+import CreateCommuteTripCta from './CreateCommuteTripCta';
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -122,6 +123,11 @@ const Departures = () => {
         Save
       </button>
       {error && <h2>{error}</h2>}
+      <CreateCommuteTripCta
+        onClick={() => {
+          console.log('click');
+        }}
+      />
     </DeparturesWrapper>
   );
 };
