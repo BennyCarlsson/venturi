@@ -10,6 +10,7 @@ import { setCurrentTable } from 'redux/tripSlice';
 import { DeparturesWrapper } from './styles';
 import DropDown from './DropDown';
 import SearchInput from './SearchInput';
+import { saveOriginAndDestination } from 'utils/localStorage';
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -112,6 +113,10 @@ const Departures = () => {
         onClick={() => {
           if (originLocation && destinationLocation)
             dispatch(setCurrentTable({ origin: originLocation, destination: destinationLocation }));
+          saveOriginAndDestination({
+            origin: originLocation as Location,
+            destination: destinationLocation as Location
+          });
         }}
       >
         Save

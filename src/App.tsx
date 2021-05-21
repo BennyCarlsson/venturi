@@ -1,6 +1,5 @@
 import './App.css';
 import { Switch, Route, HashRouter } from 'react-router-dom';
-
 import Departures from 'views/Departures';
 import Destination from 'views/Destination';
 import NotFound from 'views/NotFound';

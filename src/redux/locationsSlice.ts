@@ -33,6 +33,7 @@ export type Location = {
   type: LocationType;
 };
 
+// Todo extract and write tests
 const convertData = (data: LocationList): Location[] | undefined => {
   console.log('data', data);
   let stopLocations: Location[] = [];
