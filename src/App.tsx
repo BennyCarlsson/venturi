@@ -7,6 +7,7 @@ import StartPage from 'views/StartPage';
 import Menu from 'Menu';
 import store from './redux/store';
 import { Provider } from 'react-redux';
+import Dialog from 'components/Dialog';
 
 // Todo: use Browser router when not hosting on github pages
 function App() {
@@ -34,6 +35,7 @@ function App() {
             </Switch>
           </div>
           <Menu />
+          <Dialog />
         </HashRouter>
       </Provider>
     </div>

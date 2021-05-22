@@ -6,6 +6,7 @@ import {
   fetchOriginLocationsOnName,
   Location
 } from 'redux/locationsSlice';
+import { showDialog } from 'redux/dialogSlice';
 import { setCurrentTable } from 'redux/tripSlice';
 import { DeparturesWrapper } from './styles';
 import DropDown from './DropDown';
@@ -125,7 +126,7 @@ const Departures = () => {
       {error && <h2>{error}</h2>}
       <CreateCommuteTripCta
         onClick={() => {
-          console.log('click');
+          dispatch(showDialog());
         }}
       />
     </DeparturesWrapper>

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CloseIconButton /> should match snapshot 1`] = `
+<button
+  className="sc-bdfBwQ uLnZs"
+  onClick={[MockFunction]}
+>
+  <svg
+    className="sc-gsTCUz qFatG"
+  >
+    x.svg
+  </svg>
+</button>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dialog /> should match snapshot 1`] = `
+<div
+  className="sc-dlfnbm btOeIK"
+  data-testid="dialog-wrapper"
+>
+  <div
+    className="sc-hKgILt gqrVIr"
+  >
+    <button
+      className="sc-bdfBwQ uLnZs sc-eCssSg ghFAtm"
+      onClick={[Function]}
+    >
+      <svg
+        className="sc-gsTCUz qFatG"
+      >
+        x.svg
+      </svg>
+    </button>
+    This is Dialog
+  </div>
+</div>
+`;
