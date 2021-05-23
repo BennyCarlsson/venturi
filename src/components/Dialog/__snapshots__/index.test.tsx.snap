@@ -10,6 +10,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
   >
     <button
       className="sc-bdfBwQ uLnZs sc-eCssSg ghFAtm"
+      data-testid="close-dialog-button"
       onClick={[Function]}
     >
       <svg
@@ -18,7 +19,44 @@ exports[`<Dialog /> should match snapshot 1`] = `
         x.svg
       </svg>
     </button>
-    This is Dialog
+    <div
+      className="sc-pFZIQ cQspGf"
+    >
+      <p
+        className="sc-jSgupP lewlnh"
+        fontSize={18}
+      >
+        From
+      </p>
+      <input
+        className="sc-fubCfw iblOWB"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        value=""
+      />
+      <br />
+      <p
+        className="sc-jSgupP lewlnh"
+        fontSize={18}
+      >
+        To
+      </p>
+      <input
+        className="sc-fubCfw iblOWB"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        value=""
+      />
+      <br />
+      <br />
+      <button
+        onClick={[Function]}
+      >
+        Save
+      </button>
+    </div>
   </div>
 </div>
 `;

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { hideDialog, selectShowDialog } from 'redux/dialogSlice';
 import { DialogWrapper, InnerWrapper, StyledClosedIconButton } from './styles';
 import { useAppSelector } from 'hooks/redux';
+import AddCommuteDialog from './AddCommuteDialog';
 
 type DialogProps = {};
 
@@ -29,11 +30,12 @@ const Dialog = (props: DialogProps) => {
     <DialogWrapper {...props} data-testid="dialog-wrapper">
       <InnerWrapper>
         <StyledClosedIconButton
+          data-testid="close-dialog-button"
           onClick={(e) => {
             dispatch(hideDialog());
           }}
         />
-        This is Dialog
+        <AddCommuteDialog />
       </InnerWrapper>
     </DialogWrapper>
   );

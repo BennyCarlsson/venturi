@@ -14,7 +14,10 @@ jest.mock('react-redux', () => ({
 describe('<Dialog />', () => {
   const useAppDispatch = jest.fn();
   beforeEach(() => {
-    (useSelector as jest.Mock).mockReturnValue({ dialog: { show: true } });
+    (useSelector as jest.Mock).mockReturnValue({
+      dialog: { show: true },
+      locations: { destinationError: '' }
+    });
     (useDispatch as jest.Mock).mockReturnValue(useAppDispatch);
   });
 
@@ -30,7 +33,7 @@ describe('<Dialog />', () => {
 
   it('should call dispatch with hideDialog onClick', () => {
     render(<Dialog />);
-    userEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByTestId('close-dialog-button'));
     expect(useAppDispatch).toHaveBeenCalledWith(hideDialog());
     expect(useAppDispatch).toHaveBeenCalledTimes(1);
   });

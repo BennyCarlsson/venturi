@@ -6,8 +6,8 @@ import OtherDepartures from './OtherDepartures';
 import { StartPageWrapper } from './styles';
 import TimeBox from './TimeBox';
 
-const spaldingsgatan = '9021014006160000';
-const lillaBommen = '9021014004380000';
+//const spaldingsgatan = '9021014006160000';
+//const lillaBommen = '9021014004380000';
 //const nordstan = '9021014004945000';
 //const shouldShowRtTime = () => Origin?.rtTime !== Origin?.time;
 

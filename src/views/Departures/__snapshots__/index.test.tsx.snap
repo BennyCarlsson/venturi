@@ -2,53 +2,24 @@
 
 exports[`<Departures /> should match snapshot 1`] = `
 <div
-  className="sc-gsTCUz bwEGGT"
+  className="sc-jrAGrp hffLVH"
 >
-  <p
-    className="sc-bdfBwQ dvBDVy"
-    fontSize={18}
+  <h2
+    className="sc-jSgupP RMyFC"
   >
-    From
-  </p>
-  <input
-    className="sc-eCssSg cPRgtU"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    value=""
-  />
-  <br />
-  <p
-    className="sc-bdfBwQ dvBDVy"
-    fontSize={18}
-  >
-    To
-  </p>
-  <input
-    className="sc-eCssSg cPRgtU"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    value=""
-  />
-  <br />
-  <br />
-  <button
-    onClick={[Function]}
-  >
-    Save
-  </button>
+    Departures
+  </h2>
   <a
-    className="sc-jSgupP kerZvo"
+    className="sc-gsTCUz jxAhtz"
     onClick={[Function]}
   >
     <svg
-      className="sc-gKsewC cXnLtb"
+      className="sc-dlfnbm ilDCCC"
     >
       plus.svg
     </svg>
     <p
-      className="sc-bdfBwQ gbRIVK sc-iBPRYJ lmnfLE"
+      className="sc-bdfBwQ gbRIVK sc-hKgILt SVDlr"
       color="#FFFFFF"
       fontSize={18}
     >
