@@ -38,5 +38,8 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
   >
     Save
   </button>
+  <h2>
+    error
+  </h2>
 </div>
 `;

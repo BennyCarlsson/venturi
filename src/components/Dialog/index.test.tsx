@@ -14,10 +14,9 @@ jest.mock('react-redux', () => ({
 describe('<Dialog />', () => {
   const useAppDispatch = jest.fn();
   beforeEach(() => {
-    (useSelector as jest.Mock).mockReturnValue({
-      dialog: { show: true },
-      locations: { destinationError: '' }
-    });
+    (useSelector as jest.Mock).mockImplementation((callback) =>
+      callback({ dialog: { show: true }, locations: { destinationError: 'error' } })
+    );
     (useDispatch as jest.Mock).mockReturnValue(useAppDispatch);
   });
 

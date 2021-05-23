@@ -56,6 +56,9 @@ exports[`<Dialog /> should match snapshot 1`] = `
       >
         Save
       </button>
+      <h2>
+        error
+      </h2>
     </div>
   </div>
 </div>
