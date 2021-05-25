@@ -1,44 +1,42 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import Dialog from '.';
-import userEvent from '@testing-library/user-event';
 import { hideDialog } from 'redux/dialogSlice';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { cleanup, fireEvent, render, screen } from 'testUtils/test-utils';
+import userEvent from '@testing-library/user-event';
 
 jest.mock('react-redux', () => ({
-  useSelector: jest.fn(),
+  ...(jest.requireActual('react-redux') as {}),
   useDispatch: jest.fn()
 }));
 
 describe('<Dialog />', () => {
   const useAppDispatch = jest.fn();
   beforeEach(() => {
-    (useSelector as jest.Mock).mockImplementation((callback) =>
-      callback({ dialog: { show: true }, locations: { destinationError: 'error' } })
-    );
     (useDispatch as jest.Mock).mockReturnValue(useAppDispatch);
   });
 
+  beforeEach(() => {
+    render(<Dialog />, { initialState: { dialog: { show: true } } });
+  });
+
   it('should match snapshot', () => {
-    const tree = renderer.create(<Dialog />).toJSON();
-    expect(tree).toMatchSnapshot();
+    cleanup();
+    const { asFragment } = render(<Dialog />, { initialState: { dialog: { show: true } } });
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render without crashing', () => {
-    render(<Dialog />);
     expect(screen).toBeTruthy();
   });
 
   it('should call dispatch with hideDialog onClick', () => {
-    render(<Dialog />);
     userEvent.click(screen.getByTestId('close-dialog-button'));
     expect(useAppDispatch).toHaveBeenCalledWith(hideDialog());
     expect(useAppDispatch).toHaveBeenCalledTimes(1);
   });
 
   it('should call dispatch with hideDialog on Escape', () => {
-    render(<Dialog />);
     const dialog = screen.getByTestId('dialog-wrapper');
     fireEvent.keyDown(dialog, { key: 'Escape', code: 'Escape' });
     expect(useAppDispatch).toHaveBeenCalledWith(hideDialog());

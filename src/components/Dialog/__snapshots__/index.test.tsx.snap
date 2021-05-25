@@ -1,65 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dialog /> should match snapshot 1`] = `
-<div
-  className="sc-dlfnbm btOeIK"
-  data-testid="dialog-wrapper"
->
+<DocumentFragment>
   <div
-    className="sc-hKgILt gqrVIr"
+    class="sc-dlfnbm btOeIK"
+    data-testid="dialog-wrapper"
   >
-    <button
-      className="sc-bdfBwQ uLnZs sc-eCssSg ghFAtm"
-      data-testid="close-dialog-button"
-      onClick={[Function]}
-    >
-      <svg
-        className="sc-gsTCUz qFatG"
-      >
-        x.svg
-      </svg>
-    </button>
     <div
-      className="sc-pFZIQ cQspGf"
+      class="sc-hKgILt gqrVIr"
     >
-      <p
-        className="sc-jSgupP lewlnh"
-        fontSize={18}
-      >
-        From
-      </p>
-      <input
-        className="sc-fubCfw iblOWB"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        value=""
-      />
-      <br />
-      <p
-        className="sc-jSgupP lewlnh"
-        fontSize={18}
-      >
-        To
-      </p>
-      <input
-        className="sc-fubCfw iblOWB"
-        onBlur={[Function]}
-        onChange={[Function]}
-        onFocus={[Function]}
-        value=""
-      />
-      <br />
-      <br />
       <button
-        onClick={[Function]}
+        class="sc-bdfBwQ uLnZs sc-eCssSg ghFAtm"
+        data-testid="close-dialog-button"
       >
-        Save
+        <svg
+          class="sc-gsTCUz qFatG"
+        >
+          x.svg
+        </svg>
       </button>
-      <h2>
-        error
-      </h2>
+      <div
+        class="sc-pFZIQ cQspGf"
+      >
+        <p
+          class="sc-jSgupP lewlnh"
+          font-size="18"
+        >
+          From
+        </p>
+        <input
+          class="sc-fubCfw iblOWB"
+          value=""
+        />
+        <br />
+        <p
+          class="sc-jSgupP lewlnh"
+          font-size="18"
+        >
+          To
+        </p>
+        <input
+          class="sc-fubCfw iblOWB"
+          value=""
+        />
+        <br />
+        <br />
+        <button>
+          Save
+        </button>
+      </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
