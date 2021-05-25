@@ -20,31 +20,40 @@ exports[`<Dialog /> should match snapshot 1`] = `
         </svg>
       </button>
       <div
-        class="sc-pFZIQ cQspGf"
+        class="sc-bqyKva huHnfd"
       >
+        <h2
+          class="sc-jrAGrp dkGVgW sc-hBEYos gspMer"
+          font-size="28"
+        >
+          Destination
+        </h2>
         <p
-          class="sc-jSgupP lewlnh"
+          class="sc-jSgupP hXdStS sc-fodVxV hqNEZC"
+          font-size="14"
+        >
+          Choose your commute trip
+        </p>
+        <p
+          class="sc-jSgupP jpYqNy"
           font-size="18"
         >
           From
         </p>
         <input
-          class="sc-fubCfw iblOWB"
+          class="sc-fubCfw cNSiMz"
           value=""
         />
-        <br />
         <p
-          class="sc-jSgupP lewlnh"
+          class="sc-jSgupP jpYqNy sc-kstrdz bsPOnb"
           font-size="18"
         >
           To
         </p>
         <input
-          class="sc-fubCfw iblOWB"
+          class="sc-fubCfw cNSiMz"
           value=""
         />
-        <br />
-        <br />
         <button>
           Save
         </button>

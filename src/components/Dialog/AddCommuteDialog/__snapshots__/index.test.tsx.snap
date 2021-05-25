@@ -2,37 +2,46 @@
 
 exports[`<AddCommuteDialog /> should match snapshot 1`] = `
 <div
-  className="sc-eCssSg jfCOdx"
+  className="sc-jrAGrp hffLVH"
 >
+  <h2
+    className="sc-jSgupP ehQrep sc-iqHYGH bVotdH"
+    fontSize={28}
+  >
+    Destination
+  </h2>
   <p
-    className="sc-bdfBwQ dvBDVy"
+    className="sc-bdfBwQ QuMsF sc-crrsfI dJBLtM"
+    fontSize={14}
+  >
+    Choose your commute trip
+  </p>
+  <p
+    className="sc-bdfBwQ kMVXxV"
     fontSize={18}
   >
     From
   </p>
   <input
-    className="sc-hKgILt bjyoFb"
+    className="sc-hKgILt jroXQp"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     value=""
   />
-  <br />
   <p
-    className="sc-bdfBwQ dvBDVy"
+    className="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
     fontSize={18}
   >
     To
   </p>
   <input
-    className="sc-hKgILt bjyoFb"
+    className="sc-hKgILt jroXQp"
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
     value=""
   />
-  <br />
-  <br />
   <button
     onClick={[Function]}
   >

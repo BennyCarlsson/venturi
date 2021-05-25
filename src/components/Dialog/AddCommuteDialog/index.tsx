@@ -10,7 +10,12 @@ import { setCurrentTable } from 'redux/tripSlice';
 import DropDown from './DropDown';
 import SearchInput from './SearchInput';
 import { saveOriginAndDestination } from 'utils/localStorage';
-import { AddCommuteDialogWrapper } from './styles';
+import {
+  AddCommuteDialogWrapper,
+  StyledParagraph,
+  StyledTitleHeading,
+  StyledToParagraph
+} from './styles';
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -81,9 +86,13 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
     },
     [dispatch, error, loading]
   );
-
+  //Todo: switch button
   return (
     <AddCommuteDialogWrapper {...props}>
+      <StyledTitleHeading headingType={'h2'} fontSize={28}>
+        Destination
+      </StyledTitleHeading>
+      <StyledParagraph fontSize={14}>Choose your commute trip</StyledParagraph>
       <Paragraph fontSize={18}>From</Paragraph>
       <SearchInput
         value={originInput}
@@ -96,8 +105,7 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
         setLocation={setOriginLocation}
         show={showOriginDropDown}
       />
-      <br />
-      <Paragraph fontSize={18}>To</Paragraph>
+      <StyledToParagraph fontSize={18}>To</StyledToParagraph>
       <SearchInput
         value={destinationInput}
         onChange={destinationOnChange}
@@ -109,8 +117,6 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
         setLocation={setDestinationLocation}
         show={showDestinationDropDown}
       />
-      <br />
-      <br />
       <button
         onClick={() => {
           if (originLocation && destinationLocation)

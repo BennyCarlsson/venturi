@@ -61,7 +61,7 @@ exports[`<TimeBox /> should match snapshot 1`] = `
       </p>
     </div>
     <p
-      className="sc-gKsewC eCnwPF"
+      className="sc-gKsewC bYxfbi"
       fontSize={14}
       fontWeight={500}
     >

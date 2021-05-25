@@ -2,7 +2,7 @@
 
 exports[`<Paragraph /> should match snapshot 1`] = `
 <p
-  className="sc-bdfBwQ dvBDVy"
+  className="sc-bdfBwQ kMVXxV"
 >
   test
 </p>

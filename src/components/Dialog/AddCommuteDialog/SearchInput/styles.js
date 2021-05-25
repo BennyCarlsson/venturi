@@ -10,4 +10,5 @@ export const Input = styled.input`
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
+  padding: 8px;
 `;

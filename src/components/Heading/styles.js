@@ -5,7 +5,7 @@ import { FontWeight as _fontWeight } from 'types/index';
 const generalFontStyle = ({ fontSize, color, fontWeight, center, uppercase }) =>
   css`
     font-size: ${fontSize ? `${fontSize}px` : 'initial'};
-    color: ${color ? color : Colors.black};
+    color: ${color ? color : Colors.vBlack};
     font-weight: ${fontWeight ? fontWeight : _fontWeight.normal};
     text-align: ${center ? 'center' : 'initial'};
     text-transform: ${uppercase ? 'uppercase' : 'none'};

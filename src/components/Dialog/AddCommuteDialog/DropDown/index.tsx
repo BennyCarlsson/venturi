@@ -10,16 +10,16 @@ type DropDownProps = {
 };
 
 const DropDown = ({ locations, setInput, setLocation, show }: DropDownProps) => {
+  const shouldRender = () => show && Array.isArray(locations) && locations.length > 0;
   return (
     <Fragment>
-      {show && (
+      {shouldRender() && (
         <Ul>
           {locations?.map((loc) => (
             <Li
               key={`key-${loc.id}`}
               onClick={(e) => {
                 e.preventDefault();
-                console.log(loc.id);
                 setInput(loc.name);
                 setLocation(loc);
               }}

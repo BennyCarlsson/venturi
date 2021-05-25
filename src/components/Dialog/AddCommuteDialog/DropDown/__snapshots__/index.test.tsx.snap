@@ -10,5 +10,17 @@ exports[`<DropDown /> should match snapshot 1`] = `
   >
     name
   </li>
+  <li
+    className="sc-gsTCUz iMZhDb"
+    onClick={[Function]}
+  >
+    name2
+  </li>
+  <li
+    className="sc-gsTCUz iMZhDb"
+    onClick={[Function]}
+  >
+    name3
+  </li>
 </ul>
 `;
