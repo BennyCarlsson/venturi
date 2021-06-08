@@ -8,8 +8,8 @@ import { Provider } from 'react-redux';
 import { ReactElement } from 'react';
 import { RootState } from 'redux/store';
 
-type RenderOptionsType = { initialState: Partial<RootState> } & Omit<RenderOptions, 'queries'>;
-function render(ui: ReactElement, { initialState, ...renderOptions }: RenderOptionsType) {
+type RenderOptionsType = { initialState?: Partial<RootState> } & Omit<RenderOptions, 'queries'>;
+function render(ui: ReactElement, { initialState = {}, ...renderOptions }: RenderOptionsType) {
   const store = configureStore({
     reducer: {
       test: testReducer,

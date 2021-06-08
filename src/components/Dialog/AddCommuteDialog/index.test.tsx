@@ -1,30 +1,36 @@
-import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
 import AddCommuteDialog from '.';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { cleanup, render, screen } from 'testUtils/test-utils';
 
 jest.mock('react-redux', () => ({
-  useSelector: jest.fn(),
+  ...(jest.requireActual('react-redux') as {}),
   useDispatch: jest.fn()
 }));
 
 describe('<AddCommuteDialog />', () => {
   const useAppDispatch = jest.fn();
   beforeEach(() => {
-    (useSelector as jest.Mock).mockImplementation((callback) =>
-      callback({ dialog: { show: true }, locations: { destinationError: 'error' } })
-    );
     (useDispatch as jest.Mock).mockReturnValue(useAppDispatch);
   });
 
   it('should match snapshot', () => {
-    const tree = renderer.create(<AddCommuteDialog />).toJSON();
-    expect(tree).toMatchSnapshot();
+    cleanup();
+    const { asFragment } = render(<AddCommuteDialog />, {});
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render without crashing', () => {
-    render(<AddCommuteDialog />);
+    render(<AddCommuteDialog />, {
+      initialState: {
+        dialog: { show: true },
+        locations: {
+          destinationError: 'error',
+          loadingDestination: false,
+          loadingOrigin: false
+        }
+      }
+    });
     expect(screen).toBeTruthy();
   });
 });

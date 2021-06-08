@@ -1,54 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<AddCommuteDialog /> should match snapshot 1`] = `
-<div
-  className="sc-jrAGrp hffLVH"
->
-  <h2
-    className="sc-jSgupP ehQrep sc-iqHYGH bVotdH"
-    fontSize={28}
+<DocumentFragment>
+  <div
+    class="sc-jrAGrp hffLVH"
   >
-    Destination
-  </h2>
-  <p
-    className="sc-bdfBwQ QuMsF sc-crrsfI dJBLtM"
-    fontSize={14}
-  >
-    Choose your commute trip
-  </p>
-  <p
-    className="sc-bdfBwQ kMVXxV"
-    fontSize={18}
-  >
-    From
-  </p>
-  <input
-    className="sc-hKgILt jroXQp"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    value=""
-  />
-  <p
-    className="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
-    fontSize={18}
-  >
-    To
-  </p>
-  <input
-    className="sc-hKgILt jroXQp"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onFocus={[Function]}
-    value=""
-  />
-  <button
-    onClick={[Function]}
-  >
-    Save
-  </button>
-  <h2>
-    error
-  </h2>
-</div>
+    <h2
+      class="sc-jSgupP ehQrep sc-iqHYGH bVotdH"
+      font-size="28"
+    >
+      Destination
+    </h2>
+    <p
+      class="sc-bdfBwQ QuMsF sc-crrsfI dJBLtM"
+      font-size="14"
+    >
+      Choose your commute trip
+    </p>
+    <p
+      class="sc-bdfBwQ kMVXxV"
+      font-size="18"
+    >
+      From
+    </p>
+    <input
+      class="sc-hKgILt jroXQp"
+      value=""
+    />
+    <p
+      class="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
+      font-size="18"
+    >
+      To
+    </p>
+    <input
+      class="sc-hKgILt jroXQp"
+      value=""
+    />
+    <button>
+      Save
+    </button>
+  </div>
+</DocumentFragment>
 `;
