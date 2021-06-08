@@ -16,6 +16,7 @@ import {
   StyledTitleHeading,
   StyledToParagraph
 } from './styles';
+import Button from 'components/Button';
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -117,7 +118,7 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
         setLocation={setDestinationLocation}
         show={showDestinationDropDown}
       />
-      <button
+      <Button
         onClick={() => {
           if (originLocation && destinationLocation)
             dispatch(setCurrentTable({ origin: originLocation, destination: destinationLocation }));
@@ -128,7 +129,7 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
         }}
       >
         Save
-      </button>
+      </Button>
       {error && <h2>{error}</h2>}
     </AddCommuteDialogWrapper>
   );

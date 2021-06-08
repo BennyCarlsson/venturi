@@ -54,7 +54,9 @@ exports[`<Dialog /> should match snapshot 1`] = `
           class="sc-fubCfw cNSiMz"
           value=""
         />
-        <button>
+        <button
+          class="sc-fFubgz eXEBUp"
+        >
           Save
         </button>
       </div>

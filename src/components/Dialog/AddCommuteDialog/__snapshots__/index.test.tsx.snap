@@ -37,7 +37,9 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
       class="sc-hKgILt jroXQp"
       value=""
     />
-    <button>
+    <button
+      class="sc-dQppl bVLEuu"
+    >
       Save
     </button>
   </div>

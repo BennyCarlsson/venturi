@@ -12,7 +12,8 @@ body {
 #root {
   height: 100%;
 }
-a {
+a,
+button {
   font-family: 'Montserrat';
 }
 .App {
