@@ -1,11 +1,10 @@
-import { render, screen } from '@testing-library/react';
-import renderer from 'react-test-renderer';
+import { render, screen } from 'testUtils/test-utils';
 import MyComponent from '.';
 
 describe('<MyComponent />', () => {
   it('should match snapshot', () => {
-    const tree = renderer.create(<MyComponent title="test" />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const { asFragment } = render(<MyComponent title="test" />, {});
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render without crashing', () => {
