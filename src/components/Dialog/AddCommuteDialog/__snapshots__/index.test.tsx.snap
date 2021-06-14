@@ -3,26 +3,26 @@
 exports[`<AddCommuteDialog /> should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jrAGrp AWHwt"
+    class="sc-bqyKva lnYeGr"
   >
     <span>
       <h2
-        class="sc-jSgupP ehQrep sc-iqHYGH bVotdH"
+        class="sc-gKsewC icwmdU sc-iqHYGH bVotdH"
         font-size="28"
       >
         Destination
       </h2>
       <p
-        class="sc-bdfBwQ QuMsF sc-crrsfI dJBLtM"
+        class="sc-bdfBwQ QuMsF sc-crrsfI dipcGx"
         font-size="14"
       >
-        Choose your commute trip
+        Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
       </p>
       <p
         class="sc-bdfBwQ kMVXxV"
         font-size="18"
       >
-        From
+        Från
       </p>
       <input
         class="sc-hKgILt jroXQp"
@@ -32,7 +32,7 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
         class="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
         font-size="18"
       >
-        To
+        Till
       </p>
       <input
         class="sc-hKgILt jroXQp"
@@ -40,9 +40,9 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
       />
     </span>
     <button
-      class="sc-dQppl bVLEuu"
+      class="sc-eCssSg bljGiV sc-dQppl etkeeH"
     >
-      Save
+      Namnge din resa
     </button>
   </div>
 </DocumentFragment>

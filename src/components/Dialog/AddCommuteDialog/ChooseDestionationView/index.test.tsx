@@ -1,36 +1,26 @@
-import AddCommuteDialog from '.';
-import { cleanup, render, screen } from 'testUtils/test-utils';
+import ChooseDestionationView from '.';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { useDispatch } from 'react-redux';
+import { render, screen } from 'testUtils/test-utils';
 
 jest.mock('react-redux', () => ({
   ...(jest.requireActual('react-redux') as {}),
   useDispatch: jest.fn()
 }));
 
-describe('<AddCommuteDialog />', () => {
+describe('<ChooseDestionationView />', () => {
   const useAppDispatch = jest.fn();
   beforeEach(() => {
     (useDispatch as jest.Mock).mockReturnValue(useAppDispatch);
   });
 
   it('should match snapshot', () => {
-    cleanup();
-    const { asFragment } = render(<AddCommuteDialog />, {});
+    const { asFragment } = render(<ChooseDestionationView />, {});
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('should render without crashing', () => {
-    render(<AddCommuteDialog />, {
-      initialState: {
-        dialog: { show: true },
-        locations: {
-          destinationError: 'error',
-          loadingDestination: false,
-          loadingOrigin: false
-        }
-      }
-    });
+    render(<ChooseDestionationView />, {});
     expect(screen).toBeTruthy();
   });
 });

@@ -20,26 +20,26 @@ exports[`<Dialog /> should match snapshot 1`] = `
         </svg>
       </button>
       <div
-        class="sc-bqyKva TYzEj"
+        class="sc-bkzZxe kKRqZx"
       >
         <span>
           <h2
-            class="sc-jrAGrp dkGVgW sc-hBEYos gspMer"
+            class="sc-kEjbxe iCXKzl sc-hBEYos gspMer"
             font-size="28"
           >
             Destination
           </h2>
           <p
-            class="sc-jSgupP hXdStS sc-fodVxV hqNEZC"
+            class="sc-jSgupP hXdStS sc-fodVxV iNSmUL"
             font-size="14"
           >
-            Choose your commute trip
+            Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
           </p>
           <p
             class="sc-jSgupP jpYqNy"
             font-size="18"
           >
-            From
+            Från
           </p>
           <input
             class="sc-fubCfw cNSiMz"
@@ -49,7 +49,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
             class="sc-jSgupP jpYqNy sc-kstrdz bsPOnb"
             font-size="18"
           >
-            To
+            Till
           </p>
           <input
             class="sc-fubCfw cNSiMz"
@@ -57,9 +57,9 @@ exports[`<Dialog /> should match snapshot 1`] = `
           />
         </span>
         <button
-          class="sc-fFubgz eXEBUp"
+          class="sc-pFZIQ jXrJpn sc-fFubgz bBgDmc"
         >
-          Save
+          Namnge din resa
         </button>
       </div>
     </div>

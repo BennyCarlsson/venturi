@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChooseDestionationView /> should match snapshot 1`] = `
+<DocumentFragment>
+  <span>
+    <h2
+      class="sc-gKsewC icwmdU sc-iqHYGH bVotdH"
+      font-size="28"
+    >
+      Destination
+    </h2>
+    <p
+      class="sc-bdfBwQ QuMsF sc-crrsfI dipcGx"
+      font-size="14"
+    >
+      Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
+    </p>
+    <p
+      class="sc-bdfBwQ kMVXxV"
+      font-size="18"
+    >
+      Från
+    </p>
+    <input
+      class="sc-hKgILt jroXQp"
+      value=""
+    />
+    <p
+      class="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
+      font-size="18"
+    >
+      Till
+    </p>
+    <input
+      class="sc-hKgILt jroXQp"
+      value=""
+    />
+  </span>
+  <button
+    class="sc-eCssSg bljGiV sc-dQppl etkeeH"
+  >
+    Namnge din resa
+  </button>
+</DocumentFragment>
+`;
