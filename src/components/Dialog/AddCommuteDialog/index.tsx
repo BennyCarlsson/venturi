@@ -12,11 +12,11 @@ import SearchInput from './SearchInput';
 import { saveOriginAndDestination } from 'utils/localStorage';
 import {
   AddCommuteDialogWrapper,
+  StyledButton,
   StyledParagraph,
   StyledTitleHeading,
   StyledToParagraph
 } from './styles';
-import Button from 'components/Button';
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -90,35 +90,37 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
   //Todo: switch button
   return (
     <AddCommuteDialogWrapper {...props}>
-      <StyledTitleHeading headingType={'h2'} fontSize={28}>
-        Destination
-      </StyledTitleHeading>
-      <StyledParagraph fontSize={14}>Choose your commute trip</StyledParagraph>
-      <Paragraph fontSize={18}>From</Paragraph>
-      <SearchInput
-        value={originInput}
-        onChange={originInputOnChange}
-        setShowDropDown={setShowOriginDropDown}
-      />
-      <DropDown
-        locations={originLocations}
-        setInput={setOriginInput}
-        setLocation={setOriginLocation}
-        show={showOriginDropDown}
-      />
-      <StyledToParagraph fontSize={18}>To</StyledToParagraph>
-      <SearchInput
-        value={destinationInput}
-        onChange={destinationOnChange}
-        setShowDropDown={setShowDestinationDropDown}
-      />
-      <DropDown
-        locations={destinationLocations}
-        setInput={setDestinationInput}
-        setLocation={setDestinationLocation}
-        show={showDestinationDropDown}
-      />
-      <Button
+      <span>
+        <StyledTitleHeading headingType={'h2'} fontSize={28}>
+          Destination
+        </StyledTitleHeading>
+        <StyledParagraph fontSize={14}>Choose your commute trip</StyledParagraph>
+        <Paragraph fontSize={18}>From</Paragraph>
+        <SearchInput
+          value={originInput}
+          onChange={originInputOnChange}
+          setShowDropDown={setShowOriginDropDown}
+        />
+        <DropDown
+          locations={originLocations}
+          setInput={setOriginInput}
+          setLocation={setOriginLocation}
+          show={showOriginDropDown}
+        />
+        <StyledToParagraph fontSize={18}>To</StyledToParagraph>
+        <SearchInput
+          value={destinationInput}
+          onChange={destinationOnChange}
+          setShowDropDown={setShowDestinationDropDown}
+        />
+        <DropDown
+          locations={destinationLocations}
+          setInput={setDestinationInput}
+          setLocation={setDestinationLocation}
+          show={showDestinationDropDown}
+        />
+      </span>
+      <StyledButton
         onClick={() => {
           if (originLocation && destinationLocation)
             dispatch(setCurrentTable({ origin: originLocation, destination: destinationLocation }));
@@ -128,8 +130,8 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
           });
         }}
       >
-        Save
-      </Button>
+        Skapa Resemål
+      </StyledButton>
       {error && <h2>{error}</h2>}
     </AddCommuteDialogWrapper>
   );

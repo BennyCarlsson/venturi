@@ -3,40 +3,42 @@
 exports[`<AddCommuteDialog /> should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-jrAGrp hffLVH"
+    class="sc-jrAGrp AWHwt"
   >
-    <h2
-      class="sc-jSgupP ehQrep sc-iqHYGH bVotdH"
-      font-size="28"
-    >
-      Destination
-    </h2>
-    <p
-      class="sc-bdfBwQ QuMsF sc-crrsfI dJBLtM"
-      font-size="14"
-    >
-      Choose your commute trip
-    </p>
-    <p
-      class="sc-bdfBwQ kMVXxV"
-      font-size="18"
-    >
-      From
-    </p>
-    <input
-      class="sc-hKgILt jroXQp"
-      value=""
-    />
-    <p
-      class="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
-      font-size="18"
-    >
-      To
-    </p>
-    <input
-      class="sc-hKgILt jroXQp"
-      value=""
-    />
+    <span>
+      <h2
+        class="sc-jSgupP ehQrep sc-iqHYGH bVotdH"
+        font-size="28"
+      >
+        Destination
+      </h2>
+      <p
+        class="sc-bdfBwQ QuMsF sc-crrsfI dJBLtM"
+        font-size="14"
+      >
+        Choose your commute trip
+      </p>
+      <p
+        class="sc-bdfBwQ kMVXxV"
+        font-size="18"
+      >
+        From
+      </p>
+      <input
+        class="sc-hKgILt jroXQp"
+        value=""
+      />
+      <p
+        class="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
+        font-size="18"
+      >
+        To
+      </p>
+      <input
+        class="sc-hKgILt jroXQp"
+        value=""
+      />
+    </span>
     <button
       class="sc-dQppl bVLEuu"
     >
