@@ -7,15 +7,16 @@ type SearchInputProps = {
   setShowDropDown: Dispatch<SetStateAction<boolean>>;
 };
 
-const SearchInput = ({ value, onChange, setShowDropDown }: SearchInputProps) => {
+const SearchInput = ({ value, onChange, setShowDropDown, ...rest }: SearchInputProps) => {
   return (
     <Input
+      {...rest}
       value={value}
       onChange={onChange}
       onBlur={() => {
         setTimeout(() => {
           setShowDropDown(false);
-        }, 500);
+        }, 100);
       }}
       onFocus={() => {
         if (value.length > 1) {

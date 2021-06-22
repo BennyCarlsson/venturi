@@ -93,6 +93,7 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
         </StyledParagraph>
         <Paragraph fontSize={18}>Från</Paragraph>
         <SearchInput
+          data-testid="from-input"
           value={originInput}
           onChange={originInputOnChange}
           setShowDropDown={setShowOriginDropDown}
@@ -105,6 +106,7 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
         />
         <StyledToParagraph fontSize={18}>Till</StyledToParagraph>
         <SearchInput
+          data-testid="to-input"
           value={destinationInput}
           onChange={destinationOnChange}
           setShowDropDown={setShowDestinationDropDown}

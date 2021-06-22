@@ -43,6 +43,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
           </p>
           <input
             class="sc-fubCfw cNSiMz"
+            data-testid="from-input"
             value=""
           />
           <p
@@ -53,6 +54,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
           </p>
           <input
             class="sc-fubCfw cNSiMz"
+            data-testid="to-input"
             value=""
           />
         </span>
