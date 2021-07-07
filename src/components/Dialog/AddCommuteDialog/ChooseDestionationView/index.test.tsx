@@ -31,25 +31,38 @@ describe('<ChooseDestionationView />', () => {
     render(<ChooseDestionationView />, { initialState: { ...locations } });
     userEvent.type(screen.getByTestId('from-input'), 'aa');
     await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
-    expect(screen.getAllByRole('listitem').length).toBe(locations.locations.originLocations.length);
   });
 
-  it('should show locations when typing in the from input', async () => {
+  it('should show 7 locations when typing in the from input', async () => {
     render(<ChooseDestionationView />, { initialState: { ...locations } });
     userEvent.type(screen.getByTestId('from-input'), 'aa');
     await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
     const testLocation1Name = locations.locations.originLocations[0].name;
-    const testLocation2Name =
-      locations.locations.originLocations[locations.locations.originLocations.length - 1].name;
+    const testLocation2Name = locations.locations.originLocations[6].name;
     expect(screen.getByText(testLocation1Name)).toBeInTheDocument();
     expect(screen.getByText(testLocation2Name)).toBeInTheDocument();
+    expect(screen.getAllByRole('listitem').length).toBe(7);
+  });
+
+  it('should show 3 locations when only 3 originLocations exists', async () => {
+    render(<ChooseDestionationView />, {
+      initialState: {
+        locations: {
+          ...locations.locations,
+          originLocations: locations.locations.originLocations.slice(0, 3)
+        }
+      }
+    });
+    userEvent.type(screen.getByTestId('from-input'), 'aa');
+    await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
+    expect(screen.getAllByRole('listitem').length).toBe(3);
   });
 
   it('should hide dropdown when only 1 char in input field (from input)', async () => {
     render(<ChooseDestionationView />, { initialState: { ...locations } });
     userEvent.type(screen.getByTestId('from-input'), 'aa');
     await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
-    expect(screen.getAllByRole('listitem').length).toBe(locations.locations.originLocations.length);
+
     userEvent.type(screen.getByTestId('from-input'), '{backspace}');
     await waitForElementToBeRemoved(screen.getByRole('list'));
   });
@@ -77,34 +90,43 @@ describe('<ChooseDestionationView />', () => {
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
   });
 
-  it('should show dropdown when typing in the to input', async () => {
+  it('should show dropdown with 7 listitems when typing in the to input', async () => {
     render(<ChooseDestionationView />, { initialState: { ...locations } });
     userEvent.type(screen.getByTestId('to-input'), 'aa');
     await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
-    expect(screen.getAllByRole('listitem').length).toBe(
-      locations.locations.destinationLocations.length
-    );
+    expect(screen.getAllByRole('listitem').length).toBe(7);
   });
 
-  it('should show locations when typing in the to input', async () => {
+  it('should show 3 locations when only 3 destinationLocations exists', async () => {
+    render(<ChooseDestionationView />, {
+      initialState: {
+        locations: {
+          ...locations.locations,
+          destinationLocations: locations.locations.destinationLocations.slice(0, 3)
+        }
+      }
+    });
+    userEvent.type(screen.getByTestId('to-input'), 'aa');
+    await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
+    expect(screen.getAllByRole('listitem').length).toBe(3);
+  });
+
+  it('should show 7 locations when typing in the to input', async () => {
     render(<ChooseDestionationView />, { initialState: { ...locations } });
     userEvent.type(screen.getByTestId('to-input'), 'aa');
     await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
     const testLocation1Name = locations.locations.destinationLocations[0].name;
-    const testLocation2Name =
-      locations.locations.destinationLocations[locations.locations.destinationLocations.length - 1]
-        .name;
+    const testLocation2Name = locations.locations.destinationLocations[6].name;
     expect(screen.getByText(testLocation1Name)).toBeInTheDocument();
     expect(screen.getByText(testLocation2Name)).toBeInTheDocument();
+    expect(screen.getAllByRole('listitem').length).toBe(7);
   });
 
   it('should hide dropdown when only 1 char in input field (to input)', async () => {
     render(<ChooseDestionationView />, { initialState: { ...locations } });
     userEvent.type(screen.getByTestId('to-input'), 'aa');
     await waitFor(() => expect(screen.getByRole('list')).toBeInTheDocument());
-    expect(screen.getAllByRole('listitem').length).toBe(
-      locations.locations.destinationLocations.length
-    );
+
     userEvent.type(screen.getByTestId('to-input'), '{backspace}');
     await waitForElementToBeRemoved(screen.getByRole('list'));
   });

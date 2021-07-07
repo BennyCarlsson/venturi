@@ -7,7 +7,6 @@ export const Input = styled.input`
   border-bottom: 1px solid #726a95;
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: bold;
   font-size: 14px;
   line-height: 17px;
   padding: 8px;

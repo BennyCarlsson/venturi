@@ -25,7 +25,7 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
         Från
       </p>
       <input
-        class="sc-hKgILt jroXQp"
+        class="sc-hKgILt itdOLt"
         data-testid="from-input"
         value=""
       />
@@ -36,7 +36,7 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
         Till
       </p>
       <input
-        class="sc-hKgILt jroXQp"
+        class="sc-hKgILt itdOLt"
         data-testid="to-input"
         value=""
       />

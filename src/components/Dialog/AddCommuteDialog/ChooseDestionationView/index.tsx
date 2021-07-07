@@ -99,7 +99,7 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
           setShowDropDown={setShowOriginDropDown}
         />
         <DropDown
-          locations={originLocations}
+          locations={originLocations?.slice(0, 7)}
           setInput={setOriginInput}
           setLocation={setOriginLocation}
           show={showOriginDropDown}
@@ -112,7 +112,7 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
           setShowDropDown={setShowDestinationDropDown}
         />
         <DropDown
-          locations={destinationLocations}
+          locations={destinationLocations?.slice(0, 7)}
           setInput={setDestinationInput}
           setLocation={setDestinationLocation}
           show={showDestinationDropDown}
