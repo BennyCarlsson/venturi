@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/venturi/static/css/main.6ffd26e0.chunk.css",
-    "main.js": "/venturi/static/js/main.7765122d.chunk.js",
-    "main.js.map": "/venturi/static/js/main.7765122d.chunk.js.map",
+    "main.js": "/venturi/static/js/main.7d7cee9a.chunk.js",
+    "main.js.map": "/venturi/static/js/main.7d7cee9a.chunk.js.map",
     "runtime-main.js": "/venturi/static/js/runtime-main.98e78704.js",
     "runtime-main.js.map": "/venturi/static/js/runtime-main.98e78704.js.map",
     "static/js/2.b9f6f778.chunk.js": "/venturi/static/js/2.b9f6f778.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.98e78704.js",
     "static/js/2.b9f6f778.chunk.js",
     "static/css/main.6ffd26e0.chunk.css",
-    "static/js/main.7765122d.chunk.js"
+    "static/js/main.7d7cee9a.chunk.js"
   ]
 }
