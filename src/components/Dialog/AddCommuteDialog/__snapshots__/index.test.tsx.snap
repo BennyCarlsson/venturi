@@ -28,7 +28,7 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
         class="sc-dQppl jOyfMJ"
       >
         <input
-          class="sc-hKgILt SmUeY"
+          class="sc-hKgILt cPLMCW"
           data-testid="from-input"
           value=""
         />
@@ -43,7 +43,7 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
         class="sc-dQppl jOyfMJ"
       >
         <input
-          class="sc-hKgILt SmUeY"
+          class="sc-hKgILt cPLMCW"
           data-testid="to-input"
           value=""
         />

@@ -45,7 +45,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
             class="sc-fFubgz ifWsfu"
           >
             <input
-              class="sc-fubCfw jrOZBO"
+              class="sc-fubCfw bzeJGg"
               data-testid="from-input"
               value=""
             />
@@ -60,7 +60,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
             class="sc-fFubgz ifWsfu"
           >
             <input
-              class="sc-fubCfw jrOZBO"
+              class="sc-fubCfw bzeJGg"
               data-testid="to-input"
               value=""
             />
