@@ -17,6 +17,10 @@ export const StyledParagraph = styled(Paragraph)`
   padding-bottom: 48px;
 `;
 
+export const InputDropDownWrapper = styled.div`
+  position: relative;
+`
+
 export const StyledButton = styled(Button)`
   margin-bottom: 56px;
 `;

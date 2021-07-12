@@ -21,25 +21,33 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
     >
       Från
     </p>
-    <input
-      class="sc-hKgILt itdOLt"
-      data-testid="from-input"
-      value=""
-    />
+    <div
+      class="sc-dQppl jOyfMJ"
+    >
+      <input
+        class="sc-hKgILt SmUeY"
+        data-testid="from-input"
+        value=""
+      />
+    </div>
     <p
       class="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
       font-size="18"
     >
       Till
     </p>
-    <input
-      class="sc-hKgILt itdOLt"
-      data-testid="to-input"
-      value=""
-    />
+    <div
+      class="sc-dQppl jOyfMJ"
+    >
+      <input
+        class="sc-hKgILt SmUeY"
+        data-testid="to-input"
+        value=""
+      />
+    </div>
   </span>
   <button
-    class="sc-eCssSg bljGiV sc-dQppl etkeeH"
+    class="sc-eCssSg bljGiV sc-bqyKva dotLk"
   >
     Namnge din resa
   </button>

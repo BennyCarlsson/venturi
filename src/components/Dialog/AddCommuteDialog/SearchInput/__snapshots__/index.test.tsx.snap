@@ -2,7 +2,7 @@
 
 exports[`<SearchInput /> should match snapshot 1`] = `
 <input
-  className="sc-bdfBwQ ebCodQ"
+  className="sc-bdfBwQ hoZuat"
   onBlur={[Function]}
   onChange={[MockFunction]}
   onFocus={[Function]}

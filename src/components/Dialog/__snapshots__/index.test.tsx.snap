@@ -20,7 +20,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
         </svg>
       </button>
       <div
-        class="sc-bkzZxe kKRqZx"
+        class="sc-idOhPF iSLUWB"
       >
         <span>
           <h2
@@ -41,25 +41,33 @@ exports[`<Dialog /> should match snapshot 1`] = `
           >
             Från
           </p>
-          <input
-            class="sc-fubCfw leNSGH"
-            data-testid="from-input"
-            value=""
-          />
+          <div
+            class="sc-fFubgz ifWsfu"
+          >
+            <input
+              class="sc-fubCfw jrOZBO"
+              data-testid="from-input"
+              value=""
+            />
+          </div>
           <p
             class="sc-jSgupP jpYqNy sc-kstrdz bsPOnb"
             font-size="18"
           >
             Till
           </p>
-          <input
-            class="sc-fubCfw leNSGH"
-            data-testid="to-input"
-            value=""
-          />
+          <div
+            class="sc-fFubgz ifWsfu"
+          >
+            <input
+              class="sc-fubCfw jrOZBO"
+              data-testid="to-input"
+              value=""
+            />
+          </div>
         </span>
         <button
-          class="sc-pFZIQ jXrJpn sc-fFubgz bBgDmc"
+          class="sc-pFZIQ jXrJpn sc-bkzZxe lhqPIK"
         >
           Namnge din resa
         </button>

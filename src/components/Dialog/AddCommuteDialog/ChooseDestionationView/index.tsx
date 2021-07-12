@@ -10,7 +10,7 @@ import { setCurrentTable } from 'redux/tripSlice';
 import DropDown from '../DropDown';
 import SearchInput from '../SearchInput';
 import { saveOriginAndDestination } from 'utils/localStorage';
-import { StyledButton, StyledParagraph, StyledTitleHeading, StyledToParagraph } from './styles';
+import { StyledButton, StyledParagraph, StyledTitleHeading, InputDropDownWrapper, StyledToParagraph } from './styles';
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -92,19 +92,22 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
           tillfälle.
         </StyledParagraph>
         <Paragraph fontSize={18}>Från</Paragraph>
-        <SearchInput
-          data-testid="from-input"
-          value={originInput}
-          onChange={originInputOnChange}
-          setShowDropDown={setShowOriginDropDown}
-        />
-        <DropDown
-          locations={originLocations?.slice(0, 7)}
-          setInput={setOriginInput}
-          setLocation={setOriginLocation}
-          show={showOriginDropDown}
-        />
+        <InputDropDownWrapper>
+          <SearchInput
+            data-testid="from-input"
+            value={originInput}
+            onChange={originInputOnChange}
+            setShowDropDown={setShowOriginDropDown}
+          />
+          <DropDown
+            locations={originLocations?.slice(0, 7)}
+            setInput={setOriginInput}
+            setLocation={setOriginLocation}
+            show={showOriginDropDown}
+          />
+        </InputDropDownWrapper>
         <StyledToParagraph fontSize={18}>Till</StyledToParagraph>
+        <InputDropDownWrapper>
         <SearchInput
           data-testid="to-input"
           value={destinationInput}
@@ -117,6 +120,7 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
           setLocation={setDestinationLocation}
           show={showDestinationDropDown}
         />
+        </InputDropDownWrapper>
       </span>
       <StyledButton
         onClick={() => {

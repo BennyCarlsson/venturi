@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Input = styled.input`
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 36px;
   border: none;

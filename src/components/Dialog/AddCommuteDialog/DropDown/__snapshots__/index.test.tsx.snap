@@ -2,7 +2,7 @@
 
 exports[`<DropDown /> should match snapshot 1`] = `
 <ul
-  className="sc-bdfBwQ hqbaFS"
+  className="sc-bdfBwQ cLSKFv"
 >
   <li
     className="sc-gsTCUz iMZhDb"
