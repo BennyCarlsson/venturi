@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Colors from 'tokens/colors';
 import ClosedIconButton from 'components/CloseIconButton';
+import { motion } from 'framer-motion';
 
 export const DialogWrapper = styled.div`
   position: absolute;
@@ -12,7 +13,7 @@ export const DialogWrapper = styled.div`
   background-color: ${Colors.vBlue};
 `;
 
-export const InnerWrapper = styled.div`
+export const InnerWrapper = styled(motion.div)`
   position: relative;
   height: 100%;
   width: 100%;

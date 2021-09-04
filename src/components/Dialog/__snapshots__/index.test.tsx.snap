@@ -8,6 +8,7 @@ exports[`<Dialog /> should match snapshot 1`] = `
   >
     <div
       class="sc-hKgILt gqrVIr"
+      style="opacity: 0;"
     >
       <button
         class="sc-bdfBwQ uLnZs sc-eCssSg ghFAtm"

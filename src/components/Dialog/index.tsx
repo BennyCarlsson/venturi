@@ -4,6 +4,7 @@ import { hideDialog, selectShowDialog } from 'redux/dialogSlice';
 import { DialogWrapper, InnerWrapper, StyledClosedIconButton } from './styles';
 import { useAppSelector } from 'hooks/redux';
 import AddCommuteDialog from './AddCommuteDialog';
+import { AnimatePresence } from "framer-motion"
 
 type DialogProps = {};
 
@@ -26,18 +27,25 @@ const Dialog = (props: DialogProps) => {
   }, [displayDialog, dispatch]);
 
   if (!displayDialog) return null;
+
   return (
-    <DialogWrapper {...props} data-testid="dialog-wrapper">
-      <InnerWrapper>
-        <StyledClosedIconButton
-          data-testid="close-dialog-button"
-          onClick={(e) => {
-            dispatch(hideDialog());
-          }}
-        />
-        <AddCommuteDialog />
-      </InnerWrapper>
-    </DialogWrapper>
+    <AnimatePresence>
+    {displayDialog &&
+      <DialogWrapper {...props} data-testid="dialog-wrapper">
+        <InnerWrapper initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}>
+          <StyledClosedIconButton
+            data-testid="close-dialog-button"
+            onClick={(e) => {
+              dispatch(hideDialog());
+            }}
+          />
+          <AddCommuteDialog />
+        </InnerWrapper>
+      </DialogWrapper>
+      }
+    </AnimatePresence>
   );
 };
 
