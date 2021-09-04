@@ -1,10 +1,10 @@
 import { useAppDispatch } from 'hooks/redux';
 import { useEffect } from 'react';
 import { hideDialog, selectShowDialog } from 'redux/dialogSlice';
-import { DialogWrapper, InnerWrapper, StyledClosedIconButton } from './styles';
+import { DialogWrapper, InnerWrapper } from './styles';
 import { useAppSelector } from 'hooks/redux';
 import AddCommuteDialog from './AddCommuteDialog';
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence } from 'framer-motion';
 
 type DialogProps = {};
 
@@ -30,21 +30,13 @@ const Dialog = (props: DialogProps) => {
 
   return (
     <AnimatePresence>
-    {displayDialog &&
-      <DialogWrapper {...props} data-testid="dialog-wrapper">
-        <InnerWrapper initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}>
-          <StyledClosedIconButton
-            data-testid="close-dialog-button"
-            onClick={(e) => {
-              dispatch(hideDialog());
-            }}
-          />
-          <AddCommuteDialog />
-        </InnerWrapper>
-      </DialogWrapper>
-      }
+      {displayDialog && (
+        <DialogWrapper {...props} data-testid="dialog-wrapper">
+          <InnerWrapper initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <AddCommuteDialog />
+          </InnerWrapper>
+        </DialogWrapper>
+      )}
     </AnimatePresence>
   );
 };

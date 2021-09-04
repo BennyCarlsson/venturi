@@ -2,13 +2,13 @@
 
 exports[`<CloseIconButton /> should match snapshot 1`] = `
 <button
-  className="sc-bdfBwQ uLnZs"
+  className="sc-bdfBwQ byoPcS"
   onClick={[MockFunction]}
 >
   <svg
-    className="sc-gsTCUz qFatG"
+    className="sc-gsTCUz iynNxB"
   >
-    x.svg
+    chevron-down.svg
   </svg>
 </button>
 `;

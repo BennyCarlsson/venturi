@@ -3,21 +3,39 @@
 exports[`<AddCommuteDialog /> should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-kstrdz fvvcCx"
+    class="sc-bkzZxe kKRqZx"
   >
     <span>
-      <h2
-        class="sc-gKsewC icwmdU sc-iqHYGH bVotdH"
-        font-size="28"
+      <div
+        class="sc-crrsfI gCprfa"
       >
-        Destination
-      </h2>
-      <p
-        class="sc-bdfBwQ QuMsF sc-crrsfI dipcGx"
-        font-size="14"
-      >
-        Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
-      </p>
+        <div
+          class="sc-dQppl kHCxav"
+        >
+          <button
+            class="sc-kEjbxe XnuJF sc-fFubgz"
+            data-testid="close-dialog-button"
+          >
+            <svg
+              class="sc-iqHYGH RLSrP"
+            >
+              chevron-down.svg
+            </svg>
+          </button>
+          <h2
+            class="sc-gKsewC icwmdU sc-kstrdz fqVoFn"
+            font-size="28"
+          >
+            Destinations
+          </h2>
+        </div>
+        <p
+          class="sc-bdfBwQ QuMsF"
+          font-size="14"
+        >
+          Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
+        </p>
+      </div>
       <p
         class="sc-bdfBwQ kMVXxV"
         font-size="18"
@@ -25,7 +43,7 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
         Från
       </p>
       <div
-        class="sc-dQppl jOyfMJ"
+        class="sc-hBEYos hgFzca"
       >
         <input
           class="sc-hKgILt cPLMCW"
@@ -34,13 +52,13 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
         />
       </div>
       <p
-        class="sc-bdfBwQ kMVXxV sc-kEjbxe hVozjA"
+        class="sc-bdfBwQ kMVXxV sc-bqyKva dmDSat"
         font-size="18"
       >
         Till
       </p>
       <div
-        class="sc-dQppl jOyfMJ"
+        class="sc-hBEYos hgFzca"
       >
         <input
           class="sc-hKgILt cPLMCW"
@@ -50,7 +68,7 @@ exports[`<AddCommuteDialog /> should match snapshot 1`] = `
       </div>
     </span>
     <button
-      class="sc-eCssSg bljGiV sc-bqyKva dotLk"
+      class="sc-eCssSg bljGiV sc-fodVxV iBKypr"
     >
       Namnge din resa
     </button>

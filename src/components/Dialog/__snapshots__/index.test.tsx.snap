@@ -3,41 +3,49 @@
 exports[`<Dialog /> should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-dlfnbm btOeIK"
+    class="sc-bdfBwQ ibXtcp"
     data-testid="dialog-wrapper"
   >
     <div
-      class="sc-hKgILt gqrVIr"
+      class="sc-gsTCUz jNtGXC"
       style="opacity: 0;"
     >
-      <button
-        class="sc-bdfBwQ uLnZs sc-eCssSg ghFAtm"
-        data-testid="close-dialog-button"
-      >
-        <svg
-          class="sc-gsTCUz qFatG"
-        >
-          x.svg
-        </svg>
-      </button>
       <div
-        class="sc-idOhPF iSLUWB"
+        class="sc-dIUggk hduPgm"
       >
         <span>
-          <h2
-            class="sc-kEjbxe iCXKzl sc-hBEYos gspMer"
-            font-size="28"
+          <div
+            class="sc-bqyKva fItXhb"
           >
-            Destination
-          </h2>
+            <div
+              class="sc-kstrdz ievoUe"
+            >
+              <button
+                class="sc-crrsfI heshZZ sc-idOhPF"
+                data-testid="close-dialog-button"
+              >
+                <svg
+                  class="sc-dQppl fUdGeY"
+                >
+                  chevron-down.svg
+                </svg>
+              </button>
+              <h2
+                class="sc-fubCfw hYsKMV sc-fodVxV hUHUQe"
+                font-size="28"
+              >
+                Destinations
+              </h2>
+            </div>
+            <p
+              class="sc-dlfnbm cvhbVq"
+              font-size="14"
+            >
+              Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
+            </p>
+          </div>
           <p
-            class="sc-jSgupP hXdStS sc-fodVxV iNSmUL"
-            font-size="14"
-          >
-            Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
-          </p>
-          <p
-            class="sc-jSgupP jpYqNy"
+            class="sc-dlfnbm dJtete"
             font-size="18"
           >
             Från
@@ -46,13 +54,13 @@ exports[`<Dialog /> should match snapshot 1`] = `
             class="sc-fFubgz ifWsfu"
           >
             <input
-              class="sc-fubCfw bzeJGg"
+              class="sc-jSgupP begQqE"
               data-testid="from-input"
               value=""
             />
           </div>
           <p
-            class="sc-jSgupP jpYqNy sc-kstrdz bsPOnb"
+            class="sc-dlfnbm dJtete sc-hBEYos iTMrrR"
             font-size="18"
           >
             Till
@@ -61,14 +69,14 @@ exports[`<Dialog /> should match snapshot 1`] = `
             class="sc-fFubgz ifWsfu"
           >
             <input
-              class="sc-fubCfw bzeJGg"
+              class="sc-jSgupP begQqE"
               data-testid="to-input"
               value=""
             />
           </div>
         </span>
         <button
-          class="sc-pFZIQ jXrJpn sc-bkzZxe lhqPIK"
+          class="sc-gKsewC joGfoR sc-bkzZxe lhqPIK"
         >
           Namnge din resa
         </button>

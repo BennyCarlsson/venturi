@@ -10,7 +10,16 @@ import { setCurrentTable } from 'redux/tripSlice';
 import DropDown from '../DropDown';
 import SearchInput from '../SearchInput';
 import { saveOriginAndDestination } from 'utils/localStorage';
-import { StyledButton, StyledParagraph, StyledTitleHeading, InputDropDownWrapper, StyledToParagraph } from './styles';
+import {
+  StyledButton,
+  StyledTitleHeading,
+  InputDropDownWrapper,
+  StyledToParagraph,
+  StyledClosedIconButton,
+  TopCTAButtonTitleSubtitle,
+  CTAButtonTitleWrapper
+} from './styles';
+import { hideDialog } from 'redux/dialogSlice';
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -84,13 +93,23 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
   return (
     <React.Fragment {...props}>
       <span>
-        <StyledTitleHeading headingType={'h2'} fontSize={28}>
-          Destination
-        </StyledTitleHeading>
-        <StyledParagraph fontSize={14}>
-          Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare
-          tillfälle.
-        </StyledParagraph>
+        <TopCTAButtonTitleSubtitle>
+          <CTAButtonTitleWrapper>
+            <StyledClosedIconButton
+              data-testid="close-dialog-button"
+              onClick={(e) => {
+                dispatch(hideDialog());
+              }}
+            />
+            <StyledTitleHeading headingType={'h2'} fontSize={28}>
+              Destinations
+            </StyledTitleHeading>
+          </CTAButtonTitleWrapper>
+          <Paragraph fontSize={14}>
+            Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett
+            senare tillfälle.
+          </Paragraph>
+        </TopCTAButtonTitleSubtitle>
         <Paragraph fontSize={18}>Från</Paragraph>
         <InputDropDownWrapper>
           <SearchInput
@@ -108,18 +127,18 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
         </InputDropDownWrapper>
         <StyledToParagraph fontSize={18}>Till</StyledToParagraph>
         <InputDropDownWrapper>
-        <SearchInput
-          data-testid="to-input"
-          value={destinationInput}
-          onChange={destinationOnChange}
-          setShowDropDown={setShowDestinationDropDown}
-        />
-        <DropDown
-          locations={destinationLocations?.slice(0, 7)}
-          setInput={setDestinationInput}
-          setLocation={setDestinationLocation}
-          show={showDestinationDropDown}
-        />
+          <SearchInput
+            data-testid="to-input"
+            value={destinationInput}
+            onChange={destinationOnChange}
+            setShowDropDown={setShowDestinationDropDown}
+          />
+          <DropDown
+            locations={destinationLocations?.slice(0, 7)}
+            setInput={setDestinationInput}
+            setLocation={setDestinationLocation}
+            show={showDestinationDropDown}
+          />
         </InputDropDownWrapper>
       </span>
       <StyledButton
