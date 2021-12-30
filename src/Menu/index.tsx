@@ -1,7 +1,7 @@
-import { ReactComponent as BookLogo } from 'assets/icons/book-open.svg';
-import { ReactComponent as TrainCar } from 'assets/icons/train-car.svg';
-import MenuDotsIcon from 'components/MenuDotsIcon';
-import { MenuWrapper, SpanOne, SpanThree, SpanTwo, StyledLink } from './styles';
+import { ReactComponent as BookLogo } from "assets/icons/book-open.svg";
+import { ReactComponent as TrainCar } from "assets/icons/train-car.svg";
+import MenuDotsIcon from "components/MenuDotsIcon";
+import { MenuWrapper, SpanOne, SpanThree, SpanTwo, StyledLink } from "./styles";
 
 const Menu = () => {
   return (

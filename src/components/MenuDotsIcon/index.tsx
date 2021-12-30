@@ -1,5 +1,5 @@
-import React from 'react';
-import { Dot, MenuDotsIconWrapper } from './styles';
+import React from "react";
+import { Dot, MenuDotsIconWrapper } from "./styles";
 
 const MenuDotsIcon = () => {
   return (

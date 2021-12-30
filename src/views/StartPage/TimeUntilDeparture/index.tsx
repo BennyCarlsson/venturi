@@ -1,6 +1,6 @@
-import Paragraph from 'components/Paragraph';
-import Colors from 'tokens/colors';
-import { FontWeight } from 'types';
+import Paragraph from "components/Paragraph";
+import Colors from "tokens/colors";
+import { FontWeight } from "types";
 
 type TimeUntilDepartureProps = {
   date?: string;
@@ -11,21 +11,21 @@ type TimeUntilDepartureProps = {
 const TimeUntilDeparture = ({ time, date }: TimeUntilDepartureProps) => {
   const getDays = (ms: number) => {
     const days = Math.floor(ms / 86400000);
-    if (days <= 0) return '';
+    if (days <= 0) return "";
     if (days === 1) return `${days} day `;
     return `${days} days `;
   };
 
   const getHours = (ms: number) => {
     const hours = Math.floor((ms % 86400000) / 3600000);
-    if (hours <= 0) return '';
+    if (hours <= 0) return "";
     if (hours === 1) return `${hours} hour `;
     return `${hours} hours `;
   };
 
   const getMinutes = (ms: number) => {
     const minutes = Math.round(((ms % 86400000) % 3600000) / 60000);
-    if (minutes <= 0) return '';
+    if (minutes <= 0) return "";
     if (minutes === 1) return `${minutes} minute `;
     return `${minutes} minutes `;
   };
@@ -40,7 +40,7 @@ const TimeUntilDeparture = ({ time, date }: TimeUntilDepartureProps) => {
     const days = getDays(diffMs);
     const hours = getHours(diffMs);
     const minutes = getMinutes(diffMs);
-    if (diffMs <= 60000) return 'now';
+    if (diffMs <= 60000) return "now";
     return `in ${days}${hours}${minutes}`;
   };
 

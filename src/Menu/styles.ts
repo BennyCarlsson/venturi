@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
-import Colors from 'tokens/colors';
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import Colors from "tokens/colors";
 
 export const MenuWrapper = styled.nav`
   display: flex;

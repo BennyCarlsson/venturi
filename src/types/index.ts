@@ -1,7 +1,7 @@
 export enum FontWeight {
   normal = 400,
   medium = 500,
-  bold = 700
+  bold = 700,
 }
 
 export type Token = {
@@ -40,7 +40,17 @@ export type Leg = {
   kcal?: Float32Array;
   Origin?: Origin;
   sname?: string;
-  type: 'VAS' | 'LDT' | 'REG' | 'BUS' | 'BOAT' | 'TRAM' | 'TAXI' | 'WALK' | 'BIKE' | 'CAR';
+  type:
+    | "VAS"
+    | "LDT"
+    | "REG"
+    | "BUS"
+    | "BOAT"
+    | "TRAM"
+    | "TAXI"
+    | "WALK"
+    | "BIKE"
+    | "CAR";
   GeometryRef?: GeometryRef;
   bgColor?: string;
   Notes?: Notes;

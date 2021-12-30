@@ -1,8 +1,8 @@
-import Paragraph from 'components/Paragraph';
-import styled from 'styled-components';
-import Colors from 'tokens/colors';
-import spacings from 'tokens/spacings';
-import { ReactComponent as PlusIcon } from 'assets/icons/plus.svg';
+import Paragraph from "components/Paragraph";
+import styled from "styled-components";
+import Colors from "tokens/colors";
+import spacings from "tokens/spacings";
+import { ReactComponent as PlusIcon } from "assets/icons/plus.svg";
 
 export const CreateCommuteTripCtaWrapper = styled.a`
   position: absolute;

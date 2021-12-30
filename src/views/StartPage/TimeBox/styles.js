@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import Colors from 'tokens/colors';
-import { ReactComponent as MapPinLogo } from 'assets/icons/map-pin.svg';
-import Heading from 'components/Heading';
+import styled from "styled-components";
+import Colors from "tokens/colors";
+import { ReactComponent as MapPinLogo } from "assets/icons/map-pin.svg";
+import Heading from "components/Heading";
 
 export const TimeBoxWrapper = styled.div`
   padding: 16px 32px;

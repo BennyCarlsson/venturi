@@ -1,6 +1,6 @@
-import React from 'react';
-import { FontWeight } from 'types';
-import { P } from './styles';
+import React from "react";
+import { FontWeight } from "types";
+import { P } from "./styles";
 
 export type ParagraphProps = {
   children?: React.ReactNode;

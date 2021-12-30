@@ -1,4 +1,4 @@
-import { motion, SVGMotionProps } from 'framer-motion';
+import { motion, SVGMotionProps } from "framer-motion";
 
 const ChevronIcon = (props: SVGMotionProps<SVGSVGElement>) => {
   return (

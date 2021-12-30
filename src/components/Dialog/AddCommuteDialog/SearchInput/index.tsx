@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
-import { Input } from './styles';
+import { Dispatch, SetStateAction } from "react";
+import { Input } from "./styles";
 
 type SearchInputProps = {
   value: string;
@@ -7,7 +7,12 @@ type SearchInputProps = {
   setShowDropDown: Dispatch<SetStateAction<boolean>>;
 };
 
-const SearchInput = ({ value, onChange, setShowDropDown, ...rest }: SearchInputProps) => {
+const SearchInput = ({
+  value,
+  onChange,
+  setShowDropDown,
+  ...rest
+}: SearchInputProps) => {
   return (
     <Input
       {...rest}

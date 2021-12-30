@@ -1,5 +1,9 @@
-import Colors from 'tokens/colors';
-import { CreateCommuteTripCtaWrapper, StyledParagraph, StyledPlusIcon } from './styles';
+import Colors from "tokens/colors";
+import {
+  CreateCommuteTripCtaWrapper,
+  StyledParagraph,
+  StyledPlusIcon,
+} from "./styles";
 
 type CreateCommuteTripCtaProps = {
   onClick: () => void;

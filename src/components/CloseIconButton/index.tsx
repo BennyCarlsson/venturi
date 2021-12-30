@@ -1,4 +1,4 @@
-import { CloseIconButtonWrapper, StyledXIcon } from './styles';
+import { CloseIconButtonWrapper, StyledXIcon } from "./styles";
 
 type CloseIconButtonProps = {
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

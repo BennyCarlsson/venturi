@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const testSlice = createSlice({
-  name: 'trip',
+  name: "trip",
   initialState: {
-    value: 0
+    value: 0,
   },
   reducers: {
     increment: (state) => {
@@ -11,7 +11,7 @@ const testSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-      console.log('hello');
+      console.log("hello");
 
       state.value += 1;
     },
@@ -20,8 +20,8 @@ const testSlice = createSlice({
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload;
-    }
-  }
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function

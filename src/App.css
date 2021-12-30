@@ -6,7 +6,7 @@ html {
 }
 body {
   background-color: #ffffff;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   height: 100%;
 }
 #root {
@@ -14,7 +14,7 @@ body {
 }
 a,
 button {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 .App {
   height: 100%;

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Colors from 'tokens/colors';
-import { ReactComponent as TrainLogo } from 'assets/icons/train.svg';
-import { motion } from 'framer-motion';
-import MotionParagraph from 'components/MotionParagraph';
+import styled from "styled-components";
+import Colors from "tokens/colors";
+import { ReactComponent as TrainLogo } from "assets/icons/train.svg";
+import { motion } from "framer-motion";
+import MotionParagraph from "components/MotionParagraph";
 
 export const NextDepartureWrapper = styled(motion.div)`
   border-radius: 0 0 8px 8px;

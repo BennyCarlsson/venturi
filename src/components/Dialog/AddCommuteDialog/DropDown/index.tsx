@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
-import { Location } from 'redux/locationsSlice';
-import { Li, Ul } from './styles';
+import { Fragment } from "react";
+import { Location } from "redux/locationsSlice";
+import { Li, Ul } from "./styles";
 
 type DropDownProps = {
   locations: Location[] | undefined;
@@ -9,8 +9,14 @@ type DropDownProps = {
   show: boolean;
 };
 
-const DropDown = ({ locations, setInput, setLocation, show }: DropDownProps) => {
-  const shouldRender = () => show && Array.isArray(locations) && locations.length > 0;
+const DropDown = ({
+  locations,
+  setInput,
+  setLocation,
+  show,
+}: DropDownProps) => {
+  const shouldRender = () =>
+    show && Array.isArray(locations) && locations.length > 0;
   return (
     <Fragment>
       {shouldRender() && (

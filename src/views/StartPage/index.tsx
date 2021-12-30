@@ -1,10 +1,10 @@
-import { fetchTrip } from 'redux/tripSlice';
-import { useAppDispatch, useAppSelector } from 'hooks/redux';
-import { Fragment, useEffect, useState } from 'react';
-import DepartureBox from './DepartureBox';
-import OtherDepartures from './OtherDepartures';
-import { StartPageWrapper } from './styles';
-import TimeBox from './TimeBox';
+import { fetchTrip } from "redux/tripSlice";
+import { useAppDispatch, useAppSelector } from "hooks/redux";
+import { Fragment, useEffect, useState } from "react";
+import DepartureBox from "./DepartureBox";
+import OtherDepartures from "./OtherDepartures";
+import { StartPageWrapper } from "./styles";
+import TimeBox from "./TimeBox";
 
 //const spaldingsgatan = '9021014006160000';
 //const lillaBommen = '9021014004380000';

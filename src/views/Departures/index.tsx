@@ -1,8 +1,8 @@
-import { showDialog } from 'redux/dialogSlice';
-import CreateCommuteTripCta from './CreateCommuteTripCta';
-import Heading from 'components/Heading';
-import { DeparturesWrapper } from './styles';
-import { useAppDispatch } from 'hooks/redux';
+import { showDialog } from "redux/dialogSlice";
+import CreateCommuteTripCta from "./CreateCommuteTripCta";
+import Heading from "components/Heading";
+import { DeparturesWrapper } from "./styles";
+import { useAppDispatch } from "hooks/redux";
 
 const Departures = () => {
   const dispatch = useAppDispatch();

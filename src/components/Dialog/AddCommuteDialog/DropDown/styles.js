@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import Colors from 'tokens/colors';
+import styled from "styled-components";
+import Colors from "tokens/colors";
 
 export const Ul = styled.ul`
   position: absolute;

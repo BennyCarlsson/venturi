@@ -1,14 +1,14 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import { getTrip } from 'api/vasttrafik/vasttrafik';
-import { GetTripResponse } from 'types';
-import { Location } from './locationsSlice';
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { getTrip } from "api/vasttrafik/vasttrafik";
+import { GetTripResponse } from "types";
+import { Location } from "./locationsSlice";
 
 type tripOrderType = {
   fromId: string;
   toId: string;
 };
 export const fetchTrip = createAsyncThunk(
-  'trip/fetchTrip',
+  "trip/fetchTrip",
   async (tripOrder: tripOrderType, { signal }) => {
     const response = await getTrip(tripOrder.fromId, tripOrder.toId);
     return response;
@@ -37,7 +37,7 @@ const convertData = (data: GetTripResponse): Trip[] | undefined => {
     departureNewTime: trip.Leg.Origin?.rtTime,
     destinationName: trip.Leg.Destination?.name,
     number: trip.Leg.sname,
-    direction: trip.Leg.direction
+    direction: trip.Leg.direction,
   }));
 };
 export interface TripState {
@@ -49,11 +49,11 @@ export interface TripState {
 }
 
 const initialState: TripState = {
-  loading: true
+  loading: true,
 };
 
 const tripSlice = createSlice({
-  name: 'trip',
+  name: "trip",
   initialState,
   reducers: {
     setCurrentTable: (
@@ -62,7 +62,7 @@ const tripSlice = createSlice({
     ) => {
       state.origin = action.payload.origin;
       state.destination = action.payload.destination;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchTrip.fulfilled, (state, action) => {
@@ -73,7 +73,7 @@ const tripSlice = createSlice({
         state.trips = convertData(action.payload as GetTripResponse);
       }
     });
-  }
+  },
 });
 
 export const { setCurrentTable } = tripSlice.actions;

@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from './store';
+import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "./store";
 
 const dialogSlice = createSlice({
-  name: 'dialog',
+  name: "dialog",
   initialState: {
-    show: false
+    show: false,
   },
   reducers: {
     showDialog: (state) => {
@@ -12,8 +12,8 @@ const dialogSlice = createSlice({
     },
     hideDialog: (state) => {
       state.show = false;
-    }
-  }
+    },
+  },
 });
 
 export const { showDialog, hideDialog } = dialogSlice.actions;

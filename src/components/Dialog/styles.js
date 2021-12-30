@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import Colors from 'tokens/colors';
-import { motion } from 'framer-motion';
+import styled from "styled-components";
+import Colors from "tokens/colors";
+import { motion } from "framer-motion";
 
 export const DialogWrapper = styled.div`
   position: absolute;

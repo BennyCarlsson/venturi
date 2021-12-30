@@ -1,7 +1,7 @@
-import Paragraph from 'components/Paragraph';
-import styled from 'styled-components';
-import Colors from 'tokens/colors';
-import { motion } from 'framer-motion';
+import Paragraph from "components/Paragraph";
+import styled from "styled-components";
+import Colors from "tokens/colors";
+import { motion } from "framer-motion";
 
 export const Box = styled.div`
   background-color: ${Colors.vBlack};

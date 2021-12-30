@@ -1,5 +1,5 @@
-import React from 'react';
-import { ButtonWrapper } from './styles';
+import React from "react";
+import { ButtonWrapper } from "./styles";
 
 type ButtonProps = {
   children: React.ReactNode;

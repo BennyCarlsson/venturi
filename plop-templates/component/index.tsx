@@ -1,4 +1,4 @@
-import { MyComponentWrapper } from './styles';
+import { MyComponentWrapper } from "./styles";
 
 type MyComponentProps = {
   title: string;

@@ -1,27 +1,30 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getLocationOName } from 'api/vasttrafik/vasttrafik';
-import { LocationList } from 'types';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getLocationOName } from "api/vasttrafik/vasttrafik";
+import { LocationList } from "types";
 
-const _getLocationOName = async (name: string, { signal }: { signal: AbortSignal }) => {
-  signal.addEventListener('abort', () => {
-    console.log('cancelled');
+const _getLocationOName = async (
+  name: string,
+  { signal }: { signal: AbortSignal }
+) => {
+  signal.addEventListener("abort", () => {
+    console.log("cancelled");
   });
   return getLocationOName(name, signal);
 };
 
 export const fetchDestinationLocationsOnName = createAsyncThunk(
-  'locations/fetchDestinationLocationsOnName',
+  "locations/fetchDestinationLocationsOnName",
   _getLocationOName
 );
 
 export const fetchOriginLocationsOnName = createAsyncThunk(
-  'locations/fetchOriginLocationsOnName',
+  "locations/fetchOriginLocationsOnName",
   _getLocationOName
 );
 
 export enum LocationType {
   StopLocation,
-  CoordLocation
+  CoordLocation,
 }
 
 export type Location = {
@@ -35,7 +38,7 @@ export type Location = {
 
 // Todo extract and write tests
 const convertData = (data: LocationList): Location[] | undefined => {
-  console.log('data', data);
+  console.log("data", data);
   let stopLocations: Location[] = [];
   if (data.StopLocation) {
     if (!Array.isArray(data.StopLocation)) {
@@ -47,7 +50,7 @@ const convertData = (data: LocationList): Location[] | undefined => {
       name: loc.name,
       lat: loc.lat,
       lon: loc.lon,
-      type: LocationType.StopLocation
+      type: LocationType.StopLocation,
     }));
   }
 
@@ -62,10 +65,12 @@ const convertData = (data: LocationList): Location[] | undefined => {
       name: loc.name,
       lat: loc.lat,
       lon: loc.lon,
-      type: LocationType.CoordLocation
+      type: LocationType.CoordLocation,
     }));
   }
-  return stopLocations.concat(coordLocation).sort((a, b) => parseInt(a.idx) - parseInt(b.idx));
+  return stopLocations
+    .concat(coordLocation)
+    .sort((a, b) => parseInt(a.idx) - parseInt(b.idx));
 };
 
 export interface TripState {
@@ -79,11 +84,11 @@ export interface TripState {
 
 const initialState: TripState = {
   loadingOrigin: false,
-  loadingDestination: false
+  loadingDestination: false,
 };
 
 const locationSearchSlice = createSlice({
-  name: 'location',
+  name: "location",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -98,18 +103,24 @@ const locationSearchSlice = createSlice({
         state.originLocations = convertData(action.payload.LocationList);
       }
     });
-    builder.addCase(fetchDestinationLocationsOnName.pending, (state, action) => {
-      state.loadingDestination = true;
-    });
-    builder.addCase(fetchDestinationLocationsOnName.fulfilled, (state, action) => {
-      state.loadingDestination = false;
-      if (action.payload.LocationList.error) {
-        state.destinationError = action.payload.LocationList.errorText;
-      } else {
-        state.destinationLocations = convertData(action.payload.LocationList);
+    builder.addCase(
+      fetchDestinationLocationsOnName.pending,
+      (state, action) => {
+        state.loadingDestination = true;
       }
-    });
-  }
+    );
+    builder.addCase(
+      fetchDestinationLocationsOnName.fulfilled,
+      (state, action) => {
+        state.loadingDestination = false;
+        if (action.payload.LocationList.error) {
+          state.destinationError = action.payload.LocationList.errorText;
+        } else {
+          state.destinationLocations = convertData(action.payload.LocationList);
+        }
+      }
+    );
+  },
 });
 
 export default locationSearchSlice.reducer;

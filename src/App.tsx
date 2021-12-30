@@ -1,13 +1,13 @@
-import './App.css';
-import { Switch, Route, HashRouter } from 'react-router-dom';
-import Departures from 'views/Departures';
-import Destination from 'views/Destination';
-import NotFound from 'views/NotFound';
-import StartPage from 'views/StartPage';
-import Menu from 'Menu';
-import store from './redux/store';
-import { Provider } from 'react-redux';
-import Dialog from 'components/Dialog';
+import "./App.css";
+import { Switch, Route, HashRouter } from "react-router-dom";
+import Departures from "views/Departures";
+import Destination from "views/Destination";
+import NotFound from "views/NotFound";
+import StartPage from "views/StartPage";
+import Menu from "Menu";
+import store from "./redux/store";
+import { Provider } from "react-redux";
+import Dialog from "components/Dialog";
 
 // Todo: use Browser router when not hosting on github pages
 function App() {

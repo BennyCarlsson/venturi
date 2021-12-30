@@ -1,8 +1,8 @@
-import Heading from 'components/Heading';
-import Paragraph from 'components/Paragraph';
-import Colors from 'tokens/colors';
-import { FontWeight } from 'types';
-import TimeUntilDeparture from '../TimeUntilDeparture';
+import Heading from "components/Heading";
+import Paragraph from "components/Paragraph";
+import Colors from "tokens/colors";
+import { FontWeight } from "types";
+import TimeUntilDeparture from "../TimeUntilDeparture";
 
 import {
   TimeBoxWrapper,
@@ -12,8 +12,8 @@ import {
   TimeLocationWrapper,
   NumberAndNameWrapper,
   StyledMapPinLogo,
-  StyledRtTimeHeading
-} from './styles';
+  StyledRtTimeHeading,
+} from "./styles";
 
 type TimeBoxProps = {
   date?: string;
@@ -24,7 +24,15 @@ type TimeBoxProps = {
   direction?: string;
 };
 
-const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: TimeBoxProps) => {
+const TimeBox = ({
+  date,
+  time,
+  rtTime,
+  location,
+  number,
+  direction,
+  ...props
+}: TimeBoxProps) => {
   const isOnTime = () => {
     if (!rtTime) return true;
     if (time !== rtTime) return false;
@@ -41,13 +49,17 @@ const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: 
       <TimeLocationWrapper>
         <LocationWrapper>
           <StyledMapPinLogo />
-          <Paragraph fontSize={14} fontWeight={FontWeight.bold} color={Colors.vBlue}>
+          <Paragraph
+            fontSize={14}
+            fontWeight={FontWeight.bold}
+            color={Colors.vBlue}
+          >
             {location}
           </Paragraph>
         </LocationWrapper>
         <TimeWrapper>
           <Heading
-            headingType={'h2'}
+            headingType={"h2"}
             fontWeight={FontWeight.bold}
             fontSize={48}
             color={getTimeColor()}
@@ -55,7 +67,11 @@ const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: 
             {rtTime ? rtTime : time}
           </Heading>
           {!isOnTime() && (
-            <StyledRtTimeHeading headingType={'h3'} fontWeight={FontWeight.bold} fontSize={18}>
+            <StyledRtTimeHeading
+              headingType={"h3"}
+              fontWeight={FontWeight.bold}
+              fontSize={18}
+            >
               {time}
             </StyledRtTimeHeading>
           )}
@@ -64,7 +80,11 @@ const TimeBox = ({ date, time, rtTime, location, number, direction, ...props }: 
       </TimeLocationWrapper>
       <NumberAndNameWrapper>
         <NumberBox>
-          <Paragraph fontWeight={FontWeight.normal} fontSize={14} color={Colors.white}>
+          <Paragraph
+            fontWeight={FontWeight.normal}
+            fontSize={14}
+            color={Colors.white}
+          >
             {number}
           </Paragraph>
         </NumberBox>

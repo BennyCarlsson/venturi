@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Input = styled.input`
   position: relative;
@@ -8,7 +8,7 @@ export const Input = styled.input`
   border: none;
   border-radius: 0;
   border-bottom: 1px solid #726a95;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-size: 14px;
   line-height: 17px;

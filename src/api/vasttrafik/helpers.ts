@@ -1,4 +1,4 @@
-import { Token } from 'types';
+import { Token } from "types";
 
 export const getExpireTime = (secondsToExpires: number) => {
   let date = new Date();

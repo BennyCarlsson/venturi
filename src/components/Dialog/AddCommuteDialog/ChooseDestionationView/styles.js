@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Button from 'components/Button';
-import Heading from 'components/Heading';
-import Paragraph from 'components/Paragraph';
-import ClosedIconButton from 'components/CloseIconButton';
+import styled from "styled-components";
+import Button from "components/Button";
+import Heading from "components/Heading";
+import Paragraph from "components/Paragraph";
+import ClosedIconButton from "components/CloseIconButton";
 
 export const TopCTAButtonTitleSubtitle = styled.div`
   margin-top: 8px;
