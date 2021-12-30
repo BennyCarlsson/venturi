@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NameCommuteView /> should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-jrAGrp jwoKOl"
+  >
+    <div
+      class="sc-kEjbxe kbqPt"
+    >
+      <button
+        class="sc-fubCfw cfizV sc-kstrdz"
+        data-testid="close-dialog-button"
+      >
+        <svg
+          class="sc-pFZIQ hzDuJt"
+        >
+          chevron-down.svg
+        </svg>
+      </button>
+      <h2
+        class="sc-hKgILt jpaqbD sc-crrsfI jplDhQ"
+        font-size="28"
+      >
+        Your Trip
+      </h2>
+    </div>
+    <p
+      class="sc-bdfBwQ QuMsF"
+      font-size="14"
+    >
+      To kepp track of your trips, a good idea is to name the specific trip you are about to create. It's optional but a good idea.
+    </p>
+    <p
+      class="sc-bdfBwQ kMVXxV sc-iqHYGH JPwUs"
+      font-size="18"
+    >
+      Trip name
+    </p>
+    <input
+      class="sc-dQppl cnQJVq"
+    />
+  </div>
+  <button
+    class="sc-gsTCUz jMcfyH sc-bqyKva dotLk"
+  >
+    Create Commute trip
+  </button>
+</DocumentFragment>
+`;

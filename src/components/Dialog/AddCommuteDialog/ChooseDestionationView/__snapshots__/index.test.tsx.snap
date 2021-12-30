@@ -45,7 +45,7 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
       <input
         class="sc-hKgILt cPLMCW"
         data-testid="from-input"
-        value=""
+        value="Hålta kyrka, Kungälv"
       />
     </div>
     <p
@@ -60,7 +60,7 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
       <input
         class="sc-hKgILt cPLMCW"
         data-testid="to-input"
-        value=""
+        value="Gårda, Mölndal"
       />
     </div>
   </span>

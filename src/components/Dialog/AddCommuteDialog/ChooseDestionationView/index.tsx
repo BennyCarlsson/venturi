@@ -1,15 +1,13 @@
-import Paragraph from 'components/Paragraph';
-import { useAppDispatch, useAppSelector } from 'hooks/redux';
-import React, { useCallback, useRef, useState } from 'react';
+import Paragraph from "components/Paragraph";
+import { useAppDispatch, useAppSelector } from "hooks/redux";
+import React, { useCallback, useRef, useState } from "react";
 import {
   fetchDestinationLocationsOnName,
   fetchOriginLocationsOnName,
-  Location
-} from 'redux/locationsSlice';
-import { setCurrentTable } from 'redux/tripSlice';
-import DropDown from '../DropDown';
-import SearchInput from '../SearchInput';
-import { saveOriginAndDestination } from 'utils/localStorage';
+  Location,
+} from "redux/locationsSlice";
+import DropDown from "../DropDown";
+import SearchInput from "../SearchInput";
 import {
   StyledButton,
   StyledTitleHeading,
@@ -17,9 +15,9 @@ import {
   StyledToParagraph,
   StyledClosedIconButton,
   TopCTAButtonTitleSubtitle,
-  CTAButtonTitleWrapper
-} from './styles';
-import { hideDialog } from 'redux/dialogSlice';
+  CTAButtonTitleWrapper,
+} from "./styles";
+import { hideDialog } from "redux/dialogSlice";
 
 let timeout: any;
 const debounce = (fn: Function, delay: number) => {
@@ -29,19 +27,36 @@ const debounce = (fn: Function, delay: number) => {
   timeout = setTimeout(fn, delay);
 };
 
-type ChooseDestionationViewProps = {};
+type ChooseDestionationViewProps = {
+  goToNameCommuteView: () => void;
+  originLocation: Location | null;
+  setOriginLocation: React.Dispatch<React.SetStateAction<Location | null>>;
+  destinationLocation: Location | null;
+  setDestinationLocation: React.Dispatch<React.SetStateAction<Location | null>>;
+};
 
-const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
-  const [originInput, setOriginInput] = useState('');
+const ChooseDestionationView = ({
+  goToNameCommuteView,
+  originLocation,
+  setOriginLocation,
+  destinationLocation,
+  setDestinationLocation,
+  ...props
+}: ChooseDestionationViewProps) => {
+  const [originInput, setOriginInput] = useState(originLocation?.name || "");
   const [showOriginDropDown, setShowOriginDropDown] = useState(false);
-  const [destinationInput, setDestinationInput] = useState('');
+  const [destinationInput, setDestinationInput] = useState(
+    destinationLocation?.name || ""
+  );
   const [showDestinationDropDown, setShowDestinationDropDown] = useState(false);
-  const [originLocation, setOriginLocation] = useState<Location | null>(null);
-  const [destinationLocation, setDestinationLocation] = useState<Location | null>(null);
 
   const dispatch = useAppDispatch();
-  const originLocations = useAppSelector((state) => state.locations.originLocations);
-  const destinationLocations = useAppSelector((state) => state.locations.destinationLocations);
+  const originLocations = useAppSelector(
+    (state) => state.locations.originLocations
+  );
+  const destinationLocations = useAppSelector(
+    (state) => state.locations.destinationLocations
+  );
   const loading = useAppSelector((state) => state.locations.loadingDestination);
   const error = useAppSelector((state) => state.locations.destinationError);
   let promise = useRef<any>();
@@ -101,13 +116,13 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
                 dispatch(hideDialog());
               }}
             />
-            <StyledTitleHeading headingType={'h2'} fontSize={28}>
+            <StyledTitleHeading headingType={"h2"} fontSize={28}>
               Destinations
             </StyledTitleHeading>
           </CTAButtonTitleWrapper>
           <Paragraph fontSize={14}>
-            Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett
-            senare tillfälle.
+            Välj destinationer för din resa. Du kan alltid ändra eller lägga
+            till flera vid ett senare tillfälle.
           </Paragraph>
         </TopCTAButtonTitleSubtitle>
         <Paragraph fontSize={18}>Från</Paragraph>
@@ -143,12 +158,9 @@ const ChooseDestionationView = ({ ...props }: ChooseDestionationViewProps) => {
       </span>
       <StyledButton
         onClick={() => {
-          if (originLocation && destinationLocation)
-            dispatch(setCurrentTable({ origin: originLocation, destination: destinationLocation }));
-          saveOriginAndDestination({
-            origin: originLocation as Location,
-            destination: destinationLocation as Location
-          });
+          if (originLocation && destinationLocation) {
+            goToNameCommuteView();
+          }
         }}
       >
         Namnge din resa
