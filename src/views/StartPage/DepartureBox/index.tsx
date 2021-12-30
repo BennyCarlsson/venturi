@@ -1,9 +1,9 @@
-import Heading from "components/Heading";
-import MotionHeading from "components/MotionHeading";
-import MotionParagraph from "components/MotionParagraph";
-import { motion } from "framer-motion";
-import Colors from "tokens/colors";
-import { FontWeight } from "types";
+import Heading from 'components/Heading'
+import MotionHeading from 'components/MotionHeading'
+import MotionParagraph from 'components/MotionParagraph'
+import { motion } from 'framer-motion'
+import Colors from 'tokens/colors'
+import { FontWeight } from 'types'
 import {
   BottomPart,
   BottomParagraph,
@@ -13,32 +13,32 @@ import {
   NextDepartureWrapper,
   StyledTrailLogo,
   TopPart,
-} from "./styles";
+} from './styles'
 
 type NextDepartureBoxProps = {
-  name: string | undefined;
-  track: string | undefined;
-  slim: boolean;
-};
+  name: string | undefined
+  track: string | undefined
+  slim: boolean
+}
 
 //TODO: alternative routes?
 const DepartureBox = ({ name, track, slim }: NextDepartureBoxProps) => {
-  const variant = {};
-  const hide = { slim: { opacity: 0, y: -5 }, big: {} };
-  const topPart = { slim: { paddingTop: 0 } };
-  const bottomPart = { slim: { paddingTop: 0 } };
+  const variant = {}
+  const hide = { slim: { opacity: 0, y: -5 }, big: {} }
+  const topPart = { slim: { paddingTop: 0 } }
+  const bottomPart = { slim: { paddingTop: 0 } }
 
   return (
     <NextDepartureWrapper
       variants={variant}
-      animate={slim ? "slim" : "big"}
-      initial="initial"
+      animate={slim ? 'slim' : 'big'}
+      initial='initial'
     >
       <TopPart variants={topPart}>
         <motion.span variants={hide}>
           <MotionHeading
             variants={hide}
-            headingType={"h1"}
+            headingType={'h1'}
             fontWeight={FontWeight.medium}
             fontSize={18}
             color={Colors.white}
@@ -50,7 +50,7 @@ const DepartureBox = ({ name, track, slim }: NextDepartureBoxProps) => {
           {/* Todo: icon after type */}
           <StyledTrailLogo />
           <Heading
-            headingType={"h2"}
+            headingType={'h2'}
             fontWeight={FontWeight.medium}
             fontSize={28}
             color={Colors.white}
@@ -100,7 +100,7 @@ const DepartureBox = ({ name, track, slim }: NextDepartureBoxProps) => {
         </BottomRightPart>
       </BottomPart>
     </NextDepartureWrapper>
-  );
-};
+  )
+}
 
-export default DepartureBox;
+export default DepartureBox

@@ -1,8 +1,8 @@
-import Paragraph from "components/Paragraph";
-import Colors from "tokens/colors";
-import { FontWeight } from "types";
-import { Trip } from "redux/tripSlice";
-import ChevronIcon from "./ChevronIcon";
+import Paragraph from 'components/Paragraph'
+import Colors from 'tokens/colors'
+import { FontWeight } from 'types'
+import { Trip } from 'redux/tripSlice'
+import ChevronIcon from './ChevronIcon'
 import {
   Box,
   DepartureWrapper,
@@ -12,33 +12,33 @@ import {
   TitleParagraph,
   Top,
   Content,
-} from "./styles";
+} from './styles'
 
 type Departures = {
-  handleOnClick: () => void;
-  showContent: boolean;
-  trips: Trip[];
-};
+  handleOnClick: () => void
+  showContent: boolean
+  trips: Trip[]
+}
 
 const OtherDepartures = ({ handleOnClick, showContent, trips }: Departures) => {
   const variant = {
     initial: { height: 0 },
     animate: {
-      height: showContent ? "fit-content" : 0,
+      height: showContent ? 'fit-content' : 0,
       transition: { duration: 0.3 },
     },
-  };
+  }
 
   const chevron = {
     animate: { rotate: showContent ? 180 : 0, transition: { duration: 0.2 } },
-  };
+  }
 
   return (
     <Box>
       <Top
         onClick={(e) => {
-          e.preventDefault();
-          handleOnClick();
+          e.preventDefault()
+          handleOnClick()
         }}
       >
         <span />
@@ -50,10 +50,10 @@ const OtherDepartures = ({ handleOnClick, showContent, trips }: Departures) => {
         >
           Other departures
         </TitleParagraph>
-        <ChevronIcon variants={chevron} animate={"animate"} />
+        <ChevronIcon variants={chevron} animate={'animate'} />
       </Top>
 
-      <Content variants={variant} animate={"animate"} initial={"initial"}>
+      <Content variants={variant} animate={'animate'} initial={'initial'}>
         {trips.map((trip) => {
           //Todo leg can be an array of legs if trip contains multiple steps
           return (
@@ -70,11 +70,11 @@ const OtherDepartures = ({ handleOnClick, showContent, trips }: Departures) => {
                 <Paragraph fontSize={14}>{trip.number}</Paragraph>
               </NameBox>
             </DepartureWrapper>
-          );
+          )
         })}
       </Content>
     </Box>
-  );
-};
+  )
+}
 
-export default OtherDepartures;
+export default OtherDepartures

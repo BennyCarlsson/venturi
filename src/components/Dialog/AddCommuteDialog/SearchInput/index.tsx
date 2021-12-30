@@ -1,11 +1,11 @@
-import { Dispatch, SetStateAction } from "react";
-import { Input } from "./styles";
+import { Dispatch, SetStateAction } from 'react'
+import { Input } from './styles'
 
 type SearchInputProps = {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  setShowDropDown: Dispatch<SetStateAction<boolean>>;
-};
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  setShowDropDown: Dispatch<SetStateAction<boolean>>
+}
 
 const SearchInput = ({
   value,
@@ -20,16 +20,16 @@ const SearchInput = ({
       onChange={onChange}
       onBlur={() => {
         setTimeout(() => {
-          setShowDropDown(false);
-        }, 100);
+          setShowDropDown(false)
+        }, 100)
       }}
       onFocus={() => {
         if (value.length > 1) {
-          setShowDropDown(true);
+          setShowDropDown(true)
         }
       }}
     />
-  );
-};
+  )
+}
 
-export default SearchInput;
+export default SearchInput

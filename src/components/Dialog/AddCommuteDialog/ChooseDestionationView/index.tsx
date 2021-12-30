@@ -1,13 +1,13 @@
-import Paragraph from "components/Paragraph";
-import { useAppDispatch, useAppSelector } from "hooks/redux";
-import React, { useCallback, useRef, useState } from "react";
+import Paragraph from 'components/Paragraph'
+import { useAppDispatch, useAppSelector } from 'hooks/redux'
+import React, { useCallback, useRef, useState } from 'react'
 import {
   fetchDestinationLocationsOnName,
   fetchOriginLocationsOnName,
   Location,
-} from "redux/locationsSlice";
-import DropDown from "../DropDown";
-import SearchInput from "../SearchInput";
+} from 'redux/locationsSlice'
+import DropDown from '../DropDown'
+import SearchInput from '../SearchInput'
 import {
   StyledButton,
   StyledTitleHeading,
@@ -16,24 +16,24 @@ import {
   StyledClosedIconButton,
   TopCTAButtonTitleSubtitle,
   CTAButtonTitleWrapper,
-} from "./styles";
-import { hideDialog } from "redux/dialogSlice";
+} from './styles'
+import { hideDialog } from 'redux/dialogSlice'
 
-let timeout: any;
+let timeout: any
 const debounce = (fn: Function, delay: number) => {
   if (timeout !== undefined) {
-    clearTimeout(timeout);
+    clearTimeout(timeout)
   }
-  timeout = setTimeout(fn, delay);
-};
+  timeout = setTimeout(fn, delay)
+}
 
 type ChooseDestionationViewProps = {
-  goToNameCommuteView: () => void;
-  originLocation: Location | null;
-  setOriginLocation: React.Dispatch<React.SetStateAction<Location | null>>;
-  destinationLocation: Location | null;
-  setDestinationLocation: React.Dispatch<React.SetStateAction<Location | null>>;
-};
+  goToNameCommuteView: () => void
+  originLocation: Location | null
+  setOriginLocation: React.Dispatch<React.SetStateAction<Location | null>>
+  destinationLocation: Location | null
+  setDestinationLocation: React.Dispatch<React.SetStateAction<Location | null>>
+}
 
 const ChooseDestionationView = ({
   goToNameCommuteView,
@@ -43,80 +43,80 @@ const ChooseDestionationView = ({
   setDestinationLocation,
   ...props
 }: ChooseDestionationViewProps) => {
-  const [originInput, setOriginInput] = useState(originLocation?.name || "");
-  const [showOriginDropDown, setShowOriginDropDown] = useState(false);
+  const [originInput, setOriginInput] = useState(originLocation?.name || '')
+  const [showOriginDropDown, setShowOriginDropDown] = useState(false)
   const [destinationInput, setDestinationInput] = useState(
-    destinationLocation?.name || ""
-  );
-  const [showDestinationDropDown, setShowDestinationDropDown] = useState(false);
+    destinationLocation?.name || ''
+  )
+  const [showDestinationDropDown, setShowDestinationDropDown] = useState(false)
 
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
   const originLocations = useAppSelector(
     (state) => state.locations.originLocations
-  );
+  )
   const destinationLocations = useAppSelector(
     (state) => state.locations.destinationLocations
-  );
-  const loading = useAppSelector((state) => state.locations.loadingDestination);
-  const error = useAppSelector((state) => state.locations.destinationError);
-  let promise = useRef<any>();
+  )
+  const loading = useAppSelector((state) => state.locations.loadingDestination)
+  const error = useAppSelector((state) => state.locations.destinationError)
+  let promise = useRef<any>()
 
   const originInputOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setOriginInput(value);
+    const value = e.target.value
+    setOriginInput(value)
     debounce(() => {
-      requestOrigin(value);
-    }, 500);
-  };
+      requestOrigin(value)
+    }, 500)
+  }
 
   const requestOrigin = useCallback(
     (value: string) => {
       if (value.length > 1) {
         if (promise.current && !error && loading) {
-          promise.current.abort();
+          promise.current.abort()
         }
-        setShowOriginDropDown(true);
-        promise.current = dispatch(fetchOriginLocationsOnName(value));
+        setShowOriginDropDown(true)
+        promise.current = dispatch(fetchOriginLocationsOnName(value))
       } else {
-        setShowOriginDropDown(false);
+        setShowOriginDropDown(false)
       }
     },
     [dispatch, error, loading]
-  );
+  )
 
   const destinationOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setDestinationInput(value);
+    const value = e.target.value
+    setDestinationInput(value)
     debounce(() => {
-      requestDestination(value);
-    }, 500);
-  };
+      requestDestination(value)
+    }, 500)
+  }
   const requestDestination = useCallback(
     (value: string) => {
       if (value.length > 1) {
         if (promise.current && !error && loading) {
-          promise.current.abort();
+          promise.current.abort()
         }
-        setShowDestinationDropDown(true);
-        promise.current = dispatch(fetchDestinationLocationsOnName(value));
+        setShowDestinationDropDown(true)
+        promise.current = dispatch(fetchDestinationLocationsOnName(value))
       } else {
-        setShowDestinationDropDown(false);
+        setShowDestinationDropDown(false)
       }
     },
     [dispatch, error, loading]
-  );
+  )
   return (
     <React.Fragment {...props}>
       <span>
         <TopCTAButtonTitleSubtitle>
           <CTAButtonTitleWrapper>
             <StyledClosedIconButton
-              data-testid="close-dialog-button"
+              data-testid='close-dialog-button'
               onClick={(e) => {
-                dispatch(hideDialog());
+                dispatch(hideDialog())
               }}
             />
-            <StyledTitleHeading headingType={"h2"} fontSize={28}>
+            <StyledTitleHeading headingType={'h2'} fontSize={28}>
               Destinations
             </StyledTitleHeading>
           </CTAButtonTitleWrapper>
@@ -128,7 +128,7 @@ const ChooseDestionationView = ({
         <Paragraph fontSize={18}>Från</Paragraph>
         <InputDropDownWrapper>
           <SearchInput
-            data-testid="from-input"
+            data-testid='from-input'
             value={originInput}
             onChange={originInputOnChange}
             setShowDropDown={setShowOriginDropDown}
@@ -143,7 +143,7 @@ const ChooseDestionationView = ({
         <StyledToParagraph fontSize={18}>Till</StyledToParagraph>
         <InputDropDownWrapper>
           <SearchInput
-            data-testid="to-input"
+            data-testid='to-input'
             value={destinationInput}
             onChange={destinationOnChange}
             setShowDropDown={setShowDestinationDropDown}
@@ -159,7 +159,7 @@ const ChooseDestionationView = ({
       <StyledButton
         onClick={() => {
           if (originLocation && destinationLocation) {
-            goToNameCommuteView();
+            goToNameCommuteView()
           }
         }}
       >
@@ -167,7 +167,7 @@ const ChooseDestionationView = ({
       </StyledButton>
       {error && <h2>{error}</h2>}
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default ChooseDestionationView;
+export default ChooseDestionationView

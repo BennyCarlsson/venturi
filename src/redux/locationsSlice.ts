@@ -1,26 +1,26 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getLocationOName } from "api/vasttrafik/vasttrafik";
-import { LocationList } from "types";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { getLocationOName } from 'api/vasttrafik/vasttrafik'
+import { LocationList } from 'types'
 
 const _getLocationOName = async (
   name: string,
   { signal }: { signal: AbortSignal }
 ) => {
-  signal.addEventListener("abort", () => {
-    console.log("cancelled");
-  });
-  return getLocationOName(name, signal);
-};
+  signal.addEventListener('abort', () => {
+    console.log('cancelled')
+  })
+  return getLocationOName(name, signal)
+}
 
 export const fetchDestinationLocationsOnName = createAsyncThunk(
-  "locations/fetchDestinationLocationsOnName",
+  'locations/fetchDestinationLocationsOnName',
   _getLocationOName
-);
+)
 
 export const fetchOriginLocationsOnName = createAsyncThunk(
-  "locations/fetchOriginLocationsOnName",
+  'locations/fetchOriginLocationsOnName',
   _getLocationOName
-);
+)
 
 export enum LocationType {
   StopLocation,
@@ -28,21 +28,21 @@ export enum LocationType {
 }
 
 export type Location = {
-  id: string;
-  idx: string;
-  name: string;
-  lat: string;
-  lon: string;
-  type: LocationType;
-};
+  id: string
+  idx: string
+  name: string
+  lat: string
+  lon: string
+  type: LocationType
+}
 
 // Todo extract and write tests
 const convertData = (data: LocationList): Location[] | undefined => {
-  console.log("data", data);
-  let stopLocations: Location[] = [];
+  console.log('data', data)
+  let stopLocations: Location[] = []
   if (data.StopLocation) {
     if (!Array.isArray(data.StopLocation)) {
-      data.StopLocation = [data.StopLocation];
+      data.StopLocation = [data.StopLocation]
     }
     stopLocations = data.StopLocation?.map((loc) => ({
       id: loc.id,
@@ -51,13 +51,13 @@ const convertData = (data: LocationList): Location[] | undefined => {
       lat: loc.lat,
       lon: loc.lon,
       type: LocationType.StopLocation,
-    }));
+    }))
   }
 
-  let coordLocation: Location[] = [];
+  let coordLocation: Location[] = []
   if (data.CoordLocation) {
     if (!Array.isArray(data.CoordLocation)) {
-      data.CoordLocation = [data.CoordLocation];
+      data.CoordLocation = [data.CoordLocation]
     }
     coordLocation = data.CoordLocation?.map((loc) => ({
       id: loc.name,
@@ -66,61 +66,61 @@ const convertData = (data: LocationList): Location[] | undefined => {
       lat: loc.lat,
       lon: loc.lon,
       type: LocationType.CoordLocation,
-    }));
+    }))
   }
   return stopLocations
     .concat(coordLocation)
-    .sort((a, b) => parseInt(a.idx) - parseInt(b.idx));
-};
+    .sort((a, b) => parseInt(a.idx) - parseInt(b.idx))
+}
 
 export interface TripState {
-  loadingOrigin: boolean;
-  originLocations?: Location[];
-  originError?: string;
-  loadingDestination: boolean;
-  destinationLocations?: Location[];
-  destinationError?: string;
+  loadingOrigin: boolean
+  originLocations?: Location[]
+  originError?: string
+  loadingDestination: boolean
+  destinationLocations?: Location[]
+  destinationError?: string
 }
 
 const initialState: TripState = {
   loadingOrigin: false,
   loadingDestination: false,
-};
+}
 
 const locationSearchSlice = createSlice({
-  name: "location",
+  name: 'location',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOriginLocationsOnName.pending, (state, action) => {
-      state.loadingOrigin = true;
-    });
+      state.loadingOrigin = true
+    })
     builder.addCase(fetchOriginLocationsOnName.fulfilled, (state, action) => {
-      state.loadingOrigin = false;
+      state.loadingOrigin = false
       if (action.payload.LocationList.error) {
-        state.originError = action.payload.LocationList.errorText;
+        state.originError = action.payload.LocationList.errorText
       } else {
-        state.originLocations = convertData(action.payload.LocationList);
+        state.originLocations = convertData(action.payload.LocationList)
       }
-    });
+    })
     builder.addCase(
       fetchDestinationLocationsOnName.pending,
       (state, action) => {
-        state.loadingDestination = true;
+        state.loadingDestination = true
       }
-    );
+    )
     builder.addCase(
       fetchDestinationLocationsOnName.fulfilled,
       (state, action) => {
-        state.loadingDestination = false;
+        state.loadingDestination = false
         if (action.payload.LocationList.error) {
-          state.destinationError = action.payload.LocationList.errorText;
+          state.destinationError = action.payload.LocationList.errorText
         } else {
-          state.destinationLocations = convertData(action.payload.LocationList);
+          state.destinationLocations = convertData(action.payload.LocationList)
         }
       }
-    );
+    )
   },
-});
+})
 
-export default locationSearchSlice.reducer;
+export default locationSearchSlice.reducer

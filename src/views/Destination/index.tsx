@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
 function Destination() {
-  return <div>Destination</div>;
+  return <div>Destination</div>
 }
 
-export default Destination;
+export default Destination

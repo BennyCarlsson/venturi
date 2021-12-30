@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Colors from "tokens/colors";
+import styled from 'styled-components'
+import Colors from 'tokens/colors'
 
 export const ButtonWrapper = styled.button`
   border: none;
@@ -14,4 +14,4 @@ export const ButtonWrapper = styled.button`
   font-weight: normal;
   padding: 0;
   cursor: pointer;
-`;
+`

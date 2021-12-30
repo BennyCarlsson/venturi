@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Colors from "tokens/colors";
+import styled from 'styled-components'
+import Colors from 'tokens/colors'
 
 export const StartPageWrapper = styled.div`
   background-color: ${Colors.white};
@@ -7,4 +7,4 @@ export const StartPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
+`

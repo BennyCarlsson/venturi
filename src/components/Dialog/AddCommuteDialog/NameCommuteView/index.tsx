@@ -1,5 +1,5 @@
-import Paragraph from "components/Paragraph";
-import React from "react";
+import Paragraph from 'components/Paragraph'
+import React from 'react'
 import {
   CTAButtonTitleWrapper,
   Input,
@@ -8,12 +8,12 @@ import {
   StyledParagraph,
   StyledTitleHeading,
   TopCTAButtonTitleSubtitle,
-} from "./styles";
+} from './styles'
 
 type NameCommuteViewProps = {
-  createTrip: () => void;
-  goToChooseDestionationView: () => void;
-};
+  createTrip: () => void
+  goToChooseDestionationView: () => void
+}
 
 const NameCommuteView = ({
   createTrip,
@@ -25,12 +25,12 @@ const NameCommuteView = ({
       <TopCTAButtonTitleSubtitle>
         <CTAButtonTitleWrapper>
           <StyledClosedIconButton
-            data-testid="close-dialog-button"
+            data-testid='close-dialog-button'
             onClick={(e) => {
-              goToChooseDestionationView();
+              goToChooseDestionationView()
             }}
           />
-          <StyledTitleHeading headingType={"h2"} fontSize={28}>
+          <StyledTitleHeading headingType={'h2'} fontSize={28}>
             Your Trip
           </StyledTitleHeading>
         </CTAButtonTitleWrapper>
@@ -43,7 +43,7 @@ const NameCommuteView = ({
       </TopCTAButtonTitleSubtitle>
       <StyledButton onClick={createTrip}>Create Commute trip</StyledButton>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default NameCommuteView;
+export default NameCommuteView

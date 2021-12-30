@@ -1,5 +1,5 @@
 const spacings = {
-  bottomMenuHeight: "64px",
-};
+  bottomMenuHeight: '64px',
+}
 
-export default spacings;
+export default spacings

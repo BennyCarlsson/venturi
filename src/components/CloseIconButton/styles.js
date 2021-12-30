@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { ReactComponent as XIcon } from "assets/icons/chevron-down.svg";
-import Colors from "tokens/colors";
+import styled from 'styled-components'
+import { ReactComponent as XIcon } from 'assets/icons/chevron-down.svg'
+import Colors from 'tokens/colors'
 
 export const CloseIconButtonWrapper = styled.button`
   height: 38px;
@@ -10,9 +10,9 @@ export const CloseIconButtonWrapper = styled.button`
   border: none;
   background-color: ${Colors.vBlue};
   cursor: pointer;
-`;
+`
 
 export const StyledXIcon = styled(XIcon)`
   stroke: ${Colors.white};
   transform: rotate(90deg);
-`;
+`

@@ -1,13 +1,13 @@
-import { Fragment } from "react";
-import { Location } from "redux/locationsSlice";
-import { Li, Ul } from "./styles";
+import { Fragment } from 'react'
+import { Location } from 'redux/locationsSlice'
+import { Li, Ul } from './styles'
 
 type DropDownProps = {
-  locations: Location[] | undefined;
-  setInput: (value: React.SetStateAction<string>) => void;
-  setLocation: (value: React.SetStateAction<Location | null>) => void;
-  show: boolean;
-};
+  locations: Location[] | undefined
+  setInput: (value: React.SetStateAction<string>) => void
+  setLocation: (value: React.SetStateAction<Location | null>) => void
+  show: boolean
+}
 
 const DropDown = ({
   locations,
@@ -16,7 +16,7 @@ const DropDown = ({
   show,
 }: DropDownProps) => {
   const shouldRender = () =>
-    show && Array.isArray(locations) && locations.length > 0;
+    show && Array.isArray(locations) && locations.length > 0
   return (
     <Fragment>
       {shouldRender() && (
@@ -25,9 +25,9 @@ const DropDown = ({
             <Li
               key={`key-${loc.id}`}
               onClick={(e) => {
-                e.preventDefault();
-                setInput(loc.name);
-                setLocation(loc);
+                e.preventDefault()
+                setInput(loc.name)
+                setLocation(loc)
               }}
             >
               {loc.name}
@@ -36,7 +36,7 @@ const DropDown = ({
         </Ul>
       )}
     </Fragment>
-  );
-};
+  )
+}
 
-export default DropDown;
+export default DropDown

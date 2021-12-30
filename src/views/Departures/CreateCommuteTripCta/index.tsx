@@ -1,20 +1,20 @@
-import Colors from "tokens/colors";
+import Colors from 'tokens/colors'
 import {
   CreateCommuteTripCtaWrapper,
   StyledParagraph,
   StyledPlusIcon,
-} from "./styles";
+} from './styles'
 
 type CreateCommuteTripCtaProps = {
-  onClick: () => void;
-};
+  onClick: () => void
+}
 
 const CreateCommuteTripCta = ({ onClick }: CreateCommuteTripCtaProps) => {
   return (
     <CreateCommuteTripCtaWrapper
       onClick={(e) => {
-        e.preventDefault();
-        onClick();
+        e.preventDefault()
+        onClick()
       }}
     >
       <StyledPlusIcon />
@@ -22,7 +22,7 @@ const CreateCommuteTripCta = ({ onClick }: CreateCommuteTripCtaProps) => {
         Create commute trip
       </StyledParagraph>
     </CreateCommuteTripCtaWrapper>
-  );
-};
+  )
+}
 
-export default CreateCommuteTripCta;
+export default CreateCommuteTripCta

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import Colors from "tokens/colors";
-import { motion } from "framer-motion";
+import styled from 'styled-components'
+import Colors from 'tokens/colors'
+import { motion } from 'framer-motion'
 
 export const DialogWrapper = styled.div`
   position: absolute;
@@ -10,7 +10,7 @@ export const DialogWrapper = styled.div`
   height: 100%;
   padding: 8px 8px 16px 8px;
   background-color: ${Colors.vBlue};
-`;
+`
 
 export const InnerWrapper = styled(motion.div)`
   position: relative;
@@ -18,4 +18,4 @@ export const InnerWrapper = styled(motion.div)`
   width: 100%;
   border-radius: 8px;
   background-color: ${Colors.white};
-`;
+`

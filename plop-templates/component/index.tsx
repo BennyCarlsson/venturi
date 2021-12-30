@@ -1,11 +1,11 @@
-import { MyComponentWrapper } from "./styles";
+import { MyComponentWrapper } from './styles'
 
 type MyComponentProps = {
-  title: string;
-};
+  title: string
+}
 
 const MyComponent = ({ title, ...props }: MyComponentProps) => {
-  return <MyComponentWrapper {...props}>{title}</MyComponentWrapper>;
-};
+  return <MyComponentWrapper {...props}>{title}</MyComponentWrapper>
+}
 
-export default MyComponent;
+export default MyComponent

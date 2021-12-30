@@ -38,7 +38,7 @@ exports[`<NameCommuteView /> should match snapshot 1`] = `
       Trip name
     </p>
     <input
-      class="sc-dQppl cnQJVq"
+      class="sc-dQppl gUpTvy"
     />
   </div>
   <button

@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Colors from "tokens/colors";
+import styled from 'styled-components'
+import Colors from 'tokens/colors'
 
 export const Ul = styled.ul`
   position: absolute;
@@ -10,7 +10,7 @@ export const Ul = styled.ul`
   margin: 0;
   padding: 8px;
   border: 1px solid #726a95;
-`;
+`
 
 export const Li = styled.li`
   padding: 8px 0;
@@ -18,4 +18,4 @@ export const Li = styled.li`
   &:hover {
     background-color: #fafafa;
   }
-`;
+`

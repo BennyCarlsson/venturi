@@ -1,8 +1,8 @@
-import Heading from "components/Heading";
-import Paragraph from "components/Paragraph";
-import Colors from "tokens/colors";
-import { FontWeight } from "types";
-import TimeUntilDeparture from "../TimeUntilDeparture";
+import Heading from 'components/Heading'
+import Paragraph from 'components/Paragraph'
+import Colors from 'tokens/colors'
+import { FontWeight } from 'types'
+import TimeUntilDeparture from '../TimeUntilDeparture'
 
 import {
   TimeBoxWrapper,
@@ -13,16 +13,16 @@ import {
   NumberAndNameWrapper,
   StyledMapPinLogo,
   StyledRtTimeHeading,
-} from "./styles";
+} from './styles'
 
 type TimeBoxProps = {
-  date?: string;
-  time?: string;
-  rtTime?: string;
-  location?: string;
-  number?: string;
-  direction?: string;
-};
+  date?: string
+  time?: string
+  rtTime?: string
+  location?: string
+  number?: string
+  direction?: string
+}
 
 const TimeBox = ({
   date,
@@ -34,15 +34,15 @@ const TimeBox = ({
   ...props
 }: TimeBoxProps) => {
   const isOnTime = () => {
-    if (!rtTime) return true;
-    if (time !== rtTime) return false;
-    return true;
-  };
+    if (!rtTime) return true
+    if (time !== rtTime) return false
+    return true
+  }
 
   const getTimeColor = () => {
-    if (isOnTime()) return Colors.vBlue;
-    return Colors.vRed;
-  };
+    if (isOnTime()) return Colors.vBlue
+    return Colors.vRed
+  }
 
   return (
     <TimeBoxWrapper {...props}>
@@ -59,7 +59,7 @@ const TimeBox = ({
         </LocationWrapper>
         <TimeWrapper>
           <Heading
-            headingType={"h2"}
+            headingType={'h2'}
             fontWeight={FontWeight.bold}
             fontSize={48}
             color={getTimeColor()}
@@ -68,7 +68,7 @@ const TimeBox = ({
           </Heading>
           {!isOnTime() && (
             <StyledRtTimeHeading
-              headingType={"h3"}
+              headingType={'h3'}
               fontWeight={FontWeight.bold}
               fontSize={18}
             >
@@ -93,7 +93,7 @@ const TimeBox = ({
         </Paragraph>
       </NumberAndNameWrapper>
     </TimeBoxWrapper>
-  );
-};
+  )
+}
 
-export default TimeBox;
+export default TimeBox

@@ -43,7 +43,7 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
       class="sc-hBEYos hgFzca"
     >
       <input
-        class="sc-hKgILt hNkSSW"
+        class="sc-hKgILt cPLMCW"
         data-testid="from-input"
         value="Hålta kyrka, Kungälv"
       />
@@ -58,7 +58,7 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
       class="sc-hBEYos hgFzca"
     >
       <input
-        class="sc-hKgILt hNkSSW"
+        class="sc-hKgILt cPLMCW"
         data-testid="to-input"
         value="Gårda, Mölndal"
       />

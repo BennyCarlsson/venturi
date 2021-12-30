@@ -1,10 +1,10 @@
-import { fetchTrip } from "redux/tripSlice";
-import { useAppDispatch, useAppSelector } from "hooks/redux";
-import { Fragment, useEffect, useState } from "react";
-import DepartureBox from "./DepartureBox";
-import OtherDepartures from "./OtherDepartures";
-import { StartPageWrapper } from "./styles";
-import TimeBox from "./TimeBox";
+import { fetchTrip } from 'redux/tripSlice'
+import { useAppDispatch, useAppSelector } from 'hooks/redux'
+import { Fragment, useEffect, useState } from 'react'
+import DepartureBox from './DepartureBox'
+import OtherDepartures from './OtherDepartures'
+import { StartPageWrapper } from './styles'
+import TimeBox from './TimeBox'
 
 //const spaldingsgatan = '9021014006160000';
 //const lillaBommen = '9021014004380000';
@@ -12,23 +12,23 @@ import TimeBox from "./TimeBox";
 //const shouldShowRtTime = () => Origin?.rtTime !== Origin?.time;
 
 const StartPage = () => {
-  const dispatch = useAppDispatch();
-  const origin = useAppSelector((state) => state.trip.origin);
-  const destination = useAppSelector((state) => state.trip.destination);
-  const trips = useAppSelector((state) => state.trip.trips);
-  const error = useAppSelector((state) => state.trip.error);
-  const [showOtherDepartures, setShowOtherDepartures] = useState(false);
+  const dispatch = useAppDispatch()
+  const origin = useAppSelector((state) => state.trip.origin)
+  const destination = useAppSelector((state) => state.trip.destination)
+  const trips = useAppSelector((state) => state.trip.trips)
+  const error = useAppSelector((state) => state.trip.error)
+  const [showOtherDepartures, setShowOtherDepartures] = useState(false)
 
   const handleShowOtherDeparturesClick = () => {
-    setShowOtherDepartures((prevState) => !prevState);
-  };
+    setShowOtherDepartures((prevState) => !prevState)
+  }
 
   useEffect(() => {
     // Todo: check type some placec can't be searcherd on id
     if (origin?.id && destination?.id) {
-      dispatch(fetchTrip({ fromId: origin?.id, toId: destination?.id }));
+      dispatch(fetchTrip({ fromId: origin?.id, toId: destination?.id }))
     }
-  }, [dispatch, origin, destination]);
+  }, [dispatch, origin, destination])
 
   return (
     <StartPageWrapper>
@@ -57,7 +57,7 @@ const StartPage = () => {
       )}
       {error && <h2>{error}</h2>}
     </StartPageWrapper>
-  );
-};
+  )
+}
 
-export default StartPage;
+export default StartPage

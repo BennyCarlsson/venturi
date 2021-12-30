@@ -116,9 +116,9 @@ button {
   text-transform: none;
 }
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 fieldset {
@@ -146,11 +146,11 @@ textarea {
   overflow: auto;
   resize: vertical;
 }
-[type="checkbox"],
-[type="radio"] {
+[type='checkbox'],
+[type='radio'] {
   padding: 0;
 }
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
@@ -226,20 +226,20 @@ textarea,
 [hidden] {
   display: none;
 }
-[aria-busy="true"] {
+[aria-busy='true'] {
   cursor: progress;
 }
 [aria-controls] {
   cursor: pointer;
 }
-[aria-disabled="true"],
+[aria-disabled='true'],
 [disabled] {
   cursor: not-allowed;
 }
-[aria-hidden="false"][hidden] {
+[aria-hidden='false'][hidden] {
   display: initial;
 }
-[aria-hidden="false"][hidden]:not(:focus) {
+[aria-hidden='false'][hidden]:not(:focus) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
