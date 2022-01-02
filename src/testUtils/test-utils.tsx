@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
 import locationsReducer from '../redux/locationsSlice'
-import testReducer from '../redux/testSlice'
 import tripReducer from '../redux/tripSlice'
 import dialogReducer from '../redux/dialogSlice'
 import { render as rtlRender, RenderOptions } from '@testing-library/react'
@@ -18,7 +17,6 @@ function render(
 ) {
   const store = configureStore({
     reducer: {
-      test: testReducer,
       trip: tripReducer,
       locations: locationsReducer,
       dialog: dialogReducer,
