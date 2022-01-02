@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/venturi/static/css/main.6ffd26e0.chunk.css",
-    "main.js": "/venturi/static/js/main.382ad144.chunk.js",
-    "main.js.map": "/venturi/static/js/main.382ad144.chunk.js.map",
+    "main.css": "/venturi/static/css/main.c45161f8.chunk.css",
+    "main.js": "/venturi/static/js/main.d9b5456b.chunk.js",
+    "main.js.map": "/venturi/static/js/main.d9b5456b.chunk.js.map",
     "runtime-main.js": "/venturi/static/js/runtime-main.19d06a6f.js",
     "runtime-main.js.map": "/venturi/static/js/runtime-main.19d06a6f.js.map",
-    "static/js/2.651d9437.chunk.js": "/venturi/static/js/2.651d9437.chunk.js",
-    "static/js/2.651d9437.chunk.js.map": "/venturi/static/js/2.651d9437.chunk.js.map",
+    "static/js/2.a24046e1.chunk.js": "/venturi/static/js/2.a24046e1.chunk.js",
+    "static/js/2.a24046e1.chunk.js.map": "/venturi/static/js/2.a24046e1.chunk.js.map",
     "static/js/3.ba842124.chunk.js": "/venturi/static/js/3.ba842124.chunk.js",
     "static/js/3.ba842124.chunk.js.map": "/venturi/static/js/3.ba842124.chunk.js.map",
     "index.html": "/venturi/index.html",
-    "static/css/main.6ffd26e0.chunk.css.map": "/venturi/static/css/main.6ffd26e0.chunk.css.map",
-    "static/js/2.651d9437.chunk.js.LICENSE.txt": "/venturi/static/js/2.651d9437.chunk.js.LICENSE.txt",
+    "static/css/main.c45161f8.chunk.css.map": "/venturi/static/css/main.c45161f8.chunk.css.map",
+    "static/js/2.a24046e1.chunk.js.LICENSE.txt": "/venturi/static/js/2.a24046e1.chunk.js.LICENSE.txt",
     "static/media/book-open.67a128a7.svg": "/venturi/static/media/book-open.67a128a7.svg",
+    "static/media/chevron-down.c3e123cf.svg": "/venturi/static/media/chevron-down.c3e123cf.svg",
     "static/media/map-pin.8c41fcd3.svg": "/venturi/static/media/map-pin.8c41fcd3.svg",
     "static/media/plus.887d2aad.svg": "/venturi/static/media/plus.887d2aad.svg",
     "static/media/train-car.b1001f75.svg": "/venturi/static/media/train-car.b1001f75.svg",
-    "static/media/train.348c27b5.svg": "/venturi/static/media/train.348c27b5.svg",
-    "static/media/x.6c9a4ba7.svg": "/venturi/static/media/x.6c9a4ba7.svg"
+    "static/media/train.348c27b5.svg": "/venturi/static/media/train.348c27b5.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.19d06a6f.js",
-    "static/js/2.651d9437.chunk.js",
-    "static/css/main.6ffd26e0.chunk.css",
-    "static/js/main.382ad144.chunk.js"
+    "static/js/2.a24046e1.chunk.js",
+    "static/css/main.c45161f8.chunk.css",
+    "static/js/main.d9b5456b.chunk.js"
   ]
 }
