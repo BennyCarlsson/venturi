@@ -1,4 +1,4 @@
-import { fetchTrip } from 'redux/tripSlice'
+import { fetchTrip, Trip, Trips } from 'redux/tripSlice'
 import { useAppDispatch, useAppSelector } from 'hooks/redux'
 import { Fragment, useEffect, useState } from 'react'
 import DepartureBox from './DepartureBox'
@@ -30,26 +30,35 @@ const StartPage = () => {
     }
   }, [dispatch, origin, destination])
 
+  function filterOutDublicateDepartures(trips: Trips[]) {
+    let seen = new Set()
+    return trips.filter((trip) => {
+      let key = (trip as Trip).id ?? ((trip as Trips)[0].id as string)
+      return seen.has(key) ? false : seen.add(key)
+    })
+  }
+
   return (
     <StartPageWrapper>
+      {/* !Array.isArray(trips[0]) handle when trips[0] is Trips[] */}
       {trips && trips.length > 0 && (
         <Fragment>
           {/* Todo: rtTrack */}
           <DepartureBox
-            name={trips[0].departureName}
-            track={trips[0].departureTrack}
+            name={trips[0][0].departureName}
+            track={trips[0][0].departureTrack}
             slim={showOtherDepartures}
           />
           <TimeBox
-            date={trips[0].departureDate}
-            time={trips[0].departureTime}
-            rtTime={trips[0].departureNewTime}
-            location={trips[0].destinationName}
-            number={trips[0].number}
-            direction={trips[0].direction}
+            date={trips[0][0].departureDate}
+            time={trips[0][0].departureTime}
+            rtTime={trips[0][0].departureNewTime}
+            location={trips[0][0].destinationName}
+            number={trips[0][0].number}
+            direction={trips[0][0].direction}
           />
           <OtherDepartures
-            trips={trips.slice(1, 4)}
+            trips={filterOutDublicateDepartures(trips).slice(1, 4)}
             handleOnClick={handleShowOtherDeparturesClick}
             showContent={showOtherDepartures}
           />

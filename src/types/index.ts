@@ -29,14 +29,15 @@ export type TripList = {
 }
 
 export type Legs = {
-  Leg: Leg
+  Leg: Leg | Leg[]
+  alternative?: boolean
 }
 export type Leg = {
   fgColor?: string
   booking?: boolean
   direction?: string
   JourneyDetailRef?: JourneyDetailRef
-  cancelled: boolean
+  cancelled?: boolean
   kcal?: Float32Array
   Origin?: Origin
   sname?: string

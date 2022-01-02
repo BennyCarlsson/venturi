@@ -1,7 +1,7 @@
 import Paragraph from 'components/Paragraph'
 import Colors from 'tokens/colors'
 import { FontWeight } from 'types'
-import { Trip } from 'redux/tripSlice'
+import { Trip, Trips } from 'redux/tripSlice'
 import ChevronIcon from './ChevronIcon'
 import {
   Box,
@@ -17,7 +17,7 @@ import {
 type Departures = {
   handleOnClick: () => void
   showContent: boolean
-  trips: Trip[]
+  trips: Trips[]
 }
 
 const OtherDepartures = ({ handleOnClick, showContent, trips }: Departures) => {
@@ -32,6 +32,22 @@ const OtherDepartures = ({ handleOnClick, showContent, trips }: Departures) => {
   const chevron = {
     animate: { rotate: showContent ? 180 : 0, transition: { duration: 0.2 } },
   }
+
+  const renderDeparture = (trip: Trip, i: number) => (
+    <DepartureWrapper key={`key:${i}`}>
+      <TimeAndDirectionWrapper>
+        <Paragraph fontSize={18} color={Colors.white}>
+          {trip.departureTime}
+        </Paragraph>
+        <DirectionParagraph fontSize={18} color={Colors.white}>
+          {trip.direction}
+        </DirectionParagraph>
+      </TimeAndDirectionWrapper>
+      <NameBox>
+        <Paragraph fontSize={14}>{trip.number}</Paragraph>
+      </NameBox>
+    </DepartureWrapper>
+  )
 
   return (
     <Box>
@@ -54,23 +70,13 @@ const OtherDepartures = ({ handleOnClick, showContent, trips }: Departures) => {
       </Top>
 
       <Content variants={variant} animate={'animate'} initial={'initial'}>
-        {trips.map((trip) => {
+        {trips.map((trip, i) => {
           //Todo leg can be an array of legs if trip contains multiple steps
-          return (
-            <DepartureWrapper key={trip.id}>
-              <TimeAndDirectionWrapper>
-                <Paragraph fontSize={18} color={Colors.white}>
-                  {trip.departureTime}
-                </Paragraph>
-                <DirectionParagraph fontSize={18} color={Colors.white}>
-                  {trip.direction}
-                </DirectionParagraph>
-              </TimeAndDirectionWrapper>
-              <NameBox>
-                <Paragraph fontSize={14}>{trip.number}</Paragraph>
-              </NameBox>
-            </DepartureWrapper>
-          )
+          if (!Array.isArray(trip)) {
+            return renderDeparture(trip, i)
+          } else {
+            return renderDeparture(trip[0], i)
+          }
         })}
       </Content>
     </Box>
