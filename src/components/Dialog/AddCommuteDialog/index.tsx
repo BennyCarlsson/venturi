@@ -7,6 +7,7 @@ import { useAppDispatch } from 'hooks/redux'
 import { setCurrentTable } from 'redux/tripSlice'
 import { saveOriginAndDestination } from 'utils/localStorage'
 import { hideDialog } from 'redux/dialogSlice'
+import { addTripToList } from 'redux/tripListSlice'
 
 type AddCommuteDialogProps = {}
 
@@ -39,6 +40,12 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
         origin: originLocation,
         destination: destinationLocation,
       })
+      dispatch(
+        addTripToList({
+          origin: originLocation,
+          destination: destinationLocation,
+        })
+      )
       dispatch(hideDialog())
     }
   }

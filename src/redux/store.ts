@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import locationsReducer from './locationsSlice'
 import tripReducer from './tripSlice'
+import tripListReducer from './tripListSlice'
 import dialogReducer from './dialogSlice'
 import { loadOriginAndDestination } from '../utils/localStorage'
 
@@ -9,6 +10,7 @@ const localStorageData = loadOriginAndDestination()
 const store = configureStore({
   reducer: {
     trip: tripReducer,
+    tripList: tripListReducer,
     locations: locationsReducer,
     dialog: dialogReducer,
   },
