@@ -3,9 +3,10 @@ import locationsReducer from './locationsSlice'
 import tripReducer from './tripSlice'
 import tripListReducer from './tripListSlice'
 import dialogReducer from './dialogSlice'
-import { loadOriginAndDestination } from '../utils/localStorage'
+import { loadOriginAndDestination, loadTriplList } from '../utils/localStorage'
 
-const localStorageData = loadOriginAndDestination()
+const localStorageDataTrip = loadOriginAndDestination()
+const localStorageDataTripList = loadTriplList()
 
 const store = configureStore({
   reducer: {
@@ -14,14 +15,16 @@ const store = configureStore({
     locations: locationsReducer,
     dialog: dialogReducer,
   },
-  preloadedState: localStorageData
-    ? {
-        trip: {
-          origin: localStorageData.origin,
-          destination: localStorageData.destination,
-        },
-      }
-    : {},
+  preloadedState:
+    localStorageDataTrip && localStorageDataTripList
+      ? {
+          trip: {
+            origin: localStorageDataTrip.origin,
+            destination: localStorageDataTrip.destination,
+          },
+          tripList: localStorageDataTripList,
+        }
+      : {},
 })
 
 export type RootState = ReturnType<typeof store.getState>
