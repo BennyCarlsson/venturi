@@ -17,6 +17,7 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
     'ChooseDestinationView' | 'NameCommuteView'
   >('ChooseDestinationView')
   const [originLocation, setOriginLocation] = useState<Location | null>(null)
+  const [name, setName] = useState('')
   const [destinationLocation, setDestinationLocation] =
     useState<Location | null>(null)
 
@@ -42,6 +43,7 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
       })
       dispatch(
         addTripToList({
+          name: name,
           origin: originLocation,
           destination: destinationLocation,
         })
@@ -62,6 +64,8 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
       )}
       {displayView === 'NameCommuteView' && (
         <NameCommuteView
+          name={name}
+          setName={setName}
           createTrip={createTrip}
           goToChooseDestionationView={goToChooseDestinationView}
         />

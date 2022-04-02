@@ -9,6 +9,16 @@ exports[`<Departures /> should match snapshot 1`] = `
   >
     Departures
   </h2>
+  <div>
+    --
+    <p>
+      Destination Name
+    </p>
+    <p>
+      Origin name
+    </p>
+    ---
+  </div>
   <a
     className="sc-gsTCUz jxAhtz"
     onClick={[Function]}

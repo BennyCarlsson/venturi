@@ -11,6 +11,8 @@ import {
 } from './styles'
 
 type NameCommuteViewProps = {
+  name: string
+  setName: React.Dispatch<React.SetStateAction<string>>
   createTrip: () => void
   goToChooseDestionationView: () => void
 }
@@ -18,6 +20,8 @@ type NameCommuteViewProps = {
 const NameCommuteView = ({
   createTrip,
   goToChooseDestionationView,
+  name,
+  setName,
   ...props
 }: NameCommuteViewProps) => {
   return (
@@ -35,11 +39,16 @@ const NameCommuteView = ({
           </StyledTitleHeading>
         </CTAButtonTitleWrapper>
         <Paragraph fontSize={14}>
-          To kepp track of your trips, a good idea is to name the specific trip
+          To keep track of your trips, a good idea is to name the specific trip
           you are about to create. It's optional but a good idea.
         </Paragraph>
         <StyledParagraph fontSize={18}>Trip name</StyledParagraph>
-        <Input />
+        <Input
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value)
+          }}
+        />
       </TopCTAButtonTitleSubtitle>
       <StyledButton onClick={createTrip}>Create Commute trip</StyledButton>
     </React.Fragment>

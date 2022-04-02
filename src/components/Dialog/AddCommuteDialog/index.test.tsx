@@ -12,7 +12,7 @@ jest.mock('react-redux', () => ({
 
 describe('<AddCommuteDialog />', () => {
   const ChooseDestinationViewText =
-    "To kepp track of your trips, a good idea is to name the specific trip you are about to create. It's optional but a good idea."
+    "To keep track of your trips, a good idea is to name the specific trip you are about to create. It's optional but a good idea."
   const NameCommuteViewText =
     'Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.'
   const useAppDispatch = jest.fn()

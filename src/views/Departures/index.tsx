@@ -17,6 +17,14 @@ const Departures = () => {
   return (
     <DeparturesWrapper>
       <Heading headingType='h2'>Departures</Heading>
+      {tripList.trips.map((trip, i) => (
+        <div key={i}>
+          --
+          <p>{trip.destination?.name}</p>
+          <p>{trip.origin?.name}</p>
+          ---
+        </div>
+      ))}
       <CreateCommuteTripCta
         onClick={() => {
           dispatch(showDialog())

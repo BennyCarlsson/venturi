@@ -29,7 +29,7 @@ exports[`<NameCommuteView /> should match snapshot 1`] = `
       class="sc-bdfBwQ QuMsF"
       font-size="14"
     >
-      To kepp track of your trips, a good idea is to name the specific trip you are about to create. It's optional but a good idea.
+      To keep track of your trips, a good idea is to name the specific trip you are about to create. It's optional but a good idea.
     </p>
     <p
       class="sc-bdfBwQ kMVXxV sc-iqHYGH JPwUs"
@@ -39,6 +39,7 @@ exports[`<NameCommuteView /> should match snapshot 1`] = `
     </p>
     <input
       class="sc-dQppl gUpTvy"
+      value=""
     />
   </div>
   <button
