@@ -1,7 +1,7 @@
 import './App.css'
 import { Switch, Route, HashRouter } from 'react-router-dom'
 import Departures from 'views/Departures'
-import Destination from 'views/Destination'
+import Options from 'views/Options'
 import NotFound from 'views/NotFound'
 import StartPage from 'views/StartPage'
 import Menu from 'Menu'
@@ -27,7 +27,7 @@ function App() {
                 <Departures />
               </Route>
               <Route path='/options'>
-                <Destination />
+                <Options />
               </Route>
               <Route path='*'>
                 <NotFound />
