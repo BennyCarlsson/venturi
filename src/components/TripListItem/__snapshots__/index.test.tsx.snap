@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TripListItem /> should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-iBPRYJ vbTEt"
+  >
+    <h2
+      class="sc-gsTCUz iGKmBy"
+    >
+      TestName
+    </h2>
+    <p
+      class="sc-gKsewC gBjZDn"
+    >
+      Origin name
+    </p>
+    <p
+      class="sc-gKsewC gBjZDn"
+    >
+      Origin name
+    </p>
+    <p
+      class="sc-gKsewC gBjZDn"
+    >
+      Destination Name
+    </p>
+  </div>
+</DocumentFragment>
+`;

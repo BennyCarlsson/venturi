@@ -9,15 +9,29 @@ exports[`<Departures /> should match snapshot 1`] = `
   >
     Departures
   </h2>
-  <div>
-    --
-    <p>
-      Destination Name
-    </p>
-    <p>
+  <div
+    className="sc-kEjbxe efrvAI"
+  >
+    <h2
+      className="sc-jSgupP ffTEWZ"
+    >
+      TestName
+    </h2>
+    <p
+      className="sc-bdfBwQ kMVXxV"
+    >
       Origin name
     </p>
-    ---
+    <p
+      className="sc-bdfBwQ kMVXxV"
+    >
+      Origin name
+    </p>
+    <p
+      className="sc-bdfBwQ kMVXxV"
+    >
+      Destination Name
+    </p>
   </div>
   <a
     className="sc-gsTCUz jxAhtz"

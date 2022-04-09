@@ -5,6 +5,7 @@ import { DeparturesWrapper } from './styles'
 import { useAppDispatch, useAppSelector } from 'hooks/redux'
 import { useEffect } from 'react'
 import { saveTripList } from 'utils/localStorage'
+import TripListItem from 'components/TripListItem'
 
 const Departures = () => {
   const dispatch = useAppDispatch()
@@ -18,12 +19,7 @@ const Departures = () => {
     <DeparturesWrapper>
       <Heading headingType='h2'>Departures</Heading>
       {tripList.trips.map((trip, i) => (
-        <div key={i}>
-          --
-          <p>{trip.destination?.name}</p>
-          <p>{trip.origin?.name}</p>
-          ---
-        </div>
+        <TripListItem key={i} trip={trip} />
       ))}
       <CreateCommuteTripCta
         onClick={() => {
