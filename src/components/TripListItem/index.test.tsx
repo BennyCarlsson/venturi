@@ -18,4 +18,26 @@ describe('<TripListItem />', () => {
   it('should render without crashing', () => {
     expect(screen).toBeTruthy()
   })
+
+  it('should render trip name', () => {
+    expect(
+      screen.getByText(defaultProps.trip.name, { selector: 'h2' })
+    ).toBeTruthy()
+  })
+
+  it('should render origin name', () => {
+    expect(
+      screen.getByText(defaultProps.trip.origin?.name as string, {
+        selector: 'p',
+      })
+    ).toBeTruthy()
+  })
+
+  it('should render destination name', () => {
+    expect(
+      screen.getByText(defaultProps.trip.destination?.name as string, {
+        selector: 'p',
+      })
+    ).toBeTruthy()
+  })
 })

@@ -2,7 +2,7 @@
 
 exports[`<Departures /> should match snapshot 1`] = `
 <div
-  className="sc-jrAGrp hffLVH"
+  className="sc-jrAGrp kiZqxq"
 >
   <h2
     className="sc-jSgupP ffTEWZ"
@@ -10,28 +10,70 @@ exports[`<Departures /> should match snapshot 1`] = `
     Departures
   </h2>
   <div
-    className="sc-kEjbxe efrvAI"
+    className="sc-kEjbxe jjRlUi"
   >
-    <h2
-      className="sc-jSgupP ffTEWZ"
+    <div
+      className="sc-iqHYGH eiOsiW"
     >
-      TestName
-    </h2>
-    <p
-      className="sc-bdfBwQ kMVXxV"
+      <h2
+        className="sc-jSgupP gKCGei sc-crrsfI hwyVwH"
+        color="#ffffff"
+        fontSize={14}
+        fontWeight={700}
+      >
+        TestName
+      </h2>
+    </div>
+    <div
+      className="sc-dQppl cdOuZt"
     >
-      Origin name
-    </p>
-    <p
-      className="sc-bdfBwQ kMVXxV"
-    >
-      Origin name
-    </p>
-    <p
-      className="sc-bdfBwQ kMVXxV"
-    >
-      Destination Name
-    </p>
+      <div
+        className="sc-bqyKva fLDdyA"
+      >
+        <div
+          className="sc-hBEYos bPSeCb"
+        >
+          A
+        </div>
+        <div
+          className="sc-kstrdz foAvAb"
+        />
+        <div
+          className="sc-kstrdz foAvAb"
+        />
+        <div
+          className="sc-kstrdz foAvAb"
+        />
+        <div
+          className="sc-kstrdz foAvAb"
+        />
+        <div
+          className="sc-hBEYos bPSeCb"
+        >
+          B
+        </div>
+      </div>
+      <div
+        className="sc-fodVxV lnPhgN"
+      >
+        <p
+          className="sc-bdfBwQ INFXx"
+          color="#2f2e41"
+          fontSize={14}
+          fontWeight={500}
+        >
+          Origin name
+        </p>
+        <p
+          className="sc-bdfBwQ INFXx"
+          color="#2f2e41"
+          fontSize={14}
+          fontWeight={500}
+        >
+          Destination Name
+        </p>
+      </div>
+    </div>
   </div>
   <a
     className="sc-gsTCUz jxAhtz"
