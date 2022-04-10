@@ -2,21 +2,17 @@
 
 exports[`<Departures /> should match snapshot 1`] = `
 <div
-  className="sc-jrAGrp kiZqxq"
+  className="sc-eCssSg DKYAU"
 >
-  <h2
-    className="sc-jSgupP ffTEWZ"
-  >
-    Departures
-  </h2>
-  <div
-    className="sc-kEjbxe jjRlUi"
+  <button
+    className="sc-dQppl gIjXAQ"
+    onClick={[Function]}
   >
     <div
-      className="sc-iqHYGH eiOsiW"
+      className="sc-bqyKva fLBNiq"
     >
       <h2
-        className="sc-jSgupP gKCGei sc-crrsfI hwyVwH"
+        className="sc-pFZIQ TlXTZ sc-kstrdz jKmfew"
         color="#ffffff"
         fontSize={14}
         fontWeight={700}
@@ -25,30 +21,30 @@ exports[`<Departures /> should match snapshot 1`] = `
       </h2>
     </div>
     <div
-      className="sc-dQppl cdOuZt"
+      className="sc-hBEYos gqNeOC"
     >
       <div
-        className="sc-bqyKva fLDdyA"
+        className="sc-jSgupP gntkDZ"
       >
         <div
-          className="sc-hBEYos bPSeCb"
+          className="sc-iBPRYJ geTqOb"
         >
           A
         </div>
         <div
-          className="sc-kstrdz foAvAb"
+          className="sc-gKsewC iLwyuh"
         />
         <div
-          className="sc-kstrdz foAvAb"
+          className="sc-gKsewC iLwyuh"
         />
         <div
-          className="sc-kstrdz foAvAb"
+          className="sc-gKsewC iLwyuh"
         />
         <div
-          className="sc-kstrdz foAvAb"
+          className="sc-gKsewC iLwyuh"
         />
         <div
-          className="sc-hBEYos bPSeCb"
+          className="sc-iBPRYJ geTqOb"
         >
           B
         </div>
@@ -74,7 +70,7 @@ exports[`<Departures /> should match snapshot 1`] = `
         </p>
       </div>
     </div>
-  </div>
+  </button>
   <a
     className="sc-gsTCUz jxAhtz"
     onClick={[Function]}

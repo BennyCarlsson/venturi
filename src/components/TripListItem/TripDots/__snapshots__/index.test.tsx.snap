@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TripDots /> should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdfBwQ jVeENm"
+  >
+    <div
+      class="sc-dlfnbm gREHbW"
+    >
+      A
+    </div>
+    <div
+      class="sc-gsTCUz dosEAT"
+    />
+    <div
+      class="sc-gsTCUz dosEAT"
+    />
+    <div
+      class="sc-gsTCUz dosEAT"
+    />
+    <div
+      class="sc-gsTCUz dosEAT"
+    />
+    <div
+      class="sc-dlfnbm gREHbW"
+    >
+      B
+    </div>
+  </div>
+</DocumentFragment>
+`;

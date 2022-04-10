@@ -1,24 +1,36 @@
 import Paragraph from 'components/Paragraph'
+import { useAppDispatch } from 'hooks/redux'
 import { Location } from 'redux/locationsSlice'
 import { FontWeight } from 'types'
+import { setCurrentTable } from 'redux/tripSlice'
+import TripDots from './TripDots'
 import {
   Content,
-  Dot,
-  LetterCircle,
   NameWrapper,
   StyledHeading,
   Top,
-  TripDotsWrapper,
   TripListItemWrapper,
 } from './styles'
 
 type TripListItemProps = {
-  trip: { name: string; origin?: Location; destination?: Location }
+  trip: { name: string; origin: Location; destination: Location }
 }
 
 const TripListItem = ({ trip, ...props }: TripListItemProps) => {
+  const dispatch = useAppDispatch()
+
   return (
-    <TripListItemWrapper {...props}>
+    <TripListItemWrapper
+      onClick={() => {
+        dispatch(
+          setCurrentTable({
+            origin: trip?.origin,
+            destination: trip?.destination,
+          })
+        )
+      }}
+      {...props}
+    >
       <Top>
         <StyledHeading
           color='#ffffff'
@@ -30,14 +42,7 @@ const TripListItem = ({ trip, ...props }: TripListItemProps) => {
         </StyledHeading>
       </Top>
       <Content>
-        <TripDotsWrapper>
-          <LetterCircle>A</LetterCircle>
-          <Dot />
-          <Dot />
-          <Dot />
-          <Dot />
-          <LetterCircle>B</LetterCircle>
-        </TripDotsWrapper>
+        <TripDots />
         <NameWrapper>
           <Paragraph
             color='#2f2e41'

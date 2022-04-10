@@ -2,14 +2,14 @@
 
 exports[`<TripListItem /> should match snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="sc-iBPRYJ knujsz"
+  <button
+    class="sc-jrAGrp kXgntB"
   >
     <div
-      class="sc-fubCfw ddOmTr"
+      class="sc-kEjbxe ilXVtb"
     >
       <h2
-        class="sc-dlfnbm eUaCMe sc-pFZIQ kDdNWY"
+        class="sc-jSgupP gKCGei sc-iqHYGH gbtLxu"
         color="#ffffff"
         font-size="14"
         font-weight="700"
@@ -18,30 +18,30 @@ exports[`<TripListItem /> should match snapshot 1`] = `
       </h2>
     </div>
     <div
-      class="sc-jrAGrp eRxMdU"
+      class="sc-crrsfI cMVKCz"
     >
       <div
-        class="sc-kEjbxe ddexNR"
+        class="sc-gsTCUz jEuoeG"
       >
         <div
-          class="sc-crrsfI fwnaXW"
+          class="sc-hKgILt cRObAw"
         >
           A
         </div>
         <div
-          class="sc-iqHYGH jwPjnl"
+          class="sc-dlfnbm jpJEQU"
         />
         <div
-          class="sc-iqHYGH jwPjnl"
+          class="sc-dlfnbm jpJEQU"
         />
         <div
-          class="sc-iqHYGH jwPjnl"
+          class="sc-dlfnbm jpJEQU"
         />
         <div
-          class="sc-iqHYGH jwPjnl"
+          class="sc-dlfnbm jpJEQU"
         />
         <div
-          class="sc-crrsfI fwnaXW"
+          class="sc-hKgILt cRObAw"
         >
           B
         </div>
@@ -67,6 +67,6 @@ exports[`<TripListItem /> should match snapshot 1`] = `
         </p>
       </div>
     </div>
-  </div>
+  </button>
 </DocumentFragment>
 `;

@@ -1,6 +1,5 @@
 import { showDialog } from 'redux/dialogSlice'
 import CreateCommuteTripCta from './CreateCommuteTripCta'
-import Heading from 'components/Heading'
 import { DeparturesWrapper } from './styles'
 import { useAppDispatch, useAppSelector } from 'hooks/redux'
 import { useEffect } from 'react'
@@ -17,7 +16,6 @@ const Departures = () => {
 
   return (
     <DeparturesWrapper>
-      <Heading headingType='h2'>Departures</Heading>
       {tripList.trips.map((trip, i) => (
         <TripListItem key={i} trip={trip} />
       ))}

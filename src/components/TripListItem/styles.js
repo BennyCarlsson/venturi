@@ -1,7 +1,9 @@
 import Heading from 'components/Heading'
 import styled from 'styled-components'
 
-export const TripListItemWrapper = styled.div`
+export const TripListItemWrapper = styled.button`
+  padding: 0;
+  cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #f3f3f3;
   border-radius: 8px;
@@ -23,33 +25,7 @@ export const Content = styled.div`
   display: flex;
   padding: 8px 16px 24px 16px;
 `
-export const TripDotsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-export const Dot = styled.div`
-  width: 1px;
-  height: 7px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  background-color: #719fb0;
-  border-radius: 1px;
-`
-export const LetterCircle = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: #719fb0;
-  height: 24px;
-  width: 24px;
-  box-shadow: -1px 4px 7px 2px rgb(0 0 0 / 31%);
-  font-size: 18px;
-  font-weight: 400;
-  color: #ffffff;
-`
+
 export const NameWrapper = styled.div`
   display: flex;
   flex-direction: column;

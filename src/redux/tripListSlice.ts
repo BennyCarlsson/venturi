@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { Location } from './locationsSlice'
 
 export interface TripListState {
-  trips: { name: string; origin?: Location; destination?: Location }[]
+  trips: { name: string; origin: Location; destination: Location }[]
 }
 
 const initialState: TripListState = { trips: [] }
