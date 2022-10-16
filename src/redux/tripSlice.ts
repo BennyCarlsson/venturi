@@ -33,6 +33,7 @@ export const fetchTrip = createAsyncThunk(
 )
 
 export interface TripState {
+  currentTripName?: string
   origin?: Location
   destination?: Location
   loading: boolean
@@ -50,8 +51,13 @@ const tripSlice = createSlice({
   reducers: {
     setCurrentTable: (
       state,
-      action: PayloadAction<{ origin: Location; destination: Location }>
+      action: PayloadAction<{
+        name: string
+        origin: Location
+        destination: Location
+      }>
     ) => {
+      state.currentTripName = action.payload.name
       state.origin = action.payload.origin
       state.destination = action.payload.destination
     },

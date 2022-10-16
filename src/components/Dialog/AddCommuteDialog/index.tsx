@@ -33,11 +33,13 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
     if (originLocation && destinationLocation) {
       dispatch(
         setCurrentTable({
+          name,
           origin: originLocation,
           destination: destinationLocation,
         })
       )
       saveOriginAndDestination({
+        currentTripName: name,
         origin: originLocation,
         destination: destinationLocation,
       })

@@ -35,9 +35,7 @@ exports[`<DepartureBox /> snapshots should match snapshot 1`] = `
         color="#FFFFFF"
         fontSize={28}
         fontWeight={500}
-      >
-        Test name
-      </h2>
+      />
     </div>
   </div>
   <div
@@ -86,7 +84,7 @@ exports[`<DepartureBox /> snapshots should match snapshot 1`] = `
         fontWeight={500}
         style={Object {}}
       >
-        Placeholder
+        Test name
       </p>
     </div>
   </div>

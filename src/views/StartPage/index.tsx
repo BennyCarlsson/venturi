@@ -13,6 +13,7 @@ import TimeBox from './TimeBox'
 
 const StartPage = () => {
   const dispatch = useAppDispatch()
+  const currentTripName = useAppSelector((state) => state.trip.currentTripName)
   const origin = useAppSelector((state) => state.trip.origin)
   const destination = useAppSelector((state) => state.trip.destination)
   const trips = useAppSelector((state) => state.trip.trips)
@@ -45,7 +46,8 @@ const StartPage = () => {
         <Fragment>
           {/* Todo: rtTrack */}
           <DepartureBox
-            name={trips[0][0].departureName}
+            name={currentTripName}
+            departureName={trips[0][0].departureName}
             track={trips[0][0].departureTrack}
             slim={showOtherDepartures}
           />

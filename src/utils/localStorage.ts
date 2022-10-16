@@ -2,6 +2,7 @@ import { Location } from 'redux/locationsSlice'
 import { TripListState } from 'redux/tripListSlice'
 
 export const saveOriginAndDestination = (state: {
+  currentTripName: string
   origin: Location
   destination: Location
 }) => {
@@ -14,7 +15,7 @@ export const saveOriginAndDestination = (state: {
 }
 
 export const loadOriginAndDestination = ():
-  | { origin: Location; destination: Location }
+  | { currentTripName: string; origin: Location; destination: Location }
   | undefined => {
   try {
     const serializedState = localStorage.getItem('state')

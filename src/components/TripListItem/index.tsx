@@ -13,6 +13,7 @@ import {
 } from './styles'
 import { moveTripToFirst } from 'redux/tripListSlice'
 import { useHistory } from 'react-router-dom'
+import { saveOriginAndDestination } from 'utils/localStorage'
 
 type TripListItemProps = {
   trip: { name: string; origin: Location; destination: Location }
@@ -28,11 +29,17 @@ const TripListItem = ({ trip, index, ...props }: TripListItemProps) => {
       onClick={() => {
         dispatch(
           setCurrentTable({
+            name: trip?.name,
             origin: trip?.origin,
             destination: trip?.destination,
           })
         )
         dispatch(moveTripToFirst({ index }))
+        saveOriginAndDestination({
+          currentTripName: trip.name,
+          origin: trip.origin,
+          destination: trip.destination,
+        })
         history.push('/')
       }}
       {...props}

@@ -17,12 +17,18 @@ import {
 
 type NextDepartureBoxProps = {
   name: string | undefined
+  departureName: string | undefined
   track: string | undefined
   slim: boolean
 }
 
 //TODO: alternative routes?
-const DepartureBox = ({ name, track, slim }: NextDepartureBoxProps) => {
+const DepartureBox = ({
+  name,
+  departureName,
+  track,
+  slim,
+}: NextDepartureBoxProps) => {
   const variant = {}
   const hide = { slim: { opacity: 0, y: -5 }, big: {} }
   const topPart = { slim: { paddingTop: 0 } }
@@ -55,7 +61,7 @@ const DepartureBox = ({ name, track, slim }: NextDepartureBoxProps) => {
             fontSize={28}
             color={Colors.white}
           >
-            {name}
+            {departureName}
           </Heading>
         </DepartsWrapper>
       </TopPart>
@@ -95,7 +101,7 @@ const DepartureBox = ({ name, track, slim }: NextDepartureBoxProps) => {
             fontSize={24}
             color={Colors.white}
           >
-            Placeholder
+            {name}
           </BottomParagraph>
         </BottomRightPart>
       </BottomPart>
