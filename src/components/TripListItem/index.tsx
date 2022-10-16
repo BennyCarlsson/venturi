@@ -11,13 +11,17 @@ import {
   Top,
   TripListItemWrapper,
 } from './styles'
+import { moveTripToFirst } from 'redux/tripListSlice'
+import { useHistory } from 'react-router-dom'
 
 type TripListItemProps = {
   trip: { name: string; origin: Location; destination: Location }
+  index: number
 }
 
-const TripListItem = ({ trip, ...props }: TripListItemProps) => {
+const TripListItem = ({ trip, index, ...props }: TripListItemProps) => {
   const dispatch = useAppDispatch()
+  const history = useHistory()
 
   return (
     <TripListItemWrapper
@@ -28,6 +32,8 @@ const TripListItem = ({ trip, ...props }: TripListItemProps) => {
             destination: trip?.destination,
           })
         )
+        dispatch(moveTripToFirst({ index }))
+        history.push('/')
       }}
       {...props}
     >

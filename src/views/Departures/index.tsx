@@ -17,7 +17,7 @@ const Departures = () => {
   return (
     <DeparturesWrapper>
       {tripList.trips.map((trip, i) => (
-        <TripListItem key={i} trip={trip} />
+        <TripListItem key={trip.name} trip={trip} index={i} />
       ))}
       <CreateCommuteTripCta
         onClick={() => {

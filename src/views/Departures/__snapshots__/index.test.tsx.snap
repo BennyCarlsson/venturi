@@ -71,6 +71,140 @@ exports[`<Departures /> should match snapshot 1`] = `
       </div>
     </div>
   </button>
+  <button
+    className="sc-dQppl gIjXAQ"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-bqyKva fLBNiq"
+    >
+      <h2
+        className="sc-pFZIQ TlXTZ sc-kstrdz jKmfew"
+        color="#ffffff"
+        fontSize={14}
+        fontWeight={700}
+      >
+        TestName2
+      </h2>
+    </div>
+    <div
+      className="sc-hBEYos gqNeOC"
+    >
+      <div
+        className="sc-jSgupP gntkDZ"
+      >
+        <div
+          className="sc-iBPRYJ geTqOb"
+        >
+          A
+        </div>
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-iBPRYJ geTqOb"
+        >
+          B
+        </div>
+      </div>
+      <div
+        className="sc-fodVxV lnPhgN"
+      >
+        <p
+          className="sc-bdfBwQ INFXx"
+          color="#2f2e41"
+          fontSize={14}
+          fontWeight={500}
+        >
+          Origin name
+        </p>
+        <p
+          className="sc-bdfBwQ INFXx"
+          color="#2f2e41"
+          fontSize={14}
+          fontWeight={500}
+        >
+          Destination Name
+        </p>
+      </div>
+    </div>
+  </button>
+  <button
+    className="sc-dQppl gIjXAQ"
+    onClick={[Function]}
+  >
+    <div
+      className="sc-bqyKva fLBNiq"
+    >
+      <h2
+        className="sc-pFZIQ TlXTZ sc-kstrdz jKmfew"
+        color="#ffffff"
+        fontSize={14}
+        fontWeight={700}
+      >
+        TestName3
+      </h2>
+    </div>
+    <div
+      className="sc-hBEYos gqNeOC"
+    >
+      <div
+        className="sc-jSgupP gntkDZ"
+      >
+        <div
+          className="sc-iBPRYJ geTqOb"
+        >
+          A
+        </div>
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-gKsewC iLwyuh"
+        />
+        <div
+          className="sc-iBPRYJ geTqOb"
+        >
+          B
+        </div>
+      </div>
+      <div
+        className="sc-fodVxV lnPhgN"
+      >
+        <p
+          className="sc-bdfBwQ INFXx"
+          color="#2f2e41"
+          fontSize={14}
+          fontWeight={500}
+        >
+          Origin name
+        </p>
+        <p
+          className="sc-bdfBwQ INFXx"
+          color="#2f2e41"
+          fontSize={14}
+          fontWeight={500}
+        >
+          Destination Name
+        </p>
+      </div>
+    </div>
+  </button>
   <a
     className="sc-gsTCUz jxAhtz"
     onClick={[Function]}

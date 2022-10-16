@@ -1,6 +1,7 @@
+import { mockTripList } from 'mockData/tripList'
 import { Location, LocationType } from './locationsSlice'
 import redux from './store'
-import { addTripToList } from './tripListSlice'
+import reducer, { addTripToList, moveTripToFirst } from './tripListSlice'
 
 describe('tripListSlice reducer', () => {
   it('should return the initial state', () => {
@@ -60,5 +61,19 @@ describe('tripListSlice reducer', () => {
     expect(originName).toEqual(
       tripSlice.trips.find((trip) => trip.name === originName)?.name
     )
+  })
+
+  it('should return initial state', () => {
+    expect(
+      reducer(undefined, {
+        type: undefined,
+      })
+    ).toEqual({ trips: [] })
+  })
+
+  it('should move trip first in list', () => {
+    const result = reducer(mockTripList, moveTripToFirst({ index: 1 }))
+    expect(mockTripList.trips[0]).toEqual(result.trips[1])
+    expect(mockTripList.trips[1]).toEqual(result.trips[0])
   })
 })

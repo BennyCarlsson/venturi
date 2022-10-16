@@ -25,9 +25,17 @@ const tripListSlice = createSlice({
         destination: action.payload.destination,
       })
     },
+    moveTripToFirst: (state, action: PayloadAction<{ index: number }>) => {
+      const index = action.payload.index
+      const trip = state.trips[index]
+      state.trips.splice(index, 1)
+      state.trips.unshift(trip)
+
+      return state
+    },
   },
 })
 
-export const { addTripToList } = tripListSlice.actions
+export const { addTripToList, moveTripToFirst } = tripListSlice.actions
 
 export default tripListSlice.reducer
