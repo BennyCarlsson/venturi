@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IntroView /> should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-fubCfw jITuUJ"
+  >
+    <span>
+      <h1
+        class="sc-gsTCUz crbHUW sc-jrAGrp ciFszB"
+        color="#719FB0"
+        font-size="28"
+        font-weight="400"
+      >
+        Venturi
+      </h1>
+      <h2
+        class="sc-dlfnbm iYlpBT"
+        color="#35F39"
+        font-size="28"
+        font-weight="700"
+      >
+        Commute trip planner
+      </h2>
+      <p
+        class="sc-iBPRYJ jNAkW sc-pFZIQ dNSvNb"
+        font-size="14"
+        font-weight="500"
+      >
+        Have a quick way to get information about your most common trip.
+      </p>
+      <p
+        class="sc-iBPRYJ jNAkW sc-pFZIQ dNSvNb"
+        font-size="14"
+        font-weight="500"
+      >
+        The specified trip will be easily acceible with current status and more.
+      </p>
+    </span>
+    <div
+      class="sc-kEjbxe bpoeqT"
+    >
+      <img
+        class="sc-iqHYGH iGFhbH"
+        src="background-bus-stop.jpg"
+      />
+      <button
+        class="sc-bdfBwQ ssyvv"
+      >
+        Get Started!
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

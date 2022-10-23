@@ -30,7 +30,6 @@ const tripListSlice = createSlice({
       const trip = state.trips[index]
       state.trips.splice(index, 1)
       state.trips.unshift(trip)
-
       return state
     },
   },

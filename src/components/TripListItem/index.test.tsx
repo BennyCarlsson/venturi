@@ -4,6 +4,7 @@ import TripListItem from '.'
 
 describe('<TripListItem />', () => {
   const defaultProps: React.ComponentProps<typeof TripListItem> = {
+    index: 0,
     trip: mockTripList.trips[0],
   }
   beforeEach(() => {

@@ -33,7 +33,7 @@ export const fetchTrip = createAsyncThunk(
 )
 
 export interface TripState {
-  currentTripName?: string
+  name?: string
   origin?: Location
   destination?: Location
   loading: boolean
@@ -57,7 +57,7 @@ const tripSlice = createSlice({
         destination: Location
       }>
     ) => {
-      state.currentTripName = action.payload.name
+      state.name = action.payload.name
       state.origin = action.payload.origin
       state.destination = action.payload.destination
     },

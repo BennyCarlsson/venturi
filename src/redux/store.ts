@@ -19,7 +19,7 @@ const store = configureStore({
     localStorageDataTrip && localStorageDataTripList
       ? {
           trip: {
-            currentTripName: localStorageDataTrip.currentTripName,
+            name: localStorageDataTrip.currentTripName,
             origin: localStorageDataTrip.origin,
             destination: localStorageDataTrip.destination,
           },

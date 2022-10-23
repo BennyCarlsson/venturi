@@ -17,13 +17,15 @@ describe('<Dialog />', () => {
   })
 
   beforeEach(() => {
-    render(<Dialog />, { initialState: { dialog: { show: true } } })
+    render(<Dialog />, {
+      initialState: { dialog: { show: true, isIntro: false } },
+    })
   })
 
   it('should match snapshot', () => {
     cleanup()
     const { asFragment } = render(<Dialog />, {
-      initialState: { dialog: { show: true } },
+      initialState: { dialog: { show: true, isIntro: false } },
     })
     expect(asFragment()).toMatchSnapshot()
   })

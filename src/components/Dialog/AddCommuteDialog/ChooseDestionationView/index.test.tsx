@@ -18,12 +18,14 @@ jest.mock('react-redux', () => ({
 
 describe('<ChooseDestionationView />', () => {
   const useAppDispatch = jest.fn()
+  const mockGoBack = jest.fn()
   const mockGoToNameCommuteView = jest.fn()
   const originLocation = locations.locations.originLocations[0]
   const mockSetOriginLocation = jest.fn()
   const destinationLocation = locations.locations.destinationLocations[1]
   const mockSetDestinationLocation = jest.fn()
   const props = {
+    goBack: mockGoBack,
     goToNameCommuteView: mockGoToNameCommuteView,
     originLocation,
     setOriginLocation: mockSetOriginLocation,
@@ -55,6 +57,7 @@ describe('<ChooseDestionationView />', () => {
 
   it('should NOT call goToNameCommuteView if originLocation and destinationLocation is NOT set', async () => {
     const props = {
+      goBack: mockGoBack,
       goToNameCommuteView: mockGoToNameCommuteView,
       originLocation: null,
       setOriginLocation: mockSetOriginLocation,
@@ -242,5 +245,12 @@ describe('<ChooseDestionationView />', () => {
     const locationName = locations.locations.destinationLocations[0].name
     expect(screen.getByTestId('to-input')).toHaveValue(locationName)
     expect(screen.queryByRole('list')).not.toBeInTheDocument()
+  })
+
+  it('should call goBack onClick', async () => {
+    render(<ChooseDestionationView {...props} />, {})
+    expect(mockGoBack).not.toHaveBeenCalled()
+    await userEvent.click(screen.getByTestId('close-dialog-button'))
+    expect(mockGoBack).toHaveBeenCalledTimes(1)
   })
 })

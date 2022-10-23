@@ -13,7 +13,7 @@ import TimeBox from './TimeBox'
 
 const StartPage = () => {
   const dispatch = useAppDispatch()
-  const currentTripName = useAppSelector((state) => state.trip.currentTripName)
+  const currentTripName = useAppSelector((state) => state.trip.name)
   const origin = useAppSelector((state) => state.trip.origin)
   const destination = useAppSelector((state) => state.trip.destination)
   const trips = useAppSelector((state) => state.trip.trips)

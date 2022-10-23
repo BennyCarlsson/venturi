@@ -38,7 +38,6 @@ export type Location = {
 
 // Todo extract and write tests
 const convertData = (data: LocationList): Location[] | undefined => {
-  console.log('data', data)
   let stopLocations: Location[] = []
   if (data.StopLocation) {
     if (!Array.isArray(data.StopLocation)) {

@@ -8,18 +8,25 @@ import { setCurrentTable } from 'redux/tripSlice'
 import { saveOriginAndDestination } from 'utils/localStorage'
 import { hideDialog } from 'redux/dialogSlice'
 import { addTripToList } from 'redux/tripListSlice'
+import IntroView from './IntroView'
 
-type AddCommuteDialogProps = {}
+type AddCommuteDialogProps = {
+  isIntroView: boolean
+}
 
-const AddCommuteDialog = (props: AddCommuteDialogProps) => {
+const AddCommuteDialog = ({ isIntroView, ...props }: AddCommuteDialogProps) => {
   const dispatch = useAppDispatch()
   const [displayView, setDisplayView] = useState<
-    'ChooseDestinationView' | 'NameCommuteView'
-  >('ChooseDestinationView')
+    'IntroView' | 'ChooseDestinationView' | 'NameCommuteView'
+  >(isIntroView ? 'IntroView' : 'ChooseDestinationView')
   const [originLocation, setOriginLocation] = useState<Location | null>(null)
   const [name, setName] = useState('')
   const [destinationLocation, setDestinationLocation] =
     useState<Location | null>(null)
+
+  const goToIntroView = () => {
+    setDisplayView('IntroView')
+  }
 
   const goToNameCommuteView = () => {
     setDisplayView('NameCommuteView')
@@ -55,8 +62,14 @@ const AddCommuteDialog = (props: AddCommuteDialogProps) => {
   }
   return (
     <AddCommuteDialogWrapper {...props}>
+      {displayView === 'IntroView' && (
+        <IntroView goToChooseDestionationView={goToChooseDestinationView} />
+      )}
       {displayView === 'ChooseDestinationView' && (
         <ChooseDestionationView
+          goBack={() => {
+            isIntroView ? goToIntroView() : dispatch(hideDialog())
+          }}
           goToNameCommuteView={goToNameCommuteView}
           originLocation={originLocation}
           setOriginLocation={setOriginLocation}

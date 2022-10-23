@@ -1,6 +1,6 @@
 import { useAppDispatch } from 'hooks/redux'
 import { useEffect } from 'react'
-import { hideDialog, selectShowDialog } from 'redux/dialogSlice'
+import { hideDialog, selectIsIntro, selectShowDialog } from 'redux/dialogSlice'
 import { DialogWrapper, InnerWrapper } from './styles'
 import { useAppSelector } from 'hooks/redux'
 import AddCommuteDialog from './AddCommuteDialog'
@@ -11,6 +11,7 @@ type DialogProps = {}
 const Dialog = (props: DialogProps) => {
   const dispatch = useAppDispatch()
   const displayDialog = useAppSelector(selectShowDialog)
+  const isIntro = useAppSelector(selectIsIntro)
 
   useEffect(() => {
     if (!displayDialog) return
@@ -37,7 +38,7 @@ const Dialog = (props: DialogProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <AddCommuteDialog />
+            <AddCommuteDialog isIntroView={isIntro} />
           </InnerWrapper>
         </DialogWrapper>
       )}

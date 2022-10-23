@@ -17,7 +17,6 @@ import {
   TopCTAButtonTitleSubtitle,
   CTAButtonTitleWrapper,
 } from './styles'
-import { hideDialog } from 'redux/dialogSlice'
 
 let timeout: any
 const debounce = (fn: Function, delay: number) => {
@@ -28,6 +27,7 @@ const debounce = (fn: Function, delay: number) => {
 }
 
 type ChooseDestionationViewProps = {
+  goBack: () => void
   goToNameCommuteView: () => void
   originLocation: Location | null
   setOriginLocation: React.Dispatch<React.SetStateAction<Location | null>>
@@ -36,6 +36,7 @@ type ChooseDestionationViewProps = {
 }
 
 const ChooseDestionationView = ({
+  goBack,
   goToNameCommuteView,
   originLocation,
   setOriginLocation,
@@ -112,8 +113,8 @@ const ChooseDestionationView = ({
           <CTAButtonTitleWrapper>
             <StyledClosedIconButton
               data-testid='close-dialog-button'
-              onClick={(e) => {
-                dispatch(hideDialog())
+              onClick={() => {
+                goBack()
               }}
             />
             <StyledTitleHeading headingType={'h2'} fontSize={28}>

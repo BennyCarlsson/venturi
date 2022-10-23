@@ -10,7 +10,12 @@ describe('tripSlice reducer', () => {
   })
 
   it('should set current table', () => {
-    const state: { origin: Location; destination: Location } = {
+    const state: {
+      name: string
+      origin: Location
+      destination: Location
+    } = {
+      name: 'TestTrip',
       destination: {
         id: '1',
         idx: '1',
