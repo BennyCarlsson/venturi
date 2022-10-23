@@ -14,8 +14,7 @@ describe('<AddCommuteDialog />', () => {
   const IntroViewText =
     'Have a quick way to get information about your most common trip.'
   const ChooseDestinationViewText =
-    'Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.'
-
+    'Choose the destionations for your trip. You can always edit or add more trips later.'
   const NameCommuteViewText =
     "To keep track of your trips, a good idea is to name the specific trip you are about to create. It's optional but a good idea."
 
@@ -80,7 +79,7 @@ describe('<AddCommuteDialog />', () => {
       await new Promise((r) => setTimeout(r, 100))
     })
 
-    userEvent.click(screen.getByRole('button', { name: 'Namnge din resa' }))
+    userEvent.click(screen.getByRole('button', { name: 'Name your trip' }))
     expect(screen.getByText(NameCommuteViewText)).toBeInTheDocument()
   })
 
@@ -108,7 +107,7 @@ describe('<AddCommuteDialog />', () => {
       await new Promise((r) => setTimeout(r, 100))
     })
 
-    userEvent.click(screen.getByRole('button', { name: 'Namnge din resa' }))
+    userEvent.click(screen.getByRole('button', { name: 'Name your trip' }))
     expect(screen.getByText(NameCommuteViewText)).toBeInTheDocument()
 
     userEvent.click(screen.getByTestId('close-dialog-button'))

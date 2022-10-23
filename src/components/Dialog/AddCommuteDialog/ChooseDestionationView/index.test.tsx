@@ -51,7 +51,7 @@ describe('<ChooseDestionationView />', () => {
     render(<ChooseDestionationView {...props} />, {
       initialState: { ...locations },
     })
-    userEvent.click(screen.getByRole('button', { name: 'Namnge din resa' }))
+    userEvent.click(screen.getByRole('button', { name: 'Name your trip' }))
     expect(mockGoToNameCommuteView).toHaveBeenCalledTimes(1)
   })
 
@@ -67,7 +67,7 @@ describe('<ChooseDestionationView />', () => {
     render(<ChooseDestionationView {...props} />, {
       initialState: { ...locations },
     })
-    userEvent.click(screen.getByRole('button', { name: 'Namnge din resa' }))
+    userEvent.click(screen.getByRole('button', { name: 'Name your trip' }))
     expect(mockGoToNameCommuteView).not.toHaveBeenCalled()
   })
 

@@ -30,14 +30,14 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
         class="sc-bdfBwQ QuMsF"
         font-size="14"
       >
-        Välj destinationer för din resa. Du kan alltid ändra eller lägga till flera vid ett senare tillfälle.
+        Choose the destionations for your trip. You can always edit or add more trips later.
       </p>
     </div>
     <p
       class="sc-bdfBwQ kMVXxV"
       font-size="18"
     >
-      Från
+      From
     </p>
     <div
       class="sc-hBEYos hgFzca"
@@ -52,7 +52,7 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
       class="sc-bdfBwQ kMVXxV sc-bqyKva dmDSat"
       font-size="18"
     >
-      Till
+      To
     </p>
     <div
       class="sc-hBEYos hgFzca"
@@ -67,7 +67,7 @@ exports[`<ChooseDestionationView /> should match snapshot 1`] = `
   <button
     class="sc-eCssSg bljGiV sc-fodVxV iBKypr"
   >
-    Namnge din resa
+    Name your trip
   </button>
 </DocumentFragment>
 `;

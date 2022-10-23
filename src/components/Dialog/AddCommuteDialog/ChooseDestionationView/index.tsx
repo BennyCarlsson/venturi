@@ -122,11 +122,11 @@ const ChooseDestionationView = ({
             </StyledTitleHeading>
           </CTAButtonTitleWrapper>
           <Paragraph fontSize={14}>
-            Välj destinationer för din resa. Du kan alltid ändra eller lägga
-            till flera vid ett senare tillfälle.
+            Choose the destionations for your trip. You can always edit or add
+            more trips later.
           </Paragraph>
         </TopCTAButtonTitleSubtitle>
-        <Paragraph fontSize={18}>Från</Paragraph>
+        <Paragraph fontSize={18}>From</Paragraph>
         <InputDropDownWrapper>
           <SearchInput
             data-testid='from-input'
@@ -141,7 +141,7 @@ const ChooseDestionationView = ({
             show={showOriginDropDown}
           />
         </InputDropDownWrapper>
-        <StyledToParagraph fontSize={18}>Till</StyledToParagraph>
+        <StyledToParagraph fontSize={18}>To</StyledToParagraph>
         <InputDropDownWrapper>
           <SearchInput
             data-testid='to-input'
@@ -164,7 +164,7 @@ const ChooseDestionationView = ({
           }
         }}
       >
-        Namnge din resa
+        Name your trip
       </StyledButton>
       {error && <h2>{error}</h2>}
     </React.Fragment>
