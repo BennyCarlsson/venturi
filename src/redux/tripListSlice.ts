@@ -19,7 +19,7 @@ const tripListSlice = createSlice({
         destination: Location
       }>
     ) => {
-      state.trips.push({
+      state.trips.unshift({
         name: action.payload.name ?? action.payload.origin.name,
         origin: action.payload.origin,
         destination: action.payload.destination,
