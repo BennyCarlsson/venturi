@@ -57,7 +57,7 @@ const tripSlice = createSlice({
         destination: Location
       }>
     ) => {
-      state.name = action.payload.name
+      state.name = action.payload.name || action.payload.origin.name
       state.origin = action.payload.origin
       state.destination = action.payload.destination
     },
